@@ -11,21 +11,22 @@ const Services = () => {
             id: 1,
             image: Image1,
             title: "Web Development",
-            description: "Development of websites and web applications using technologies like HTML, CSS, JavaScript, and frameworks such as React and Angular.",
+            description: "Creation of modern, responsive websites and dynamic web applications using HTML, CSS, JavaScript, and frameworks such as React and Angular. Focused on intuitive user experiences and robust backend integration with technologies like Java",
         },
         {
             id: 2,
             image: Image2,
-            title: "Backend Development",
-            description: "Building the server-side logic and APIs utilizing technologies like Spring.",
+            title: "Data Science",
+            description: "Comprehensive data analysis, interactive visualization, and predictive modeling with Python and R. Skilled in extracting insights from datasets, applying machine learning algorithms, and communicating results through compelling dashboards.",
         },
         {
             id: 3,
             image: Image3,
             title: "Mechanical Design",
-            description: "Designing mechanical components and systems, from conceptualization to 3D modeling and prototyping using CAD software like SolidWorks and AutoCAD.",
+            description: "End-to-end design of mechanical components and systems, from initial concept sketches to 3D modeling and prototyping. Using CAD tools like SolidWorks and Fusion 360",
         },
     ];
+
 
 
     return (

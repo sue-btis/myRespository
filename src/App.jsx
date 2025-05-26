@@ -34,7 +34,7 @@ function App() {
                 </div>
                 <Services/>
                 <Resume/>
-
+                <Portfolio/>
                 <Contact/>
             </main>
         </>

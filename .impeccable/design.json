@@ -1,0 +1,1009 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T19:27:01.249Z",
+  "title": "Design System: Josue Escobar — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "neutral-ground": {
+        "role": "neutral",
+        "displayName": "Chassis Gray",
+        "canonical": "#ECECEC",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A1A1A1",
+          "#C7C7C7",
+          "#EEEEEE"
+        ]
+      },
+      "neutral-ground-2": {
+        "role": "neutral",
+        "displayName": "Chassis Paper",
+        "canonical": "#F7F7F7",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A1A1A1",
+          "#C7C7C7",
+          "#EEEEEE"
+        ]
+      },
+      "neutral-plate": {
+        "role": "secondary",
+        "displayName": "Sky Plate",
+        "canonical": "#90CCF4",
+        "tonalRamp": [
+          "#000C22",
+          "#002741",
+          "#0E4562",
+          "#2C6486",
+          "#4F87AB",
+          "#74A9CC",
+          "#9DCFF0",
+          "#C8F6FF"
+        ]
+      },
+      "neutral-plate-blue": {
+        "role": "secondary",
+        "displayName": "Chassis Blue",
+        "canonical": "#5DA2D5",
+        "tonalRamp": [
+          "#000B28",
+          "#002649",
+          "#00446C",
+          "#1E6390",
+          "#4487B7",
+          "#6BA9D7",
+          "#96CFFB",
+          "#C1F6FF"
+        ]
+      },
+      "neutral-ink": {
+        "role": "primary",
+        "displayName": "Chassis Navy",
+        "canonical": "#16324A",
+        "tonalRamp": [
+          "#000C1C",
+          "#102639",
+          "#294258",
+          "#45617A",
+          "#66849F",
+          "#89A5BF",
+          "#B0CBE4",
+          "#D9F2FF"
+        ]
+      },
+      "neutral-ink-2": {
+        "role": "neutral",
+        "displayName": "Chassis Navy Muted",
+        "canonical": "#3E5568",
+        "tonalRamp": [
+          "#010C18",
+          "#152634",
+          "#2E4252",
+          "#4A6173",
+          "#6C8397",
+          "#8EA5B8",
+          "#B5CADD",
+          "#DDF2FF"
+        ]
+      },
+      "neutral-signal": {
+        "role": "tertiary",
+        "displayName": "Coral Signal",
+        "canonical": "#F78888",
+        "tonalRamp": [
+          "#290000",
+          "#4D0009",
+          "#721B22",
+          "#99383D",
+          "#C25C5E",
+          "#E48180",
+          "#FFA9A8",
+          "#FFD3D1"
+        ]
+      },
+      "neutral-region": {
+        "role": "tertiary",
+        "displayName": "Rich Yellow",
+        "canonical": "#F3D250",
+        "tonalRamp": [
+          "#1A0500",
+          "#371F00",
+          "#563B00",
+          "#785A00",
+          "#9C7D00",
+          "#BCA026",
+          "#E1C662",
+          "#FFEE94"
+        ]
+      },
+      "neutral-on-region-2": {
+        "role": "neutral",
+        "displayName": "Olive Ink",
+        "canonical": "#3E4A2A",
+        "tonalRamp": [
+          "#070E00",
+          "#1F280F",
+          "#3A4428",
+          "#576343",
+          "#798665",
+          "#9AA787",
+          "#C0CDAE",
+          "#E8F4D7"
+        ]
+      },
+      "fullstack-ground": {
+        "role": "neutral",
+        "displayName": "Ice Blue",
+        "canonical": "#C4DBF6",
+        "tonalRamp": [
+          "#020C19",
+          "#172536",
+          "#304155",
+          "#4C5F76",
+          "#6E829A",
+          "#90A4BB",
+          "#B7C9E0",
+          "#DFF1FF"
+        ]
+      },
+      "fullstack-ground-2": {
+        "role": "neutral",
+        "displayName": "Pale Ice",
+        "canonical": "#D7E6F9",
+        "tonalRamp": [
+          "#050C15",
+          "#1C2530",
+          "#36414E",
+          "#535F6E",
+          "#748292",
+          "#96A3B3",
+          "#BCC9D8",
+          "#E4F0FE"
+        ]
+      },
+      "fullstack-plate": {
+        "role": "secondary",
+        "displayName": "Signal Blue",
+        "canonical": "#3B8BEB",
+        "tonalRamp": [
+          "#00003D",
+          "#001C63",
+          "#003C8A",
+          "#015CB3",
+          "#3380DC",
+          "#5DA3FC",
+          "#89CBFF",
+          "#B5F3FF"
+        ]
+      },
+      "fullstack-ink": {
+        "role": "neutral",
+        "displayName": "Winter Navy",
+        "canonical": "#14264A",
+        "tonalRamp": [
+          "#020921",
+          "#142340",
+          "#2E3F61",
+          "#495D84",
+          "#6A80AA",
+          "#8CA2CA",
+          "#B3C8EF",
+          "#DBEFFF"
+        ]
+      },
+      "fullstack-ink-2": {
+        "role": "neutral",
+        "displayName": "Winter Navy Muted",
+        "canonical": "#33476B",
+        "tonalRamp": [
+          "#020A20",
+          "#15233E",
+          "#2E405F",
+          "#4A5E82",
+          "#6B81A7",
+          "#8DA2C8",
+          "#B4C8EC",
+          "#DCF0FF"
+        ]
+      },
+      "fullstack-signal": {
+        "role": "primary",
+        "displayName": "Snowy Crimson",
+        "canonical": "#B23850",
+        "tonalRamp": [
+          "#2C0001",
+          "#510011",
+          "#78092A",
+          "#A02D45",
+          "#CA5266",
+          "#EC7988",
+          "#FFA2AF",
+          "#FFCDD8"
+        ]
+      },
+      "fullstack-on-signal": {
+        "role": "neutral",
+        "displayName": "Crimson Paper",
+        "canonical": "#F7EFF1",
+        "tonalRamp": [
+          "#0E0A0B",
+          "#272324",
+          "#443E3F",
+          "#625C5D",
+          "#857E80",
+          "#A69FA1",
+          "#CCC5C7",
+          "#F3EDEE"
+        ]
+      },
+      "fullstack-on-region": {
+        "role": "neutral",
+        "displayName": "Night Navy",
+        "canonical": "#0E1B36",
+        "tonalRamp": [
+          "#030A1D",
+          "#18243A",
+          "#32405A",
+          "#4E5E7C",
+          "#6F80A1",
+          "#91A2C2",
+          "#B8C8E6",
+          "#E0EFFF"
+        ]
+      },
+      "fullstack-snow": {
+        "role": "neutral",
+        "displayName": "Snow Sand (legend only)",
+        "canonical": "#E7E3D4",
+        "tonalRamp": [
+          "#0D0B05",
+          "#27241B",
+          "#434035",
+          "#615E51",
+          "#848073",
+          "#A5A295",
+          "#CBC7BB",
+          "#F2EFE3"
+        ]
+      },
+      "fullstack-slate": {
+        "role": "neutral",
+        "displayName": "Dusk Slate (legend only)",
+        "canonical": "#8590AA",
+        "tonalRamp": [
+          "#060A18",
+          "#1D2435",
+          "#373F53",
+          "#545D74",
+          "#768099",
+          "#97A1B9",
+          "#BDC7DE",
+          "#E5EEFF"
+        ]
+      },
+      "ai-ground": {
+        "role": "neutral",
+        "displayName": "Slate Teal",
+        "canonical": "#304C64",
+        "tonalRamp": [
+          "#000C1B",
+          "#102638",
+          "#2A4257",
+          "#456179",
+          "#67849D",
+          "#89A5BE",
+          "#B0CBE3",
+          "#D9F2FF"
+        ]
+      },
+      "ai-ground-2": {
+        "role": "neutral",
+        "displayName": "Deep Slate",
+        "canonical": "#26425A",
+        "tonalRamp": [
+          "#000C1B",
+          "#102638",
+          "#2A4258",
+          "#456179",
+          "#67849E",
+          "#89A5BF",
+          "#B0CBE3",
+          "#D9F2FF"
+        ]
+      },
+      "ai-plate": {
+        "role": "secondary",
+        "displayName": "Deep Teal",
+        "canonical": "#26788E",
+        "tonalRamp": [
+          "#000F1D",
+          "#002B3B",
+          "#00485A",
+          "#16687C",
+          "#408CA1",
+          "#69ADC2",
+          "#94D3E6",
+          "#BFF9FF"
+        ]
+      },
+      "ai-ink": {
+        "role": "neutral",
+        "displayName": "Pale Teal",
+        "canonical": "#CFE6EA",
+        "tonalRamp": [
+          "#030D0F",
+          "#182729",
+          "#324346",
+          "#4E6265",
+          "#708588",
+          "#92A6A9",
+          "#B9CBCF",
+          "#E1F2F5"
+        ]
+      },
+      "ai-ink-2": {
+        "role": "neutral",
+        "displayName": "Mist Teal",
+        "canonical": "#A4CCD4",
+        "tonalRamp": [
+          "#000F13",
+          "#0B292E",
+          "#26454B",
+          "#41646B",
+          "#63878F",
+          "#86A9B0",
+          "#ADCED5",
+          "#D6F5FB"
+        ]
+      },
+      "ai-signal": {
+        "role": "primary",
+        "displayName": "Amber Ember",
+        "canonical": "#E2480C",
+        "tonalRamp": [
+          "#340000",
+          "#5C0000",
+          "#850000",
+          "#AF1700",
+          "#DA460E",
+          "#FC7147",
+          "#FF9D76",
+          "#FFC9A4"
+        ]
+      },
+      "ai-on-signal": {
+        "role": "neutral",
+        "displayName": "Char",
+        "canonical": "#1A0703",
+        "tonalRamp": [
+          "#150704",
+          "#311F19",
+          "#4F3A33",
+          "#70574F",
+          "#947971",
+          "#B59B93",
+          "#DAC1B9",
+          "#FFE9E1"
+        ]
+      },
+      "ai-on-region-2": {
+        "role": "neutral",
+        "displayName": "Burnt Char",
+        "canonical": "#3A1206",
+        "tonalRamp": [
+          "#1C0300",
+          "#3A190F",
+          "#5B3428",
+          "#7D5143",
+          "#A37364",
+          "#C49587",
+          "#E9BBAE",
+          "#FFE4D6"
+        ]
+      },
+      "ai-on-cta": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#1F3445",
+        "tonalRamp": [
+          "#020C17",
+          "#152633",
+          "#2F4252",
+          "#4B6072",
+          "#6D8397",
+          "#8FA5B7",
+          "#B5CADC",
+          "#DEF1FF"
+        ]
+      },
+      "ai-rust": {
+        "role": "neutral",
+        "displayName": "Autumn Rust (legend only)",
+        "canonical": "#631B08",
+        "tonalRamp": [
+          "#240000",
+          "#450D01",
+          "#692919",
+          "#8E4633",
+          "#B56854",
+          "#D78B78",
+          "#FBB3A0",
+          "#FFDCCA"
+        ]
+      },
+      "data-ground": {
+        "role": "neutral",
+        "displayName": "Lilac Mist",
+        "canonical": "#EDE8F5",
+        "tonalRamp": [
+          "#0C0A10",
+          "#25222A",
+          "#413E47",
+          "#5F5B66",
+          "#827E89",
+          "#A39FAA",
+          "#C9C5D0",
+          "#F0ECF6"
+        ]
+      },
+      "data-ground-2": {
+        "role": "neutral",
+        "displayName": "Pale Lilac",
+        "canonical": "#E1DDF0",
+        "tonalRamp": [
+          "#0C0913",
+          "#25222D",
+          "#403D4B",
+          "#5E5B6A",
+          "#817D8E",
+          "#A29FAF",
+          "#C8C5D4",
+          "#EFECFB"
+        ]
+      },
+      "data-plate": {
+        "role": "secondary",
+        "displayName": "Lavender Steel",
+        "canonical": "#ADBBDA",
+        "tonalRamp": [
+          "#050A1A",
+          "#1B2337",
+          "#353F56",
+          "#525D77",
+          "#74809C",
+          "#95A1BD",
+          "#BBC7E1",
+          "#E3EFFF"
+        ]
+      },
+      "data-ink": {
+        "role": "neutral",
+        "displayName": "Ink Indigo",
+        "canonical": "#26346B",
+        "tonalRamp": [
+          "#030529",
+          "#15204A",
+          "#2E3C6D",
+          "#495A92",
+          "#6A7DB9",
+          "#8C9FD9",
+          "#B3C5FD",
+          "#DBEDFF"
+        ]
+      },
+      "data-ink-2": {
+        "role": "primary",
+        "displayName": "Metallic Indigo",
+        "canonical": "#3D52A0",
+        "tonalRamp": [
+          "#030033",
+          "#111C56",
+          "#28397B",
+          "#4257A2",
+          "#637BCA",
+          "#859EEA",
+          "#ACC4FF",
+          "#D4ECFF"
+        ]
+      },
+      "data-signal": {
+        "role": "tertiary",
+        "displayName": "Steel Periwinkle",
+        "canonical": "#7091E6",
+        "tonalRamp": [
+          "#010034",
+          "#0C1C58",
+          "#233A7D",
+          "#3D58A4",
+          "#5D7CCC",
+          "#809FEC",
+          "#A7C5FF",
+          "#D0EDFF"
+        ]
+      },
+      "data-on-signal": {
+        "role": "neutral",
+        "displayName": "Deep Indigo",
+        "canonical": "#121A3A",
+        "tonalRamp": [
+          "#05091F",
+          "#1A223D",
+          "#343E5D",
+          "#505C80",
+          "#727FA5",
+          "#94A0C6",
+          "#BAC6EA",
+          "#E2EEFF"
+        ]
+      },
+      "data-on-region-2": {
+        "role": "neutral",
+        "displayName": "Indigo Haze",
+        "canonical": "#C9D2EC",
+        "tonalRamp": [
+          "#070A17",
+          "#1E2333",
+          "#393F52",
+          "#565D72",
+          "#788097",
+          "#99A1B7",
+          "#BFC7DC",
+          "#E7EEFF"
+        ]
+      },
+      "data-scanline": {
+        "role": "neutral",
+        "displayName": "Scanline Violet",
+        "canonical": "#8697C4",
+        "tonalRamp": [
+          "#040821",
+          "#182240",
+          "#323E61",
+          "#4E5C84",
+          "#6F7FA9",
+          "#91A1CA",
+          "#B7C7EE",
+          "#DFEEFF"
+        ]
+      },
+      "design-ground": {
+        "role": "neutral",
+        "displayName": "Carbon",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A1A1A1",
+          "#C7C7C7",
+          "#EEEEEE"
+        ]
+      },
+      "design-ground-2": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#1E1E1E",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A1A1A1",
+          "#C7C7C7",
+          "#EEEEEE"
+        ]
+      },
+      "design-plate": {
+        "role": "primary",
+        "displayName": "Pop Ultramarine",
+        "canonical": "#273DB4",
+        "tonalRamp": [
+          "#060046",
+          "#0C0C6D",
+          "#1E2F97",
+          "#3550C2",
+          "#5375EC",
+          "#7599FF",
+          "#9DC2FF",
+          "#C6EAFF"
+        ]
+      },
+      "design-ink": {
+        "role": "neutral",
+        "displayName": "Warm White",
+        "canonical": "#F2F0EE",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#252423",
+          "#413F3E",
+          "#5F5D5C",
+          "#81807E",
+          "#A3A19F",
+          "#C8C7C5",
+          "#F0EEED"
+        ]
+      },
+      "design-ink-2": {
+        "role": "neutral",
+        "displayName": "Warm Gray",
+        "canonical": "#C9C4C0",
+        "tonalRamp": [
+          "#0D0B09",
+          "#262321",
+          "#433F3C",
+          "#615D59",
+          "#847F7C",
+          "#A5A19D",
+          "#CBC6C3",
+          "#F2EEEA"
+        ]
+      },
+      "design-signal": {
+        "role": "tertiary",
+        "displayName": "Burnt Orange",
+        "canonical": "#ED7845",
+        "tonalRamp": [
+          "#2D0000",
+          "#510000",
+          "#771600",
+          "#9F3600",
+          "#C95B28",
+          "#EA8054",
+          "#FFAA80",
+          "#FFD4AD"
+        ]
+      },
+      "design-cta": {
+        "role": "secondary",
+        "displayName": "Hot Pink",
+        "canonical": "#F95CA4",
+        "tonalRamp": [
+          "#30000E",
+          "#560028",
+          "#7F0044",
+          "#A80663",
+          "#D33D86",
+          "#F569A7",
+          "#FF95CC",
+          "#FFC1F3"
+        ]
+      },
+      "design-on-region-2": {
+        "role": "neutral",
+        "displayName": "Ultramarine Haze",
+        "canonical": "#CDD3F2",
+        "tonalRamp": [
+          "#080919",
+          "#1F2235",
+          "#3A3E54",
+          "#575C75",
+          "#797E9A",
+          "#9BA0BA",
+          "#C1C6DF",
+          "#E8EDFF"
+        ]
+      },
+      "design-red": {
+        "role": "neutral",
+        "displayName": "Pop Red (gradient only)",
+        "canonical": "#C50900",
+        "tonalRamp": [
+          "#360000",
+          "#5F0000",
+          "#880000",
+          "#B40000",
+          "#E03B2B",
+          "#FF6956",
+          "#FF9782",
+          "#FFC3AE"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-neutral": {
+        "displayName": "Archivo Wide",
+        "purpose": "Neutral chassis display voice, width 118."
+      },
+      "display-fullstack": {
+        "displayName": "Funnel Display",
+        "purpose": "Full-stack & Product display voice."
+      },
+      "display-ai": {
+        "displayName": "Unbounded",
+        "purpose": "AI & Agents display voice."
+      },
+      "display-data": {
+        "displayName": "Doto",
+        "purpose": "Data & Analytics dot-matrix display voice; display roles only."
+      },
+      "display-design": {
+        "displayName": "Michroma",
+        "purpose": "3D & Engineering design display voice."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "The 10-second line; size scaled by the face multiplier k."
+      },
+      "close": {
+        "displayName": "Close",
+        "purpose": "The closing question in the region-owned close section."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Project titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text on every face; lining tabular numerals."
+      },
+      "body-lead": {
+        "displayName": "Lead",
+        "purpose": "The line under the 10-second line."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Slot numbers 01-04 and timeline years, condensed light Archivo."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Call-to-action, slot names, links."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Slot meta, spec terms, notes, in ink-2."
+      }
+    },
+    "faceMultiplier": {
+      "neutral": 1,
+      "fullstack": 1.04,
+      "ai": 0.86,
+      "data": 0.9,
+      "design": 0.8
+    },
+    "ruleColors": {
+      "neutral": "#16324A2E",
+      "fullstack": "#14264A2E",
+      "ai": "#A4CCD42E",
+      "data": "#3D52A033",
+      "design": "#F2F0EE24"
+    },
+    "textures": [
+      {
+        "face": "ai",
+        "value": "radial-gradient(#A4CCD41F 1px, transparent 1.4px) 0 0 / 22px 22px",
+        "purpose": "Dot grid."
+      },
+      {
+        "face": "data",
+        "value": "repeating-linear-gradient(180deg, transparent 0 39px, #8697C42E 39px 40px)",
+        "purpose": "Horizontal scanlines."
+      },
+      {
+        "face": "design",
+        "value": "linear-gradient(#F2F0EE0F 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, #F2F0EE0F 1px, transparent 1px) 0 0 / 40px 40px",
+        "purpose": "Blueprint grid."
+      },
+      {
+        "face": "design",
+        "value": "border-top: 10px solid; border-image: linear-gradient(90deg, #C50900, #ED7845 35%, #F95CA4 65%, #273DB4) 1",
+        "purpose": "Gradient bar over the close section."
+      }
+    ],
+    "shadows": [],
+    "depth": [
+      {
+        "name": "seated-plate",
+        "value": "plate translate(-6px, -6px); under-layer translate(6px, 6px), background var(--ground), border 1px solid var(--ink)",
+        "purpose": "Seated slot only: a real layer offset, not a shadow."
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 3px",
+      "note": "As built. Signal is below 3:1 against ground on neutral (2.01), AI (2.20) and Data (2.54); not a rule to inherit."
+    },
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "State transitions, eject, timeline draw-in (1.4s)."
+      },
+      {
+        "name": "spring",
+        "value": "linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1)",
+        "purpose": "Overshoot and damping: call-to-action lift, slot edge, seat on spring faces."
+      },
+      {
+        "name": "seat-neutral",
+        "value": "0.62s spring",
+        "purpose": "Neutral seat timing."
+      },
+      {
+        "name": "seat-fullstack",
+        "value": "0.7s spring",
+        "purpose": "Full-stack seat timing."
+      },
+      {
+        "name": "seat-ai",
+        "value": "0.9s cubic-bezier(.65, 0, .35, 1)",
+        "purpose": "AI seat timing."
+      },
+      {
+        "name": "seat-data",
+        "value": "0.48s steps(8, end)",
+        "purpose": "Data seat timing, stepped like a display refresh."
+      },
+      {
+        "name": "seat-design",
+        "value": "0.8s spring",
+        "purpose": "3D seat timing."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none; animation: none",
+        "purpose": "Immediate cut under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Call-to-action",
+      "kind": "button",
+      "refersTo": "button-cta-neutral",
+      "description": "The single primary action, in the rail.",
+      "html": "<a class=\"ds-cta\" href=\"#\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 4h12v8H2zM2 4l6 5 6-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>Write to me</a>",
+      "css": ".ds-cta{display:inline-flex;align-items:center;gap:.5em;padding:.7em 1.15em;border-radius:3px;background:#16324A;color:#ECECEC;font-family:Archivo,system-ui,sans-serif;font-weight:650;text-decoration:none;transition:transform .5s linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1)}.ds-cta svg{width:1em;height:1em}.ds-cta:hover{transform:translateY(-2px)}.ds-cta:active{transform:translateY(1px)}.ds-cta:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+    },
+    {
+      "name": "Module Slot",
+      "kind": "custom",
+      "refersTo": "slot-neutral",
+      "description": "Numbered slot with its palette edge; click inserts or ejects the module.",
+      "html": "<button class=\"ds-slot\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-slot__edge\"><i style=\"background:#B23850\"></i><i style=\"background:#3B8BEB\"></i><i style=\"background:#E7E3D4\"></i><i style=\"background:#C4DBF6\"></i><i style=\"background:#8590AA\"></i></span><span class=\"ds-slot__num\">01</span><span class=\"ds-slot__name\">Full-stack &amp; Product</span><span class=\"ds-slot__meta\"><span>1 project</span><b>Insert</b></span></button>",
+      "css": ".ds-slot{display:grid;grid-template-rows:10px auto 1fr auto;gap:12px;width:240px;min-height:180px;padding:0 20px 18px;text-align:left;font:inherit;font-family:Archivo,system-ui,sans-serif;color:#16324A;background:#ECECEC;border:1px solid #16324A2E;cursor:pointer;transition:transform .62s linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1)}.ds-slot__edge{display:flex;margin:0 -20px;height:10px}.ds-slot__edge i{flex:1}.ds-slot__num{font-size:2.6rem;font-weight:300;font-variation-settings:\"wdth\" 70;line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}.ds-slot__name{font-size:1.1rem;font-weight:650;line-height:1.2;align-self:end;max-width:14ch}.ds-slot__meta{display:flex;justify-content:space-between;font-size:.8rem;color:#3E5568}.ds-slot__meta b{color:#16324A;font-weight:650}.ds-slot:hover{transform:translateY(-3px)}.ds-slot:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+    },
+    {
+      "name": "Seated Slot",
+      "kind": "custom",
+      "refersTo": "slot-seated-neutral",
+      "description": "Seated state: the plate lifts onto ground-2 over an offset ink-hairline layer.",
+      "html": "<div class=\"ds-seat-wrap\"><button class=\"ds-seated\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-seated__num\">01</span><span>Full-stack &amp; Product</span><span class=\"ds-seated__act\">Eject</span></button></div>",
+      "css": ".ds-seat-wrap{padding:12px}.ds-seated{position:relative;isolation:isolate;display:grid;gap:12px;width:220px;padding:24px 20px 18px;text-align:left;font:inherit;font-family:Archivo,system-ui,sans-serif;font-weight:650;color:#16324A;background:#F7F7F7;border:0;transform:translate(-6px,-6px);cursor:pointer}.ds-seated::before{content:\"\";position:absolute;inset:0;z-index:-1;transform:translate(6px,6px);border:1px solid #16324A;background:#ECECEC}.ds-seated__num{font-size:2.6rem;font-weight:300;font-variation-settings:\"wdth\" 70;line-height:1}.ds-seated__act{font-size:.8rem}.ds-seated:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+    },
+    {
+      "name": "Rail",
+      "kind": "nav",
+      "refersTo": "rail-neutral",
+      "description": "Sticky chassis rail: name, CV, LinkedIn, GitHub, call-to-action.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail__name\" href=\"#\">Josue Escobar</a><span class=\"ds-rail__links\"><span class=\"ds-pending\">CV</span><a href=\"#\">GitHub</a><a class=\"ds-rail__cta\" href=\"#\">Write to me</a></span></nav>",
+      "css": ".ds-rail{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 24px;background:#ECECEC;border-bottom:1px solid #16324A2E;font-family:Archivo,system-ui,sans-serif;color:#16324A}.ds-rail__name{font-weight:700;font-variation-settings:\"wdth\" 112;color:inherit;text-decoration:none}.ds-rail__links{display:flex;align-items:center;gap:20px;font-size:.875rem}.ds-rail__links a:not(.ds-rail__cta){color:#3E5568;text-decoration:none}.ds-rail__links a:not(.ds-rail__cta):hover{color:#16324A;text-decoration:underline}.ds-pending{color:#3E5568;text-decoration:underline dashed;text-underline-offset:.22em;cursor:help}.ds-rail__cta{padding:.7em 1.15em;border-radius:3px;background:#16324A;color:#ECECEC;font-weight:650;text-decoration:none}.ds-rail a:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+    },
+    {
+      "name": "Pending Link",
+      "kind": "chip",
+      "description": "A link without a target: dashed, muted, never reads as live.",
+      "html": "<span class=\"ds-pending-link\" tabindex=\"0\">LinkedIn</span> <span class=\"ds-pending-tag\">Live demo · URL pending</span>",
+      "css": ".ds-pending-link{font-family:Archivo,system-ui,sans-serif;color:#3E5568;text-decoration:underline dashed;text-underline-offset:.22em;text-decoration-thickness:1px;cursor:help}.ds-pending-link:focus-visible{outline:2px solid #16324A;outline-offset:3px;border-radius:3px}.ds-pending-tag{font-family:Archivo,system-ui,sans-serif;font-size:.8rem;color:#3E5568;border:1px dashed #16324A33;padding:.35em .6em;border-radius:3px}"
+    },
+    {
+      "name": "Project Plate (region)",
+      "kind": "card",
+      "refersTo": "project-region-neutral",
+      "description": "The inserted area's project, owned by the face region color.",
+      "html": "<article class=\"ds-plate\"><h3 class=\"ds-plate__title\">TrainLog</h3><p>An offline-first training PWA.</p><dl class=\"ds-spec\"><dt>Stack</dt><dd>React, TypeScript, PWA</dd></dl><a class=\"ds-plate__link\" href=\"#\">Source</a></article>",
+      "css": ".ds-plate{max-width:520px;padding:32px;background:#F3D250;color:#16324A;border-radius:3px;font-family:Archivo,system-ui,sans-serif}.ds-plate__title{font-size:2.6rem;font-weight:780;font-variation-settings:\"wdth\" 118;letter-spacing:-.035em;line-height:1;margin:0 0 16px}.ds-spec{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin:24px 0 0;padding-top:18px;border-top:1px solid #16324A38;font-size:.9rem}.ds-spec dt{color:#3E4A2A}.ds-spec dd{margin:0}.ds-plate__link{display:inline-block;margin-top:24px;color:inherit;font-weight:650;text-underline-offset:.22em}.ds-plate__link:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+    },
+    {
+      "name": "Project Plate (default)",
+      "kind": "card",
+      "refersTo": "project-plate-neutral",
+      "description": "Projects not owned by the active area: ground-2 with a hairline.",
+      "html": "<article class=\"ds-card\"><h3>ChangeSmith</h3><p>Plugins that make coding agents work like a careful engineer.</p></article>",
+      "css": ".ds-card{max-width:520px;padding:32px;background:#F7F7F7;color:#16324A;border:1px solid #16324A2E;border-radius:3px;font-family:Archivo,system-ui,sans-serif}.ds-card h3{font-size:2.2rem;font-weight:780;font-variation-settings:\"wdth\" 118;letter-spacing:-.035em;line-height:1;margin:0 0 16px}.ds-card p{margin:0;max-width:46ch}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Modular Chassis",
+    "overview": "The site is one engineered instrument. The neutral face is the chassis: a light-gray plate with a sticky rail, the 10-second line, and four numbered slots (01–04). Inserting a module (Full-stack & Product, AI & Agents, Data & Analytics, 3D & Engineering design) changes the whole face: palette, display face, background texture, hover material and seat timing. Ejecting restores the neutral face intact. The chassis carries all content; choosing a module is optional.\n\nEvery face redefines the same set of roles (ground, ground-2, plate, ink, ink-2, signal, on-signal, cta, on-cta, region, on-region, on-region-2, rule, display face, display width/weight/tracking, a size multiplier `k`, texture, seat duration and easing). Layout reads only the roles, which is how five faces share one grid. Hardware cues are real structure: hairline rules are the mounting rails, slot numbers are the navigation, the five-color edge on each slot is that module's palette, set like a screen-printed legend.\n\nThe system refuses the dark-neon developer portfolio and the skill-bar résumé page. Depth is layer overlap, never soft shadow.",
+    "keyCharacteristics": [
+      "Five faces, one grid; faces swap materials, never positions.",
+      "Each face's palette owns whole regions (a project plate, the close section), not scattered accents.",
+      "Seating motion has mass and a per-face rhythm; reduced motion cuts instantly.",
+      "Lining, tabular numerals everywhere; slot numbers and years in condensed light Archivo.",
+      "Flat plates with 1px rules and 3px milled corners."
+    ],
+    "rules": [
+      {
+        "name": "The Region Ownership Rule",
+        "body": "The active face's region color owns whole blocks: the inserted area's project plate and the close section. It never appears as a scattered accent over another face's ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Snow Is Not a Ground Rule",
+        "body": "Full-stack's #E7E3D4 is a legend color only; the Full-stack face is never a beige ground with brown ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pinned Palette Rule",
+        "body": "Palette values are owner-pinned and change only with the owner. The AI palette is approved as built and stays exactly as is.",
+        "section": "colors"
+      },
+      {
+        "name": "The Size Multiplier Rule",
+        "body": "Display sizes are one clamp scale multiplied by the face's `k` (neutral 1, Full-stack 1.04, AI 0.86, Data 0.9, 3D 0.8), so wider faces shrink and the copy block keeps one height.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lining Numerals Rule",
+        "body": "The whole document sets `lining-nums tabular-nums`; slot numbers and years never use oldstyle figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Doto Is Display Only Rule",
+        "body": "The dot-matrix face sets display roles only; Data body text stays Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Registration Rule",
+        "body": "All five faces share the grid to the pixel. Switching faces changes only what content is made of; it never moves the slot row or reflows the layout. Reordering projects by active area is the only sanctioned change, and it happens below the fold.",
+        "section": "layout"
+      },
+      {
+        "name": "The Seated Plate Rule",
+        "body": "The 6px offset plate is reserved for the seated state of a slot. It is a real layer with the ground's own color and an ink hairline, not a shadow, and it does not decorate resting elements.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Glow Rule",
+        "body": "No soft drop shadows, no glow, no blur.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ballistics Rule",
+        "body": "Every reskin moves with mass and the face's own seat timing. No linear fades, no instant swaps, except the immediate cut under reduced motion.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do define every new face or surface through the shared role set, so layout code reads only roles.",
+      "Do keep the copy block at its single shared height so the slot row registers across faces.",
+      "Do let the active palette own whole regions (project plate, close section).",
+      "Do give each face its own hover material and seat timing.",
+      "Do keep every text/ground pairing at WCAG AA and focus indicators at 3:1 or better against their ground.",
+      "Do render pending links as dashed ink-2 text that explains itself on tap."
+    ],
+    "donts": [
+      "Don't move layout between faces.",
+      "Don't use soft drop shadows or glow; depth is layer overlap.",
+      "Don't put kicker or eyebrow labels above headings.",
+      "Don't make a pending link look live.",
+      "Don't use a beige ground or brown ink on the Full-stack face.",
+      "Don't add hardware costume (screws, knobs, LEDs) that does not map to structure or state.",
+      "Don't use dark-plus-neon glow, skill-percentage bars or contribution counters."
+    ]
+  }
+}

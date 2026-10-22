@@ -1,0 +1,63 @@
+.face { padding: clamp(24px, 4vh, 48px) var(--gutter) 0; }
+.face__copy { height: var(--copy-h); display: flex; flex-direction: column; justify-content: flex-end; gap: clamp(16px, 2.4vh, 24px); }
+.face__line { font-size: calc(clamp(2.3rem, 5.4vw, 5rem) * var(--k)); max-width: 60rem; }
+.face__by { max-width: 52ch; color: var(--ink-2); font-size: clamp(1rem, 1.3vw, 1.15rem); }
+.face__by strong { color: var(--ink); font-weight: 650; }
+
+.slots {
+  display: grid; grid-template-columns: repeat(var(--slots, 4), 1fr);
+  margin-top: clamp(28px, 4.5vh, 48px);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+.slot {
+  --edge: 10px;
+  position: relative; isolation: isolate;
+  display: grid; grid-template-rows: var(--edge) auto 1fr auto; gap: 12px;
+  min-height: clamp(150px, 20vh, 200px);
+  padding: 0 clamp(14px, 1.6vw, 24px) clamp(14px, 2vh, 20px);
+  text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: transparent; border: 0; border-right: 1px solid var(--rule);
+  transition: transform var(--seat-dur) var(--seat-ease), background-color .3s var(--ease-out);
+}
+.slot:first-child { border-left: 1px solid var(--rule); }
+.slot__edge { display: flex; margin: 0 calc(-1 * clamp(14px, 1.6vw, 24px)); height: var(--edge); transition: height .5s var(--spring); }
+.slot__edge i { flex: 1; }
+.slot__num { font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; font-variation-settings: "wdth" 70; line-height: 1; letter-spacing: -.02em; }
+.slot__name { font-size: clamp(1rem, 1.25vw, 1.2rem); font-weight: 650; line-height: 1.2; align-self: end; max-width: 14ch; }
+.slot__meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .8rem; color: var(--ink-2); }
+.slot__act { font-weight: 650; color: var(--ink); }
+
+/* Seated: the module plate laps over the slot rules and sits proud of the chassis; the layer under it shows the offset. */
+.slot[aria-pressed="true"] { --edge: 18px; background: var(--ground-2); transform: translate(-6px, -6px); z-index: 1; }
+.slot[aria-pressed="true"]::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  transform: translate(6px, 6px); border: 1px solid var(--ink); background: var(--ground);
+}
+
+/* Each face answers the pointer in its own material. */
+html[data-face="neutral"] .slot:hover { transform: translateY(-3px); }
+html[data-face="fullstack"] .slot::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--plate);
+  clip-path: inset(100% 0 0 0); transition: clip-path .45s var(--ease-out);
+}
+html[data-face="fullstack"] .slot:hover::after { clip-path: inset(62% 0 0 0); }
+html[data-face="ai"] .slot { overflow: hidden; }
+html[data-face="ai"] .slot::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  left: var(--x, 50%); top: var(--y, 50%);
+  width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
+  background: var(--ripple); transform: scale(0); opacity: 0;
+  transition: transform .9s var(--ease-out), opacity .9s var(--ease-out);
+}
+html[data-face="ai"] .slot:hover::after { transform: scale(60); opacity: 1; }
+html[data-face="data"] .slot:hover { background: var(--ground-2); transition-timing-function: steps(4, end); }
+html[data-face="data"] .slot:hover .slot__num { color: var(--ink-2); }
+html[data-face="design"] .slot { outline: 1px solid transparent; outline-offset: -10px; transition: outline-offset .4s var(--spring), outline-color .2s; }
+html[data-face="design"] .slot:hover { outline-color: var(--signal); outline-offset: -4px; }
+
+@media (max-width: 640px) {
+  .slots { grid-template-columns: repeat(min(var(--slots, 4), 2), 1fr); }
+  .slot { border-bottom: 1px solid var(--rule); }
+  .slot:nth-child(odd) { border-left: 1px solid var(--rule); }
+  .slot:nth-last-child(-n + 2) { border-bottom: 0; }
+}

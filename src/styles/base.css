@@ -1,0 +1,54 @@
+* { box-sizing: border-box; margin: 0; }
+html { color-scheme: light; scroll-behavior: smooth; scrollbar-color: var(--ink-2) var(--ground-2); accent-color: var(--signal); }
+html[data-face="ai"], html[data-face="design"] { color-scheme: dark; }
+body {
+  font-family: var(--body);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink); background: var(--ground);
+  background-image: var(--texture);
+  caret-color: var(--signal);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--signal); color: var(--on-signal); }
+a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+/* currentColor is the text's own AA-passing color, so the ring holds 3:1 on every face and region. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: var(--radius); }
+img { display: block; max-width: 100%; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.display {
+  font-family: var(--display);
+  font-variation-settings: "wdth" var(--display-wdth);
+  font-weight: var(--display-wght);
+  letter-spacing: var(--display-track);
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.pending-link { position: relative; color: var(--ink-2); text-decoration: underline dashed; text-underline-offset: .22em; cursor: help; }
+.pending-link.is-told::after {
+  content: "Link coming soon"; position: absolute; top: calc(100% + 8px); right: 0; z-index: 20;
+  white-space: nowrap; font-size: .75rem; padding: .35em .6em; border-radius: var(--radius);
+  background: var(--ink); color: var(--ground);
+}
+
+.section { padding: clamp(72px, 12vh, 140px) var(--gutter) 0; }
+.section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vh, 48px); }
+.section__title { font-size: calc(clamp(2rem, 4vw, 3.4rem) * var(--k)); }
+.section__note { color: var(--ink-2); font-size: .9rem; max-width: 46ch; }
+
+/* Seating: the new face grows out of the slot that was pressed, with that face's own timing. */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) { animation: seat var(--seat-dur) var(--seat-ease) both; z-index: 1; }
+html.ejecting::view-transition-new(root) { animation: none; z-index: 0; }
+html.ejecting::view-transition-old(root) { animation: seat var(--seat-dur) var(--ease-out) reverse both; z-index: 1; }
+@keyframes seat {
+  from { clip-path: inset(var(--from-t) var(--from-r) var(--from-b) var(--from-l)); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}

@@ -1,17 +1,17 @@
 /* Registered so the palette interpolates when the face changes instead of snapping. */
-@property --ground { syntax: '<color>'; inherits: true; initial-value: #ECECEC; }
-@property --ground-2 { syntax: '<color>'; inherits: true; initial-value: #F7F7F7; }
-@property --plate { syntax: '<color>'; inherits: true; initial-value: #90CCF4; }
-@property --ink { syntax: '<color>'; inherits: true; initial-value: #16324A; }
-@property --ink-2 { syntax: '<color>'; inherits: true; initial-value: #3E5568; }
-@property --signal { syntax: '<color>'; inherits: true; initial-value: #F78888; }
-@property --on-signal { syntax: '<color>'; inherits: true; initial-value: #16324A; }
-@property --cta { syntax: '<color>'; inherits: true; initial-value: #16324A; }
-@property --on-cta { syntax: '<color>'; inherits: true; initial-value: #ECECEC; }
-@property --region { syntax: '<color>'; inherits: true; initial-value: #F3D250; }
-@property --on-region { syntax: '<color>'; inherits: true; initial-value: #16324A; }
-@property --on-region-2 { syntax: '<color>'; inherits: true; initial-value: #3E4A2A; }
-@property --rule { syntax: '<color>'; inherits: true; initial-value: #16324A2E; }
+@property --ground { syntax: '<color>'; inherits: true; initial-value: #FFFFFF; }
+@property --ground-2 { syntax: '<color>'; inherits: true; initial-value: #F2F6FD; }
+@property --plate { syntax: '<color>'; inherits: true; initial-value: #77A6F7; }
+@property --ink { syntax: '<color>'; inherits: true; initial-value: #1B2A4A; }
+@property --ink-2 { syntax: '<color>'; inherits: true; initial-value: #3C4A66; }
+@property --signal { syntax: '<color>'; inherits: true; initial-value: #00887A; }
+@property --on-signal { syntax: '<color>'; inherits: true; initial-value: #FFFFFF; }
+@property --cta { syntax: '<color>'; inherits: true; initial-value: #1B2A4A; }
+@property --on-cta { syntax: '<color>'; inherits: true; initial-value: #FFFFFF; }
+@property --region { syntax: '<color>'; inherits: true; initial-value: #D3E3FC; }
+@property --on-region { syntax: '<color>'; inherits: true; initial-value: #1B2A4A; }
+@property --on-region-2 { syntax: '<color>'; inherits: true; initial-value: #33456B; }
+@property --rule { syntax: '<color>'; inherits: true; initial-value: #1B2A4A2E; }
 
 :root {
   --ease-out: cubic-bezier(.16, 1, .3, 1);
@@ -32,12 +32,12 @@
 }
 /* Faces. Every face fills the same roles; layout reads only the roles. Palettes are owner-pinned (DESIGN.md). */
 html[data-face="neutral"] {
-  --ground: #ECECEC; --ground-2: #F7F7F7; --plate: #90CCF4;
-  --ink: #16324A; --ink-2: #3E5568; --signal: #F78888;
-  --on-signal: #16324A; --cta: #16324A; --on-cta: #ECECEC;
-  --region: #F3D250; --on-region: #16324A; --on-region-2: #3E4A2A;
-  --region-alt: #90CCF4; --on-region-alt-2: #23415C;
-  --rule: #16324A2E;
+  --ground: #FFFFFF; --ground-2: #F2F6FD; --plate: #77A6F7;
+  --ink: #1B2A4A; --ink-2: #3C4A66; --signal: #00887A;
+  --on-signal: #FFFFFF; --cta: #1B2A4A; --on-cta: #FFFFFF;
+  --region: #D3E3FC; --on-region: #1B2A4A; --on-region-2: #33456B;
+  --region-alt: #FFCCBC; --on-region-alt-2: #5A2F22;
+  --rule: #1B2A4A2E;
   --display: "Archivo Variable", system-ui, sans-serif;
   --display-wdth: 118; --display-wght: 780; --display-track: -0.035em; --k: 1;
   --texture: none;

@@ -10,7 +10,7 @@
   --scr-dim: color-mix(in srgb, var(--scr-fg) 78%, var(--scr));
   --scr-line: color-mix(in srgb, var(--scr-fg) 24%, transparent);
 }
-html[data-face="neutral"] { --scr: #0F2133; --scr-fg: #ECECEC; --scr-acc: #F3D250; --on-acc: #0F2133; --led: #F78888; }
+html[data-face="neutral"] { --scr: #10203A; --scr-fg: #FFFFFF; --scr-acc: #77A6F7; --on-acc: #10203A; --led: #00887A; }
 html[data-face="fullstack"] { --scr: #0B1630; --scr-fg: #D7E6F9; --scr-acc: #6FAAF2; --on-acc: #0B1630; --led: #B23850; }
 html[data-face="ai"] { --scr: #13273A; --scr-fg: #CFE6EA; --scr-acc: #FF8A5C; --on-acc: #1A0703; --led: #E2480C; }
 html[data-face="data"] { --scr: #141C45; --scr-fg: #EDE8F5; --scr-acc: #9DB4F5; --on-acc: #121A3A; --led: #7091E6; }

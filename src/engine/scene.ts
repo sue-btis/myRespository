@@ -20,7 +20,7 @@ type Role = (typeof ROLES)[number]
 
 // Duplicated from the CSS tokens: during the face switch computed styles are mid-transition.
 const PAL: Record<Face, { plate: string; ink: string; signal: string }> = {
-  neutral: { plate: '#90CCF4', ink: '#16324A', signal: '#F78888' },
+  neutral: { plate: '#77A6F7', ink: '#1B2A4A', signal: '#00887A' },
   fullstack: { plate: '#3B8BEB', ink: '#14264A', signal: '#B23850' },
   ai: { plate: '#26788E', ink: '#26425A', signal: '#E2480C' },
   data: { plate: '#ADBBDA', ink: '#26346B', signal: '#7091E6' },

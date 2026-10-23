@@ -96,3 +96,21 @@ test('links without a target never render as live anchors', async ({ page }) => 
   // CV in the bar and in the close section.
   await expect(page.locator('.pend')).toHaveCount(2)
 })
+
+test('tabbing into the Work console keeps focus on the cartridge', async ({ page }) => {
+  await page.goto('/')
+  await ready(page)
+  const slot = page.locator('.slot').first()
+  // Focusing scrolls the console into view, which is what used to trigger the auto-boot.
+  await slot.focus()
+  await page.waitForTimeout(400)
+  expect(await page.evaluate(() => document.activeElement?.classList.contains('slot'))).toBe(true)
+  await expect(page.locator('.screen')).toHaveAttribute('data-view', 'select')
+})
+
+test('scrolling to the Work console boots a project', async ({ page }) => {
+  await page.goto('/')
+  await ready(page)
+  await page.locator('#work').scrollIntoViewIfNeeded()
+  await expect(page.locator('.screen')).not.toHaveAttribute('data-view', 'select')
+})

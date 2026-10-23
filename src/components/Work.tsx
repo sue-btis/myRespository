@@ -109,7 +109,8 @@ export function Work({ face }: { face: Face }) {
   const autoBoot = useRef(() => {})
   useEffect(() => {
     autoBoot.current = () => {
-      if (view !== 'select' || screen.isBusy()) return
+      // Someone tabbing in already chose to browse the slots; booting would make the focused slot inert.
+      if (view !== 'select' || screen.isBusy() || consoleRef.current?.contains(document.activeElement)) return
       const i = Math.max(0, SLOTS.findIndex((s) => s.area.id === face))
       lastSlot.current = slotEls.current[i]
       void screen.go(SLOTS[i].project.id, { instant: true })

@@ -1,0 +1,56 @@
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding: .05em .03em .16em; margin: -.05em -.03em -.16em; }
+.w__i { display: inline-block; }
+.js [data-split] .w__i { transform: translateY(118%); }
+.js [data-split].in .w__i { transform: none; transition: transform var(--seat-dur) var(--seat-ease); transition-delay: calc(var(--i) * 60ms + var(--d, 0) * 1ms); }
+.js [data-reveal] { opacity: 0; transform: translateY(26px); }
+.js [data-reveal].in {
+  opacity: 1; transform: none;
+  transition: opacity .7s var(--ease-out), transform var(--seat-dur) var(--seat-ease); transition-delay: calc(var(--d, 0) * 1ms);
+}
+
+.btn {
+  position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; white-space: nowrap; flex: none; min-height: 48px; padding: 0 22px; border: 1.5px solid transparent;
+  border-radius: var(--radius); background: var(--cta); color: var(--on-cta); font-weight: 700; font-size: 1rem; text-decoration: none;
+  cursor: pointer; transition: transform .35s var(--spring), box-shadow .3s var(--ease-out), background-color .3s, border-color .3s;
+}
+.btn--sm { min-height: 44px; padding: 0 18px; }
+.btn--ghost { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--ink) 45%, transparent); }
+.btn:hover { box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--cta) 65%, transparent); }
+.btn--ghost:hover { box-shadow: none; border-color: var(--ink); background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.btn:active { transform: scale(.95); }
+.btn svg { width: 18px; height: 18px; flex: none; transition: transform .45s var(--spring); }
+.btn:hover svg { transform: translate(3px, -3px) rotate(8deg); }
+.btn .lbl { white-space: nowrap; }
+.btn .ch { display: inline-block; transition: transform .35s var(--spring); transition-delay: calc(var(--i) * 28ms); }
+.btn:hover .ch, .btn:focus-visible .ch { transform: translateY(-3px); }
+.ch.sp { width: .3em; }
+.spot::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .35s;
+  background: radial-gradient(circle 140px at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, currentColor 22%, transparent), transparent 70%);
+}
+.spot:hover::after { opacity: 1; }
+.rpl {
+  position: absolute; z-index: -1; border-radius: 50%; pointer-events: none;
+  background: color-mix(in srgb, currentColor 30%, transparent); transform: scale(0); animation: rpl .7s var(--ease-out) forwards;
+}
+@keyframes rpl { to { transform: scale(1); opacity: 0; } }
+
+.mailwrap { position: relative; display: inline-flex; }
+.copied {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 5; padding: 4px 10px; border-radius: var(--radius);
+  background: var(--ink); color: var(--ground); font-size: .8125rem; font-weight: 700; white-space: nowrap; pointer-events: none;
+  opacity: 0; transform: translateY(-4px); transition: opacity .2s, transform .3s var(--spring);
+}
+.copied[data-side="right"] { left: auto; right: 0; }
+.copied[data-on] { opacity: 1; transform: none; }
+
+.cursor {
+  position: fixed; left: 0; top: 0; z-index: 130; width: 44px; height: 44px; margin: -22px 0 0 -22px; border: 2.4px solid #fff;
+  border-radius: 50%; mix-blend-mode: difference; pointer-events: none; opacity: 0; scale: .6;
+  transition: scale .35s var(--spring), opacity .3s, background .3s;
+}
+.cursor.on { opacity: 1; }
+/* Grows with `scale` so it never triggers layout; the engine positions it with `translate`. */
+.cursor.big { scale: 1; background: rgb(255 255 255 / .16); }
+@media (hover: none), (pointer: coarse) { .cursor { display: none; } }

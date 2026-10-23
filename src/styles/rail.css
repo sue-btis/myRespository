@@ -1,0 +1,44 @@
+.top {
+  position: fixed; inset: 0 0 auto 0; z-index: 40; height: var(--rail-h);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter);
+  transition: background-color .3s, backdrop-filter .3s, box-shadow .3s;
+}
+.top.stuck {
+  background: color-mix(in srgb, var(--ground) 82%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--rule);
+}
+.name {
+  font-family: var(--display); font-variation-settings: "wdth" var(--display-wdth); font-weight: var(--display-wght);
+  letter-spacing: var(--display-track); text-decoration: none; font-size: calc(1.05rem * var(--k));
+  display: flex; align-items: center; gap: 10px; white-space: nowrap; min-width: 0;
+}
+.name b {
+  display: inline-block; width: 12px; height: 12px; background: var(--signal); border-radius: 50%;
+  box-shadow: 0 0 0 0 var(--signal); animation: beat 2.4s var(--ease-out) 3;
+}
+@keyframes beat {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal) 60%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 12px transparent; }
+}
+.nav { display: flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.nl {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; font-size: .875rem;
+  text-decoration: none; position: relative; border-radius: var(--radius);
+}
+.nl svg { width: 18px; height: 18px; flex: none; transition: transform .35s var(--spring); }
+.nl:hover svg { transform: translateY(-3px) rotate(-8deg); }
+.nl .t { position: relative; }
+.nl .t::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; background: currentColor;
+  transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease-out);
+}
+a.nl:hover .t::after { transform: scaleX(1); transform-origin: left; }
+@media (max-width: 640px) {
+  .nl .t { display: none; }
+  .nl { padding: 0 8px; min-width: 44px; justify-content: center; }
+  .name { font-size: calc(.95rem * var(--k)); }
+  .nav { gap: 0; }
+  .nav .btn { min-width: 44px; padding: 0 12px; }
+  .nav .btn .lbl { display: none; }
+}
+@media (max-width: 380px) { .name { font-size: calc(.85rem * var(--k)); gap: 8px; } }

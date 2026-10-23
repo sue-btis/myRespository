@@ -1,0 +1,30 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: clip; scroll-behavior: smooth; color-scheme: light; -webkit-text-size-adjust: 100%; }
+html[data-face="ai"], html[data-face="design"] { color-scheme: dark; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.55;
+  overflow-x: clip; -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+main > section { scroll-margin-top: var(--rail-h); }
+ul, ol { list-style: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: var(--radius); }
+.skip {
+  position: fixed; left: 12px; top: -80px; z-index: 200; background: var(--cta); color: var(--on-cta);
+  padding: 12px 18px; border-radius: var(--radius); transition: top .2s;
+}
+.skip:focus { top: 12px; }
+.display {
+  font-family: var(--display); font-weight: var(--display-wght);
+  font-variation-settings: "wdth" var(--display-wdth); letter-spacing: var(--display-track); line-height: .96;
+}
+
+/* The texture layer and the canvas field are the one fixed background. */
+.tex { position: fixed; inset: 0; z-index: -2; background: var(--texture); pointer-events: none; }
+#field { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; display: block; }
+.wipe { position: fixed; inset: 0; z-index: 90; pointer-events: none; background: var(--plate); clip-path: circle(0 at 50% 50%); }

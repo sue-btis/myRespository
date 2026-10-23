@@ -37,10 +37,11 @@ a.nl:hover .t::after { transform: scaleX(1); transform-origin: left; }
 .nl.pend .t::after { display: none; }
 @media (max-width: 640px) {
   .nl .t { display: none; }
-  .nl { padding: 0 8px; }
+  .nl { padding: 0 8px; min-width: 44px; justify-content: center; }
   .name { font-size: .95rem; }
   .nav { gap: 0; }
-  .nav .cta { display: none; }
+  .nav .cta { min-width: 44px; padding: 0 12px; }
+  .nav .cta .lbl { display: none; }
 }
 
 .cta {

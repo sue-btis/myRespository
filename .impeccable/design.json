@@ -1,1009 +1,1654 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T19:27:01.249Z",
+  "generatedAt": "2026-10-23T21:16:09.178Z",
   "title": "Design System: Josue Escobar — Portfolio",
   "extensions": {
     "colorMeta": {
       "neutral-ground": {
         "role": "neutral",
-        "displayName": "Chassis Gray",
-        "canonical": "#ECECEC",
+        "displayName": "Paper White (neutral)",
+        "canonical": "#FFFFFF",
         "tonalRamp": [
           "#0B0B0B",
-          "#242424",
-          "#404040",
-          "#5D5D5D",
-          "#808080",
-          "#A1A1A1",
-          "#C7C7C7",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
           "#EEEEEE"
         ]
       },
       "neutral-ground-2": {
         "role": "neutral",
-        "displayName": "Chassis Paper",
-        "canonical": "#F7F7F7",
+        "displayName": "Ice Panel (neutral)",
+        "canonical": "#F2F6FD",
         "tonalRamp": [
-          "#0B0B0B",
-          "#242424",
-          "#404040",
-          "#5D5D5D",
-          "#808080",
-          "#A1A1A1",
-          "#C7C7C7",
-          "#EEEEEE"
+          "#090B10",
+          "#22252A",
+          "#3F4248",
+          "#5E6167",
+          "#7F8289",
+          "#A1A5AC",
+          "#C5C9D0",
+          "#EBEFF6"
         ]
       },
       "neutral-plate": {
         "role": "secondary",
-        "displayName": "Sky Plate",
-        "canonical": "#90CCF4",
+        "displayName": "Flat Sky Blue (neutral)",
+        "canonical": "#77A6F7",
         "tonalRamp": [
-          "#000C22",
-          "#002741",
-          "#0E4562",
-          "#2C6486",
-          "#4F87AB",
-          "#74A9CC",
-          "#9DCFF0",
-          "#C8F6FF"
-        ]
-      },
-      "neutral-plate-blue": {
-        "role": "secondary",
-        "displayName": "Chassis Blue",
-        "canonical": "#5DA2D5",
-        "tonalRamp": [
-          "#000B28",
-          "#002649",
-          "#00446C",
-          "#1E6390",
-          "#4487B7",
-          "#6BA9D7",
-          "#96CFFB",
-          "#C1F6FF"
+          "#000827",
+          "#001F5A",
+          "#143D85",
+          "#345FA9",
+          "#5481CF",
+          "#76A5F6",
+          "#ABCAFF",
+          "#E6EFFF"
         ]
       },
       "neutral-ink": {
-        "role": "primary",
-        "displayName": "Chassis Navy",
-        "canonical": "#16324A",
+        "role": "neutral",
+        "displayName": "Navy Ink (neutral)",
+        "canonical": "#1B2A4A",
         "tonalRamp": [
-          "#000C1C",
-          "#102639",
-          "#294258",
-          "#45617A",
-          "#66849F",
-          "#89A5BF",
-          "#B0CBE4",
-          "#D9F2FF"
+          "#010825",
+          "#152443",
+          "#314163",
+          "#4F6185",
+          "#6F82A8",
+          "#91A5CD",
+          "#B5CAF3",
+          "#E7EFFE"
         ]
       },
       "neutral-ink-2": {
         "role": "neutral",
-        "displayName": "Chassis Navy Muted",
-        "canonical": "#3E5568",
+        "displayName": "Slate Ink (neutral)",
+        "canonical": "#3C4A66",
         "tonalRamp": [
-          "#010C18",
-          "#152634",
-          "#2E4252",
-          "#4A6173",
-          "#6C8397",
-          "#8EA5B8",
-          "#B5CADD",
-          "#DDF2FF"
+          "#020920",
+          "#18243E",
+          "#34425D",
+          "#52617F",
+          "#7383A1",
+          "#95A5C6",
+          "#B8CAEB",
+          "#E7EFFE"
         ]
       },
       "neutral-signal": {
-        "role": "tertiary",
-        "displayName": "Coral Signal",
-        "canonical": "#F78888",
+        "role": "primary",
+        "displayName": "Flat Teal (neutral)",
+        "canonical": "#00887A",
         "tonalRamp": [
-          "#290000",
-          "#4D0009",
-          "#721B22",
-          "#99383D",
-          "#C25C5E",
-          "#E48180",
-          "#FFA9A8",
-          "#FFD3D1"
+          "#000F0C",
+          "#012C27",
+          "#034D45",
+          "#077165",
+          "#219687",
+          "#4FBAAA",
+          "#77DFCE",
+          "#BAFFF2"
+        ]
+      },
+      "neutral-on-signal": {
+        "role": "primary",
+        "displayName": "White on Teal (neutral)",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "neutral-cta": {
+        "role": "primary",
+        "displayName": "Navy Action (neutral)",
+        "canonical": "#1B2A4A",
+        "tonalRamp": [
+          "#010825",
+          "#152443",
+          "#314163",
+          "#4F6185",
+          "#6F82A8",
+          "#91A5CD",
+          "#B5CAF3",
+          "#E7EFFE"
+        ]
+      },
+      "neutral-on-cta": {
+        "role": "primary",
+        "displayName": "White on Navy (neutral)",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
         ]
       },
       "neutral-region": {
-        "role": "tertiary",
-        "displayName": "Rich Yellow",
-        "canonical": "#F3D250",
+        "role": "secondary",
+        "displayName": "Pale Sky Region (neutral)",
+        "canonical": "#D3E3FC",
         "tonalRamp": [
-          "#1A0500",
-          "#371F00",
-          "#563B00",
-          "#785A00",
-          "#9C7D00",
-          "#BCA026",
-          "#E1C662",
-          "#FFEE94"
+          "#030B1B",
+          "#1A2538",
+          "#364357",
+          "#546277",
+          "#75839A",
+          "#97A6BE",
+          "#BBCAE3",
+          "#E6EFFE"
+        ]
+      },
+      "neutral-on-region": {
+        "role": "secondary",
+        "displayName": "Navy on Sky (neutral)",
+        "canonical": "#1B2A4A",
+        "tonalRamp": [
+          "#010825",
+          "#152443",
+          "#314163",
+          "#4F6185",
+          "#6F82A8",
+          "#91A5CD",
+          "#B5CAF3",
+          "#E7EFFE"
         ]
       },
       "neutral-on-region-2": {
-        "role": "neutral",
-        "displayName": "Olive Ink",
-        "canonical": "#3E4A2A",
+        "role": "secondary",
+        "displayName": "Dusk Navy on Sky (neutral)",
+        "canonical": "#33456B",
         "tonalRamp": [
-          "#070E00",
-          "#1F280F",
-          "#3A4428",
-          "#576343",
-          "#798665",
-          "#9AA787",
-          "#C0CDAE",
-          "#E8F4D7"
+          "#010727",
+          "#142346",
+          "#2F4167",
+          "#4D6189",
+          "#6E82AC",
+          "#8FA5D1",
+          "#B3C9F7",
+          "#E7EFFE"
+        ]
+      },
+      "neutral-rule": {
+        "role": "neutral",
+        "displayName": "Navy Hairline (neutral)",
+        "canonical": "#1B2A4A2E",
+        "tonalRamp": [
+          "#010825",
+          "#152443",
+          "#314163",
+          "#4F6185",
+          "#6F82A8",
+          "#91A5CD",
+          "#B5CAF3",
+          "#E7EFFE"
+        ]
+      },
+      "neutral-scr": {
+        "role": "tertiary",
+        "displayName": "Midnight Screen (neutral)",
+        "canonical": "#10203A",
+        "tonalRamp": [
+          "#010A21",
+          "#15253F",
+          "#31425F",
+          "#4F6280",
+          "#6F83A3",
+          "#91A6C8",
+          "#B5CBED",
+          "#E6EFFE"
+        ]
+      },
+      "neutral-scr-fg": {
+        "role": "tertiary",
+        "displayName": "Phosphor White (neutral)",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "neutral-scr-acc": {
+        "role": "tertiary",
+        "displayName": "Sky Key (neutral)",
+        "canonical": "#77A6F7",
+        "tonalRamp": [
+          "#000827",
+          "#001F5A",
+          "#143D85",
+          "#345FA9",
+          "#5481CF",
+          "#76A5F6",
+          "#ABCAFF",
+          "#E6EFFF"
+        ]
+      },
+      "neutral-on-acc": {
+        "role": "tertiary",
+        "displayName": "Midnight on Sky (neutral)",
+        "canonical": "#10203A",
+        "tonalRamp": [
+          "#010A21",
+          "#15253F",
+          "#31425F",
+          "#4F6280",
+          "#6F83A3",
+          "#91A6C8",
+          "#B5CBED",
+          "#E6EFFE"
+        ]
+      },
+      "neutral-led": {
+        "role": "tertiary",
+        "displayName": "Teal LED (neutral)",
+        "canonical": "#00887A",
+        "tonalRamp": [
+          "#000F0C",
+          "#012C27",
+          "#034D45",
+          "#077165",
+          "#219687",
+          "#4FBAAA",
+          "#77DFCE",
+          "#BAFFF2"
         ]
       },
       "fullstack-ground": {
         "role": "neutral",
-        "displayName": "Ice Blue",
+        "displayName": "Snow Blue (fullstack)",
         "canonical": "#C4DBF6",
         "tonalRamp": [
-          "#020C19",
-          "#172536",
-          "#304155",
-          "#4C5F76",
-          "#6E829A",
-          "#90A4BB",
-          "#B7C9E0",
-          "#DFF1FF"
+          "#000B1D",
+          "#14263A",
+          "#314459",
+          "#4F637A",
+          "#6F849D",
+          "#91A7C1",
+          "#B5CCE6",
+          "#E4F0FE"
         ]
       },
       "fullstack-ground-2": {
         "role": "neutral",
-        "displayName": "Pale Ice",
+        "displayName": "Frost Panel (fullstack)",
         "canonical": "#D7E6F9",
         "tonalRamp": [
-          "#050C15",
-          "#1C2530",
-          "#36414E",
-          "#535F6E",
-          "#748292",
-          "#96A3B3",
-          "#BCC9D8",
-          "#E4F0FE"
+          "#030B18",
+          "#1B2634",
+          "#374352",
+          "#566273",
+          "#768495",
+          "#98A6B8",
+          "#BCCBDD",
+          "#E5F0FE"
         ]
       },
       "fullstack-plate": {
         "role": "secondary",
-        "displayName": "Signal Blue",
+        "displayName": "Clear Blue (fullstack)",
         "canonical": "#3B8BEB",
         "tonalRamp": [
-          "#00003D",
-          "#001C63",
-          "#003C8A",
-          "#015CB3",
-          "#3380DC",
-          "#5DA3FC",
-          "#89CBFF",
-          "#B5F3FF"
+          "#000B1F",
+          "#00244D",
+          "#014081",
+          "#005FBA",
+          "#3282E1",
+          "#62A7FE",
+          "#A5CCFE",
+          "#E4F0FF"
         ]
       },
       "fullstack-ink": {
         "role": "neutral",
-        "displayName": "Winter Navy",
+        "displayName": "Deep Navy (fullstack)",
         "canonical": "#14264A",
         "tonalRamp": [
-          "#020921",
-          "#142340",
-          "#2E3F61",
-          "#495D84",
-          "#6A80AA",
-          "#8CA2CA",
-          "#B3C8EF",
-          "#DBEFFF"
+          "#000728",
+          "#122347",
+          "#2D4168",
+          "#4B618A",
+          "#6C83AD",
+          "#8DA5D2",
+          "#B1CAF8",
+          "#E6EFFE"
         ]
       },
       "fullstack-ink-2": {
         "role": "neutral",
-        "displayName": "Winter Navy Muted",
+        "displayName": "Storm Ink (fullstack)",
         "canonical": "#33476B",
         "tonalRamp": [
-          "#020A20",
-          "#15233E",
-          "#2E405F",
-          "#4A5E82",
-          "#6B81A7",
-          "#8DA2C8",
-          "#B4C8EC",
-          "#DCF0FF"
+          "#000826",
+          "#122445",
+          "#2E4265",
+          "#4C6187",
+          "#6C83AB",
+          "#8EA6CF",
+          "#B2CAF5",
+          "#E6EFFE"
         ]
       },
       "fullstack-signal": {
         "role": "primary",
-        "displayName": "Snowy Crimson",
+        "displayName": "Raspberry (fullstack)",
         "canonical": "#B23850",
         "tonalRamp": [
-          "#2C0001",
-          "#510011",
-          "#78092A",
-          "#A02D45",
-          "#CA5266",
-          "#EC7988",
-          "#FFA2AF",
-          "#FFCDD8"
+          "#1E0005",
+          "#4C0016",
+          "#7E002A",
+          "#A72D47",
+          "#CE5267",
+          "#F77689",
+          "#FFB1B8",
+          "#FEE8EA"
         ]
       },
       "fullstack-on-signal": {
-        "role": "neutral",
-        "displayName": "Crimson Paper",
+        "role": "primary",
+        "displayName": "Snow on Raspberry (fullstack)",
         "canonical": "#F7EFF1",
         "tonalRamp": [
           "#0E0A0B",
-          "#272324",
-          "#443E3F",
-          "#625C5D",
-          "#857E80",
-          "#A69FA1",
-          "#CCC5C7",
-          "#F3EDEE"
+          "#292325",
+          "#464042",
+          "#665F61",
+          "#878082",
+          "#AAA3A5",
+          "#CEC7C9",
+          "#F4ECEE"
+        ]
+      },
+      "fullstack-cta": {
+        "role": "primary",
+        "displayName": "Raspberry Action (fullstack)",
+        "canonical": "#B23850",
+        "tonalRamp": [
+          "#1E0005",
+          "#4C0016",
+          "#7E002A",
+          "#A72D47",
+          "#CE5267",
+          "#F77689",
+          "#FFB1B8",
+          "#FEE8EA"
+        ]
+      },
+      "fullstack-on-cta": {
+        "role": "primary",
+        "displayName": "Snow on Raspberry (fullstack)",
+        "canonical": "#F7EFF1",
+        "tonalRamp": [
+          "#0E0A0B",
+          "#292325",
+          "#464042",
+          "#665F61",
+          "#878082",
+          "#AAA3A5",
+          "#CEC7C9",
+          "#F4ECEE"
+        ]
+      },
+      "fullstack-region": {
+        "role": "secondary",
+        "displayName": "Clear Blue Region (fullstack)",
+        "canonical": "#3B8BEB",
+        "tonalRamp": [
+          "#000B1F",
+          "#00244D",
+          "#014081",
+          "#005FBA",
+          "#3282E1",
+          "#62A7FE",
+          "#A5CCFE",
+          "#E4F0FF"
         ]
       },
       "fullstack-on-region": {
-        "role": "neutral",
-        "displayName": "Night Navy",
+        "role": "secondary",
+        "displayName": "Night on Blue (fullstack)",
         "canonical": "#0E1B36",
         "tonalRamp": [
-          "#030A1D",
-          "#18243A",
-          "#32405A",
-          "#4E5E7C",
-          "#6F80A1",
-          "#91A2C2",
-          "#B8C8E6",
-          "#E0EFFF"
+          "#020922",
+          "#162440",
+          "#324260",
+          "#516181",
+          "#7183A4",
+          "#93A5C9",
+          "#B6CAEE",
+          "#E7EFFE"
         ]
       },
-      "fullstack-snow": {
-        "role": "neutral",
-        "displayName": "Snow Sand (legend only)",
-        "canonical": "#E7E3D4",
+      "fullstack-on-region-2": {
+        "role": "secondary",
+        "displayName": "Night on Blue 2 (fullstack)",
+        "canonical": "#0E1B36",
         "tonalRamp": [
-          "#0D0B05",
-          "#27241B",
-          "#434035",
-          "#615E51",
-          "#848073",
-          "#A5A295",
-          "#CBC7BB",
-          "#F2EFE3"
+          "#020922",
+          "#162440",
+          "#324260",
+          "#516181",
+          "#7183A4",
+          "#93A5C9",
+          "#B6CAEE",
+          "#E7EFFE"
         ]
       },
-      "fullstack-slate": {
+      "fullstack-rule": {
         "role": "neutral",
-        "displayName": "Dusk Slate (legend only)",
-        "canonical": "#8590AA",
+        "displayName": "Navy Hairline (fullstack)",
+        "canonical": "#14264A2E",
         "tonalRamp": [
-          "#060A18",
-          "#1D2435",
-          "#373F53",
-          "#545D74",
-          "#768099",
-          "#97A1B9",
-          "#BDC7DE",
-          "#E5EEFF"
+          "#000728",
+          "#122347",
+          "#2D4168",
+          "#4B618A",
+          "#6C83AD",
+          "#8DA5D2",
+          "#B1CAF8",
+          "#E6EFFE"
+        ]
+      },
+      "fullstack-scr": {
+        "role": "tertiary",
+        "displayName": "Night Screen (fullstack)",
+        "canonical": "#0B1630",
+        "tonalRamp": [
+          "#020922",
+          "#18243F",
+          "#34415F",
+          "#526181",
+          "#7282A4",
+          "#94A5C8",
+          "#B8C9ED",
+          "#E7EFFE"
+        ]
+      },
+      "fullstack-scr-fg": {
+        "role": "tertiary",
+        "displayName": "Frost Phosphor (fullstack)",
+        "canonical": "#D7E6F9",
+        "tonalRamp": [
+          "#030B18",
+          "#1B2634",
+          "#374352",
+          "#566273",
+          "#768495",
+          "#98A6B8",
+          "#BCCBDD",
+          "#E5F0FE"
+        ]
+      },
+      "fullstack-scr-acc": {
+        "role": "tertiary",
+        "displayName": "Cornflower Key (fullstack)",
+        "canonical": "#6FAAF2",
+        "tonalRamp": [
+          "#000B1F",
+          "#00244C",
+          "#01417F",
+          "#2862A4",
+          "#4B84CA",
+          "#6DA8F0",
+          "#A4CDFE",
+          "#E4F0FF"
+        ]
+      },
+      "fullstack-on-acc": {
+        "role": "tertiary",
+        "displayName": "Night on Cornflower (fullstack)",
+        "canonical": "#0B1630",
+        "tonalRamp": [
+          "#020922",
+          "#18243F",
+          "#34415F",
+          "#526181",
+          "#7282A4",
+          "#94A5C8",
+          "#B8C9ED",
+          "#E7EFFE"
+        ]
+      },
+      "fullstack-led": {
+        "role": "tertiary",
+        "displayName": "Raspberry LED (fullstack)",
+        "canonical": "#B23850",
+        "tonalRamp": [
+          "#1E0005",
+          "#4C0016",
+          "#7E002A",
+          "#A72D47",
+          "#CE5267",
+          "#F77689",
+          "#FFB1B8",
+          "#FEE8EA"
         ]
       },
       "ai-ground": {
         "role": "neutral",
-        "displayName": "Slate Teal",
+        "displayName": "Deep Teal (ai)",
         "canonical": "#304C64",
         "tonalRamp": [
-          "#000C1B",
-          "#102638",
-          "#2A4257",
-          "#456179",
-          "#67849D",
-          "#89A5BE",
-          "#B0CBE3",
-          "#D9F2FF"
+          "#000C1A",
+          "#0B273D",
+          "#29455C",
+          "#48657E",
+          "#6886A0",
+          "#8AA9C5",
+          "#ADCDEA",
+          "#E1F1FF"
         ]
       },
       "ai-ground-2": {
         "role": "neutral",
-        "displayName": "Deep Slate",
+        "displayName": "Deeper Teal (ai)",
         "canonical": "#26425A",
         "tonalRamp": [
           "#000C1B",
-          "#102638",
-          "#2A4258",
-          "#456179",
-          "#67849E",
-          "#89A5BF",
-          "#B0CBE3",
-          "#D9F2FF"
+          "#0B273D",
+          "#29455D",
+          "#47657E",
+          "#6886A1",
+          "#8AA9C5",
+          "#ADCDEB",
+          "#E2F1FE"
         ]
       },
       "ai-plate": {
         "role": "secondary",
-        "displayName": "Deep Teal",
+        "displayName": "Deep Turquoise (ai)",
         "canonical": "#26788E",
         "tonalRamp": [
-          "#000F1D",
-          "#002B3B",
-          "#00485A",
-          "#16687C",
-          "#408CA1",
-          "#69ADC2",
-          "#94D3E6",
-          "#BFF9FF"
+          "#000E13",
+          "#012A35",
+          "#034A5A",
+          "#156C82",
+          "#408EA5",
+          "#64B2C9",
+          "#89D7EF",
+          "#D7F4FE"
         ]
       },
       "ai-ink": {
         "role": "neutral",
-        "displayName": "Pale Teal",
+        "displayName": "Mist Turquoise (ai)",
         "canonical": "#CFE6EA",
         "tonalRamp": [
-          "#030D0F",
-          "#182729",
-          "#324346",
-          "#4E6265",
-          "#708588",
-          "#92A6A9",
-          "#B9CBCF",
-          "#E1F2F5"
+          "#000E11",
+          "#16282C",
+          "#334649",
+          "#516569",
+          "#72878A",
+          "#94AAAD",
+          "#B7CED2",
+          "#DCF4F8"
         ]
       },
       "ai-ink-2": {
         "role": "neutral",
-        "displayName": "Mist Teal",
+        "displayName": "Pale Turquoise (ai)",
         "canonical": "#A4CCD4",
         "tonalRamp": [
-          "#000F13",
-          "#0B292E",
-          "#26454B",
-          "#41646B",
-          "#63878F",
-          "#86A9B0",
-          "#ADCED5",
-          "#D6F5FB"
+          "#000E11",
+          "#032B31",
+          "#23484F",
+          "#43686F",
+          "#648A91",
+          "#86ADB5",
+          "#A9D1D9",
+          "#D0F7FF"
         ]
       },
       "ai-signal": {
         "role": "primary",
-        "displayName": "Amber Ember",
+        "displayName": "Burnt Amber (ai)",
         "canonical": "#E2480C",
         "tonalRamp": [
-          "#340000",
-          "#5C0000",
-          "#850000",
-          "#AF1700",
-          "#DA460E",
-          "#FC7147",
-          "#FF9D76",
-          "#FFC9A4"
+          "#1C0300",
+          "#460F00",
+          "#762000",
+          "#A93100",
+          "#DF4506",
+          "#FE764E",
+          "#FEB59F",
+          "#FFE9E3"
         ]
       },
       "ai-on-signal": {
-        "role": "neutral",
-        "displayName": "Char",
+        "role": "primary",
+        "displayName": "Ember Black (ai)",
         "canonical": "#1A0703",
         "tonalRamp": [
-          "#150704",
-          "#311F19",
-          "#4F3A33",
-          "#70574F",
-          "#947971",
-          "#B59B93",
-          "#DAC1B9",
-          "#FFE9E1"
+          "#180502",
+          "#341F18",
+          "#533B34",
+          "#745A52",
+          "#977B73",
+          "#BA9E95",
+          "#E0C2B8",
+          "#FEE9E3"
         ]
       },
-      "ai-on-region-2": {
-        "role": "neutral",
-        "displayName": "Burnt Char",
-        "canonical": "#3A1206",
+      "ai-cta": {
+        "role": "primary",
+        "displayName": "Pale Turquoise Action (ai)",
+        "canonical": "#A4CCD4",
         "tonalRamp": [
-          "#1C0300",
-          "#3A190F",
-          "#5B3428",
-          "#7D5143",
-          "#A37364",
-          "#C49587",
-          "#E9BBAE",
-          "#FFE4D6"
+          "#000E11",
+          "#032B31",
+          "#23484F",
+          "#43686F",
+          "#648A91",
+          "#86ADB5",
+          "#A9D1D9",
+          "#D0F7FF"
         ]
       },
       "ai-on-cta": {
-        "role": "neutral",
-        "displayName": "Slate Ink",
+        "role": "primary",
+        "displayName": "Teal on Turquoise (ai)",
         "canonical": "#1F3445",
         "tonalRamp": [
-          "#020C17",
-          "#152633",
-          "#2F4252",
-          "#4B6072",
-          "#6D8397",
-          "#8FA5B7",
-          "#B5CADC",
-          "#DEF1FF"
+          "#000C19",
+          "#122737",
+          "#2F4556",
+          "#4E6477",
+          "#6E8699",
+          "#90A8BD",
+          "#B4CDE2",
+          "#E1F1FE"
         ]
       },
-      "ai-rust": {
-        "role": "neutral",
-        "displayName": "Autumn Rust (legend only)",
-        "canonical": "#631B08",
+      "ai-region": {
+        "role": "secondary",
+        "displayName": "Burnt Amber Region (ai)",
+        "canonical": "#E2480C",
         "tonalRamp": [
-          "#240000",
-          "#450D01",
-          "#692919",
-          "#8E4633",
-          "#B56854",
-          "#D78B78",
-          "#FBB3A0",
-          "#FFDCCA"
+          "#1C0300",
+          "#460F00",
+          "#762000",
+          "#A93100",
+          "#DF4506",
+          "#FE764E",
+          "#FEB59F",
+          "#FFE9E3"
+        ]
+      },
+      "ai-on-region": {
+        "role": "secondary",
+        "displayName": "Ember on Amber (ai)",
+        "canonical": "#1A0703",
+        "tonalRamp": [
+          "#180502",
+          "#341F18",
+          "#533B34",
+          "#745A52",
+          "#977B73",
+          "#BA9E95",
+          "#E0C2B8",
+          "#FEE9E3"
+        ]
+      },
+      "ai-on-region-2": {
+        "role": "secondary",
+        "displayName": "Ember on Amber 2 (ai)",
+        "canonical": "#1A0703",
+        "tonalRamp": [
+          "#180502",
+          "#341F18",
+          "#533B34",
+          "#745A52",
+          "#977B73",
+          "#BA9E95",
+          "#E0C2B8",
+          "#FEE9E3"
+        ]
+      },
+      "ai-rule": {
+        "role": "neutral",
+        "displayName": "Turquoise Hairline (ai)",
+        "canonical": "#A4CCD42E",
+        "tonalRamp": [
+          "#000E11",
+          "#032B31",
+          "#23484F",
+          "#43686F",
+          "#648A91",
+          "#86ADB5",
+          "#A9D1D9",
+          "#D0F7FF"
+        ]
+      },
+      "ai-scr": {
+        "role": "tertiary",
+        "displayName": "Abyss Screen (ai)",
+        "canonical": "#13273A",
+        "tonalRamp": [
+          "#000C1C",
+          "#13273A",
+          "#2F4459",
+          "#4E647A",
+          "#6E859C",
+          "#90A8C0",
+          "#B4CCE5",
+          "#E2F0FF"
+        ]
+      },
+      "ai-scr-fg": {
+        "role": "tertiary",
+        "displayName": "Mist Phosphor (ai)",
+        "canonical": "#CFE6EA",
+        "tonalRamp": [
+          "#000E11",
+          "#16282C",
+          "#334649",
+          "#516569",
+          "#72878A",
+          "#94AAAD",
+          "#B7CED2",
+          "#DCF4F8"
+        ]
+      },
+      "ai-scr-acc": {
+        "role": "tertiary",
+        "displayName": "Apricot Key (ai)",
+        "canonical": "#FF8A5C",
+        "tonalRamp": [
+          "#1A0400",
+          "#431300",
+          "#712600",
+          "#A33B02",
+          "#CC5C2D",
+          "#F48052",
+          "#FFB599",
+          "#FEEAE2"
+        ]
+      },
+      "ai-on-acc": {
+        "role": "tertiary",
+        "displayName": "Ember on Apricot (ai)",
+        "canonical": "#1A0703",
+        "tonalRamp": [
+          "#180502",
+          "#341F18",
+          "#533B34",
+          "#745A52",
+          "#977B73",
+          "#BA9E95",
+          "#E0C2B8",
+          "#FEE9E3"
+        ]
+      },
+      "ai-led": {
+        "role": "tertiary",
+        "displayName": "Amber LED (ai)",
+        "canonical": "#E2480C",
+        "tonalRamp": [
+          "#1C0300",
+          "#460F00",
+          "#762000",
+          "#A93100",
+          "#DF4506",
+          "#FE764E",
+          "#FEB59F",
+          "#FFE9E3"
         ]
       },
       "data-ground": {
         "role": "neutral",
-        "displayName": "Lilac Mist",
+        "displayName": "Lavender Mist (data)",
         "canonical": "#EDE8F5",
         "tonalRamp": [
-          "#0C0A10",
-          "#25222A",
-          "#413E47",
-          "#5F5B66",
-          "#827E89",
-          "#A39FAA",
-          "#C9C5D0",
-          "#F0ECF6"
+          "#0D0911",
+          "#27232C",
+          "#44404A",
+          "#635F6A",
+          "#84808B",
+          "#A7A2AF",
+          "#CBC6D3",
+          "#F1ECF9"
         ]
       },
       "data-ground-2": {
         "role": "neutral",
-        "displayName": "Pale Lilac",
+        "displayName": "Lavender Panel (data)",
         "canonical": "#E1DDF0",
         "tonalRamp": [
-          "#0C0913",
-          "#25222D",
-          "#403D4B",
-          "#5E5B6A",
-          "#817D8E",
-          "#A29FAF",
-          "#C8C5D4",
-          "#EFECFB"
+          "#0C0915",
+          "#262330",
+          "#433F4F",
+          "#625E6F",
+          "#837F91",
+          "#A6A2B4",
+          "#CAC6D9",
+          "#EFEBFF"
         ]
       },
       "data-plate": {
         "role": "secondary",
-        "displayName": "Lavender Steel",
+        "displayName": "Metallic Lilac (data)",
         "canonical": "#ADBBDA",
         "tonalRamp": [
-          "#050A1A",
-          "#1B2337",
-          "#353F56",
-          "#525D77",
-          "#74809C",
-          "#95A1BD",
-          "#BBC7E1",
-          "#E3EFFF"
+          "#04091F",
+          "#1A243C",
+          "#36415B",
+          "#55617C",
+          "#75829F",
+          "#97A5C3",
+          "#BBC9E9",
+          "#E7EFFE"
         ]
       },
       "data-ink": {
         "role": "neutral",
-        "displayName": "Ink Indigo",
+        "displayName": "Indigo Ink (data)",
         "canonical": "#26346B",
         "tonalRamp": [
-          "#030529",
-          "#15204A",
-          "#2E3C6D",
-          "#495A92",
-          "#6A7DB9",
-          "#8C9FD9",
-          "#B3C5FD",
-          "#DBEDFF"
+          "#030033",
+          "#141E53",
+          "#2E3D75",
+          "#4C5D98",
+          "#6C7FBD",
+          "#8DA2E3",
+          "#B4C7FF",
+          "#E8EEFF"
         ]
       },
       "data-ink-2": {
-        "role": "primary",
-        "displayName": "Metallic Indigo",
+        "role": "neutral",
+        "displayName": "Royal Periwinkle (data)",
         "canonical": "#3D52A0",
         "tonalRamp": [
           "#030033",
-          "#111C56",
-          "#28397B",
-          "#4257A2",
-          "#637BCA",
-          "#859EEA",
-          "#ACC4FF",
-          "#D4ECFF"
+          "#101862",
+          "#283985",
+          "#455BA9",
+          "#647DCF",
+          "#85A0F6",
+          "#B4C7FF",
+          "#E8EEFE"
         ]
       },
       "data-signal": {
-        "role": "tertiary",
-        "displayName": "Steel Periwinkle",
+        "role": "primary",
+        "displayName": "Cornflower (data)",
         "canonical": "#7091E6",
         "tonalRamp": [
-          "#010034",
-          "#0C1C58",
-          "#233A7D",
-          "#3D58A4",
-          "#5D7CCC",
-          "#809FEC",
-          "#A7C5FF",
-          "#D0EDFF"
+          "#020035",
+          "#0A1864",
+          "#223A87",
+          "#3F5BAB",
+          "#5E7ED1",
+          "#7FA1F8",
+          "#B2C8FE",
+          "#E8EEFE"
         ]
       },
       "data-on-signal": {
-        "role": "neutral",
-        "displayName": "Deep Indigo",
+        "role": "primary",
+        "displayName": "Indigo Night on Cornflower (data)",
         "canonical": "#121A3A",
         "tonalRamp": [
-          "#05091F",
-          "#1A223D",
-          "#343E5D",
-          "#505C80",
-          "#727FA5",
-          "#94A0C6",
-          "#BAC6EA",
-          "#E2EEFF"
+          "#040725",
+          "#1A2243",
+          "#354063",
+          "#536085",
+          "#7481A9",
+          "#96A4CD",
+          "#B9C8F3",
+          "#E8EEFE"
+        ]
+      },
+      "data-cta": {
+        "role": "primary",
+        "displayName": "Royal Periwinkle Action (data)",
+        "canonical": "#3D52A0",
+        "tonalRamp": [
+          "#030033",
+          "#101862",
+          "#283985",
+          "#455BA9",
+          "#647DCF",
+          "#85A0F6",
+          "#B4C7FF",
+          "#E8EEFE"
+        ]
+      },
+      "data-on-cta": {
+        "role": "primary",
+        "displayName": "Lavender on Royal (data)",
+        "canonical": "#EDE8F5",
+        "tonalRamp": [
+          "#0D0911",
+          "#27232C",
+          "#44404A",
+          "#635F6A",
+          "#84808B",
+          "#A7A2AF",
+          "#CBC6D3",
+          "#F1ECF9"
+        ]
+      },
+      "data-region": {
+        "role": "secondary",
+        "displayName": "Royal Periwinkle Region (data)",
+        "canonical": "#3D52A0",
+        "tonalRamp": [
+          "#030033",
+          "#101862",
+          "#283985",
+          "#455BA9",
+          "#647DCF",
+          "#85A0F6",
+          "#B4C7FF",
+          "#E8EEFE"
+        ]
+      },
+      "data-on-region": {
+        "role": "secondary",
+        "displayName": "Lavender on Royal (data)",
+        "canonical": "#EDE8F5",
+        "tonalRamp": [
+          "#0D0911",
+          "#27232C",
+          "#44404A",
+          "#635F6A",
+          "#84808B",
+          "#A7A2AF",
+          "#CBC6D3",
+          "#F1ECF9"
         ]
       },
       "data-on-region-2": {
-        "role": "neutral",
-        "displayName": "Indigo Haze",
+        "role": "secondary",
+        "displayName": "Pale Periwinkle on Royal (data)",
         "canonical": "#C9D2EC",
         "tonalRamp": [
-          "#070A17",
-          "#1E2333",
-          "#393F52",
-          "#565D72",
-          "#788097",
-          "#99A1B7",
-          "#BFC7DC",
-          "#E7EEFF"
+          "#060A1B",
+          "#1E2437",
+          "#3A4156",
+          "#596077",
+          "#7A8299",
+          "#9CA4BD",
+          "#C0C9E2",
+          "#E8EEFF"
         ]
       },
-      "data-scanline": {
+      "data-rule": {
         "role": "neutral",
-        "displayName": "Scanline Violet",
-        "canonical": "#8697C4",
+        "displayName": "Periwinkle Hairline (data)",
+        "canonical": "#3D52A033",
         "tonalRamp": [
-          "#040821",
-          "#182240",
-          "#323E61",
-          "#4E5C84",
-          "#6F7FA9",
-          "#91A1CA",
-          "#B7C7EE",
-          "#DFEEFF"
+          "#030033",
+          "#101862",
+          "#283985",
+          "#455BA9",
+          "#647DCF",
+          "#85A0F6",
+          "#B4C7FF",
+          "#E8EEFE"
+        ]
+      },
+      "data-scr": {
+        "role": "tertiary",
+        "displayName": "Indigo Screen (data)",
+        "canonical": "#141C45",
+        "tonalRamp": [
+          "#04042B",
+          "#18214A",
+          "#333F6B",
+          "#515E8D",
+          "#7180B1",
+          "#93A3D6",
+          "#B6C7FD",
+          "#E8EEFF"
+        ]
+      },
+      "data-scr-fg": {
+        "role": "tertiary",
+        "displayName": "Lavender Phosphor (data)",
+        "canonical": "#EDE8F5",
+        "tonalRamp": [
+          "#0D0911",
+          "#27232C",
+          "#44404A",
+          "#635F6A",
+          "#84808B",
+          "#A7A2AF",
+          "#CBC6D3",
+          "#F1ECF9"
+        ]
+      },
+      "data-scr-acc": {
+        "role": "tertiary",
+        "displayName": "Periwinkle Key (data)",
+        "canonical": "#9DB4F5",
+        "tonalRamp": [
+          "#030133",
+          "#131F53",
+          "#2D3E75",
+          "#4B5E98",
+          "#6B7FBD",
+          "#8CA3E2",
+          "#B4C8FF",
+          "#E8EEFE"
+        ]
+      },
+      "data-on-acc": {
+        "role": "tertiary",
+        "displayName": "Indigo on Periwinkle (data)",
+        "canonical": "#121A3A",
+        "tonalRamp": [
+          "#040725",
+          "#1A2243",
+          "#354063",
+          "#536085",
+          "#7481A9",
+          "#96A4CD",
+          "#B9C8F3",
+          "#E8EEFE"
+        ]
+      },
+      "data-led": {
+        "role": "tertiary",
+        "displayName": "Cornflower LED (data)",
+        "canonical": "#7091E6",
+        "tonalRamp": [
+          "#020035",
+          "#0A1864",
+          "#223A87",
+          "#3F5BAB",
+          "#5E7ED1",
+          "#7FA1F8",
+          "#B2C8FE",
+          "#E8EEFE"
         ]
       },
       "design-ground": {
         "role": "neutral",
-        "displayName": "Carbon",
+        "displayName": "Near Black (design)",
         "canonical": "#141414",
         "tonalRamp": [
           "#0B0B0B",
-          "#242424",
-          "#404040",
-          "#5D5D5D",
-          "#808080",
-          "#A1A1A1",
-          "#C7C7C7",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
           "#EEEEEE"
         ]
       },
       "design-ground-2": {
         "role": "neutral",
-        "displayName": "Graphite",
+        "displayName": "Graphite Panel (design)",
         "canonical": "#1E1E1E",
         "tonalRamp": [
           "#0B0B0B",
-          "#242424",
-          "#404040",
-          "#5D5D5D",
-          "#808080",
-          "#A1A1A1",
-          "#C7C7C7",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
           "#EEEEEE"
         ]
       },
       "design-plate": {
-        "role": "primary",
-        "displayName": "Pop Ultramarine",
+        "role": "secondary",
+        "displayName": "Klein Blue (design)",
         "canonical": "#273DB4",
         "tonalRamp": [
-          "#060046",
-          "#0C0C6D",
-          "#1E2F97",
-          "#3550C2",
-          "#5375EC",
-          "#7599FF",
-          "#9DC2FF",
-          "#C6EAFF"
+          "#020034",
+          "#0D0178",
+          "#1D2DA4",
+          "#3652CA",
+          "#5476F2",
+          "#80A0FE",
+          "#B3C8FF",
+          "#E8EEFE"
         ]
       },
       "design-ink": {
         "role": "neutral",
-        "displayName": "Warm White",
+        "displayName": "Warm White (design)",
         "canonical": "#F2F0EE",
         "tonalRamp": [
           "#0C0B0A",
-          "#252423",
-          "#413F3E",
-          "#5F5D5C",
-          "#81807E",
-          "#A3A19F",
-          "#C8C7C5",
-          "#F0EEED"
+          "#262523",
+          "#434240",
+          "#62615F",
+          "#848280",
+          "#A6A5A3",
+          "#CBC9C7",
+          "#F0EEEC"
         ]
       },
       "design-ink-2": {
         "role": "neutral",
-        "displayName": "Warm Gray",
+        "displayName": "Warm Gray (design)",
         "canonical": "#C9C4C0",
         "tonalRamp": [
-          "#0D0B09",
-          "#262321",
-          "#433F3C",
-          "#615D59",
-          "#847F7C",
-          "#A5A19D",
-          "#CBC6C3",
-          "#F2EEEA"
+          "#0E0A08",
+          "#282421",
+          "#45413E",
+          "#65605D",
+          "#86817E",
+          "#A9A4A0",
+          "#CDC8C4",
+          "#F3EDE9"
         ]
       },
       "design-signal": {
-        "role": "tertiary",
-        "displayName": "Burnt Orange",
+        "role": "primary",
+        "displayName": "Tangerine (design)",
         "canonical": "#ED7845",
         "tonalRamp": [
-          "#2D0000",
-          "#510000",
-          "#771600",
-          "#9F3600",
-          "#C95B28",
-          "#EA8054",
-          "#FFAA80",
-          "#FFD4AD"
+          "#1A0400",
+          "#431400",
+          "#702802",
+          "#A13D03",
+          "#CD5B25",
+          "#F57F4C",
+          "#FEB598",
+          "#FEEAE2"
+        ]
+      },
+      "design-on-signal": {
+        "role": "primary",
+        "displayName": "Black on Tangerine (design)",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
         ]
       },
       "design-cta": {
-        "role": "secondary",
-        "displayName": "Hot Pink",
+        "role": "primary",
+        "displayName": "Hot Pink Action (design)",
         "canonical": "#F95CA4",
         "tonalRamp": [
-          "#30000E",
-          "#560028",
-          "#7F0044",
-          "#A80663",
-          "#D33D86",
-          "#F569A7",
-          "#FF95CC",
-          "#FFC1F3"
+          "#1D000C",
+          "#490027",
+          "#7A0146",
+          "#AF0466",
+          "#D83C88",
+          "#FF66AB",
+          "#FFADCC",
+          "#FEE8EF"
+        ]
+      },
+      "design-on-cta": {
+        "role": "primary",
+        "displayName": "Black on Pink (design)",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "design-region": {
+        "role": "secondary",
+        "displayName": "Klein Blue Region (design)",
+        "canonical": "#273DB4",
+        "tonalRamp": [
+          "#020034",
+          "#0D0178",
+          "#1D2DA4",
+          "#3652CA",
+          "#5476F2",
+          "#80A0FE",
+          "#B3C8FF",
+          "#E8EEFE"
+        ]
+      },
+      "design-on-region": {
+        "role": "secondary",
+        "displayName": "White on Klein (design)",
+        "canonical": "#F2F0EE",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#262523",
+          "#434240",
+          "#62615F",
+          "#848280",
+          "#A6A5A3",
+          "#CBC9C7",
+          "#F0EEEC"
         ]
       },
       "design-on-region-2": {
-        "role": "neutral",
-        "displayName": "Ultramarine Haze",
+        "role": "secondary",
+        "displayName": "Pale Blue on Klein (design)",
         "canonical": "#CDD3F2",
         "tonalRamp": [
-          "#080919",
-          "#1F2235",
-          "#3A3E54",
-          "#575C75",
-          "#797E9A",
-          "#9BA0BA",
-          "#C1C6DF",
-          "#E8EDFF"
+          "#07081D",
+          "#20233A",
+          "#3C4059",
+          "#5B5F7A",
+          "#7B809D",
+          "#9EA3C1",
+          "#C1C7E6",
+          "#EAEDFF"
         ]
       },
-      "design-red": {
+      "design-rule": {
         "role": "neutral",
-        "displayName": "Pop Red (gradient only)",
-        "canonical": "#C50900",
+        "displayName": "White Hairline (design)",
+        "canonical": "#F2F0EE24",
         "tonalRamp": [
-          "#360000",
-          "#5F0000",
-          "#880000",
-          "#B40000",
-          "#E03B2B",
-          "#FF6956",
-          "#FF9782",
-          "#FFC3AE"
+          "#0C0B0A",
+          "#262523",
+          "#434240",
+          "#62615F",
+          "#848280",
+          "#A6A5A3",
+          "#CBC9C7",
+          "#F0EEEC"
+        ]
+      },
+      "design-scr": {
+        "role": "tertiary",
+        "displayName": "Void Screen (design)",
+        "canonical": "#070707",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "design-scr-fg": {
+        "role": "tertiary",
+        "displayName": "Warm Phosphor (design)",
+        "canonical": "#F2F0EE",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#262523",
+          "#434240",
+          "#62615F",
+          "#848280",
+          "#A6A5A3",
+          "#CBC9C7",
+          "#F0EEEC"
+        ]
+      },
+      "design-scr-acc": {
+        "role": "tertiary",
+        "displayName": "Hot Pink Key (design)",
+        "canonical": "#F95CA4",
+        "tonalRamp": [
+          "#1D000C",
+          "#490027",
+          "#7A0146",
+          "#AF0466",
+          "#D83C88",
+          "#FF66AB",
+          "#FFADCC",
+          "#FEE8EF"
+        ]
+      },
+      "design-on-acc": {
+        "role": "tertiary",
+        "displayName": "Black on Pink (design)",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "design-led": {
+        "role": "tertiary",
+        "displayName": "Tangerine LED (design)",
+        "canonical": "#ED7845",
+        "tonalRamp": [
+          "#1A0400",
+          "#431400",
+          "#702802",
+          "#A13D03",
+          "#CD5B25",
+          "#F57F4C",
+          "#FEB598",
+          "#FEEAE2"
         ]
       }
     },
     "typographyMeta": {
       "display-neutral": {
-        "displayName": "Archivo Wide",
-        "purpose": "Neutral chassis display voice, width 118."
+        "displayName": "Display · Archivo wide",
+        "purpose": "Neutral face headlines, wordmark, cartridge titles, email (wdth 118)."
       },
       "display-fullstack": {
-        "displayName": "Funnel Display",
-        "purpose": "Full-stack & Product display voice."
+        "displayName": "Display · Funnel Display",
+        "purpose": "Full-stack face headlines and display roles."
       },
       "display-ai": {
-        "displayName": "Unbounded",
-        "purpose": "AI & Agents display voice."
+        "displayName": "Display · Unbounded",
+        "purpose": "AI face headlines and display roles."
       },
       "display-data": {
-        "displayName": "Doto",
-        "purpose": "Data & Analytics dot-matrix display voice; display roles only."
+        "displayName": "Display · Doto",
+        "purpose": "Data face headlines and display roles; never running text."
       },
       "display-design": {
-        "displayName": "Michroma",
-        "purpose": "3D & Engineering design display voice."
+        "displayName": "Display · Michroma",
+        "purpose": "3D & Engineering design face headlines and display roles."
       },
-      "display": {
-        "displayName": "Display",
-        "purpose": "The 10-second line; size scaled by the face multiplier k."
+      "headline-hero": {
+        "displayName": "Hero line",
+        "purpose": "The 10-second line; display face, scaled by --k."
       },
-      "close": {
-        "displayName": "Close",
-        "purpose": "The closing question in the region-owned close section."
+      "headline-section": {
+        "displayName": "Section title",
+        "purpose": "Section titles; display face, scaled by --k."
       },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Project titles."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Section titles."
+      "title-card": {
+        "displayName": "Card title",
+        "purpose": "Area card names."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running text on every face; lining tabular numerals."
-      },
-      "body-lead": {
-        "displayName": "Lead",
-        "purpose": "The line under the 10-second line."
-      },
-      "numeral": {
-        "displayName": "Numeral",
-        "purpose": "Slot numbers 01-04 and timeline years, condensed light Archivo."
+        "purpose": "All running text and UI on every face."
       },
       "label": {
-        "displayName": "Label",
-        "purpose": "Call-to-action, slot names, links."
+        "displayName": "Silkscreen label",
+        "purpose": "Uppercase device and field labels; never a kicker over a headline."
       },
-      "meta": {
-        "displayName": "Meta",
-        "purpose": "Slot meta, spec terms, notes, in ink-2."
+      "pixel": {
+        "displayName": "Pixel counter",
+        "purpose": "Console numerals and counters on every face."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Terminal output and key caps."
       }
     },
-    "faceMultiplier": {
-      "neutral": 1,
-      "fullstack": 1.04,
-      "ai": 0.86,
-      "data": 0.9,
-      "design": 0.8
-    },
-    "ruleColors": {
-      "neutral": "#16324A2E",
-      "fullstack": "#14264A2E",
-      "ai": "#A4CCD42E",
-      "data": "#3D52A033",
-      "design": "#F2F0EE24"
-    },
-    "textures": [
+    "shadows": [
       {
-        "face": "ai",
-        "value": "radial-gradient(#A4CCD41F 1px, transparent 1.4px) 0 0 / 22px 22px",
-        "purpose": "Dot grid."
+        "name": "card-rest",
+        "value": "0 1px 0 var(--rule), 0 18px 30px -24px #0007",
+        "purpose": "Area cards at rest."
       },
       {
-        "face": "data",
-        "value": "repeating-linear-gradient(180deg, transparent 0 39px, #8697C42E 39px 40px)",
-        "purpose": "Horizontal scanlines."
+        "name": "card-lift",
+        "value": "0 26px 40px -22px #0009",
+        "purpose": "Area card under the pointer."
       },
       {
-        "face": "design",
-        "value": "linear-gradient(#F2F0EE0F 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, #F2F0EE0F 1px, transparent 1px) 0 0 / 40px 40px",
-        "purpose": "Blueprint grid."
+        "name": "action-glow",
+        "value": "0 10px 24px -14px var(--cta)",
+        "purpose": "Top-bar Write to me; grows to 0 18px 30px -14px on hover."
       },
       {
-        "face": "design",
-        "value": "border-top: 10px solid; border-image: linear-gradient(90deg, #C50900, #ED7845 35%, #F95CA4 65%, #273DB4) 1",
-        "purpose": "Gradient bar over the close section."
-      }
-    ],
-    "shadows": [],
-    "depth": [
+        "name": "console-shell",
+        "value": "0 0 0 1px var(--rule), 0 36px 70px -36px rgba(8,14,28,.55), inset 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent)",
+        "purpose": "The Work console body."
+      },
       {
-        "name": "seated-plate",
-        "value": "plate translate(-6px, -6px); under-layer translate(6px, 6px), background var(--ground), border 1px solid var(--ink)",
-        "purpose": "Seated slot only: a real layer offset, not a shadow."
+        "name": "crt-screen",
+        "value": "0 0 0 2px #000, inset 0 0 90px rgba(0,0,0,.5)",
+        "purpose": "Console screen bezel and vignette."
+      },
+      {
+        "name": "console-key-edge",
+        "value": "0 4px 0 color-mix(in srgb, var(--scr-acc) 48%, #000)",
+        "purpose": "Console keys and cartridges only; 5px hover, 1px pressed."
+      },
+      {
+        "name": "stuck-bar",
+        "value": "0 1px 0 var(--rule)",
+        "purpose": "Top bar after scroll, with backdrop-filter: blur(10px)."
       }
     ],
-    "focus": {
-      "value": "outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 3px",
-      "note": "As built. Signal is below 3:1 against ground on neutral (2.01), AI (2.20) and Data (2.54); not a rule to inherit."
-    },
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "State transitions, eject, timeline draw-in (1.4s)."
+        "purpose": "Reveals, underlines, ripples."
+      },
+      {
+        "name": "ease-io",
+        "value": "cubic-bezier(.65, 0, .35, 1)",
+        "purpose": "Breathing underline; AI seat easing."
       },
       {
         "name": "spring",
         "value": "linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1)",
-        "purpose": "Overshoot and damping: call-to-action lift, slot edge, seat on spring faces."
+        "purpose": "Buttons, icons, card tilt; seat easing on spring faces."
       },
       {
         "name": "seat-neutral",
-        "value": "0.62s spring",
-        "purpose": "Neutral seat timing."
+        "value": ".62s var(--spring)",
+        "purpose": "Face-change and reveal timing, neutral."
       },
       {
         "name": "seat-fullstack",
-        "value": "0.7s spring",
-        "purpose": "Full-stack seat timing."
+        "value": ".7s var(--spring)",
+        "purpose": "Face-change and reveal timing, fullstack."
       },
       {
         "name": "seat-ai",
-        "value": "0.9s cubic-bezier(.65, 0, .35, 1)",
-        "purpose": "AI seat timing."
+        "value": ".9s cubic-bezier(.65, 0, .35, 1)",
+        "purpose": "Face-change and reveal timing, ai."
       },
       {
         "name": "seat-data",
-        "value": "0.48s steps(8, end)",
-        "purpose": "Data seat timing, stepped like a display refresh."
+        "value": ".48s steps(8, end)",
+        "purpose": "Face-change and reveal timing, data."
       },
       {
         "name": "seat-design",
-        "value": "0.8s spring",
-        "purpose": "3D seat timing."
+        "value": ".8s var(--spring)",
+        "purpose": "Face-change and reveal timing, design."
       },
       {
-        "name": "reduced-motion",
-        "value": "transition: none; animation: none",
-        "purpose": "Immediate cut under prefers-reduced-motion."
+        "name": "face-wipe",
+        "value": "760ms cubic-bezier(.7, 0, .2, 1)",
+        "purpose": "Circular plate wipe from the click point on area change."
+      },
+      {
+        "name": "console-step",
+        "value": "steps(2-8, end)",
+        "purpose": "All motion inside the console screen."
       }
     ],
     "breakpoints": [
       {
-        "name": "stack",
-        "value": "900px"
+        "name": "xs",
+        "value": "520px"
       },
       {
-        "name": "phone",
+        "name": "sm",
         "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "760px"
+      },
+      {
+        "name": "lg",
+        "value": "860px"
+      },
+      {
+        "name": "xl",
+        "value": "900px"
       }
     ]
   },
   "components": [
     {
-      "name": "Call-to-action",
+      "name": "Primary Button",
       "kind": "button",
-      "refersTo": "button-cta-neutral",
-      "description": "The single primary action, in the rail.",
-      "html": "<a class=\"ds-cta\" href=\"#\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 4h12v8H2zM2 4l6 5 6-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>Write to me</a>",
-      "css": ".ds-cta{display:inline-flex;align-items:center;gap:.5em;padding:.7em 1.15em;border-radius:3px;background:#16324A;color:#ECECEC;font-family:Archivo,system-ui,sans-serif;font-weight:650;text-decoration:none;transition:transform .5s linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1)}.ds-cta svg{width:1em;height:1em}.ds-cta:hover{transform:translateY(-2px)}.ds-cta:active{transform:translateY(1px)}.ds-cta:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+      "refersTo": "button-primary",
+      "description": "Write to me and every primary action; cta fill, icon lifts on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/></svg>Write to me</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;border-radius:var(--radius,3px);background:var(--cta,#1B2A4A);color:var(--on-cta,#FFFFFF);font:700 1rem \"Archivo Variable\",system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 24px -14px var(--cta,#1B2A4A);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .3s}.ds-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .45s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{box-shadow:0 18px 30px -14px var(--cta,#1B2A4A)}.ds-btn:hover svg{transform:translate(4px,-3px) rotate(8deg)}.ds-btn:active{transform:scale(.94,.88)}.ds-btn:focus-visible{outline:3px solid var(--ink,#1B2A4A);outline-offset:3px}"
     },
     {
-      "name": "Module Slot",
-      "kind": "custom",
-      "refersTo": "slot-neutral",
-      "description": "Numbered slot with its palette edge; click inserts or ejects the module.",
-      "html": "<button class=\"ds-slot\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-slot__edge\"><i style=\"background:#B23850\"></i><i style=\"background:#3B8BEB\"></i><i style=\"background:#E7E3D4\"></i><i style=\"background:#C4DBF6\"></i><i style=\"background:#8590AA\"></i></span><span class=\"ds-slot__num\">01</span><span class=\"ds-slot__name\">Full-stack &amp; Product</span><span class=\"ds-slot__meta\"><span>1 project</span><b>Insert</b></span></button>",
-      "css": ".ds-slot{display:grid;grid-template-rows:10px auto 1fr auto;gap:12px;width:240px;min-height:180px;padding:0 20px 18px;text-align:left;font:inherit;font-family:Archivo,system-ui,sans-serif;color:#16324A;background:#ECECEC;border:1px solid #16324A2E;cursor:pointer;transition:transform .62s linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1)}.ds-slot__edge{display:flex;margin:0 -20px;height:10px}.ds-slot__edge i{flex:1}.ds-slot__num{font-size:2.6rem;font-weight:300;font-variation-settings:\"wdth\" 70;line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}.ds-slot__name{font-size:1.1rem;font-weight:650;line-height:1.2;align-self:end;max-width:14ch}.ds-slot__meta{display:flex;justify-content:space-between;font-size:.8rem;color:#3E5568}.ds-slot__meta b{color:#16324A;font-weight:650}.ds-slot:hover{transform:translateY(-3px)}.ds-slot:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions (GitHub, LinkedIn); ink outline.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">GitHub</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:var(--radius,3px);background:transparent;color:var(--ink,#1B2A4A);box-shadow:inset 0 0 0 1.5px var(--ink,#1B2A4A);font:700 1rem \"Archivo Variable\",system-ui,sans-serif;text-decoration:none;transition:background-color .3s,transform .45s cubic-bezier(.16,1,.3,1)}.ds-btn-ghost:hover{background:color-mix(in srgb,var(--ink,#1B2A4A) 8%,transparent)}.ds-btn-ghost:active{transform:scale(.95)}.ds-btn-ghost:focus-visible{outline:3px solid var(--ink,#1B2A4A);outline-offset:3px}"
     },
     {
-      "name": "Seated Slot",
-      "kind": "custom",
-      "refersTo": "slot-seated-neutral",
-      "description": "Seated state: the plate lifts onto ground-2 over an offset ink-hairline layer.",
-      "html": "<div class=\"ds-seat-wrap\"><button class=\"ds-seated\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-seated__num\">01</span><span>Full-stack &amp; Product</span><span class=\"ds-seated__act\">Eject</span></button></div>",
-      "css": ".ds-seat-wrap{padding:12px}.ds-seated{position:relative;isolation:isolate;display:grid;gap:12px;width:220px;padding:24px 20px 18px;text-align:left;font:inherit;font-family:Archivo,system-ui,sans-serif;font-weight:650;color:#16324A;background:#F7F7F7;border:0;transform:translate(-6px,-6px);cursor:pointer}.ds-seated::before{content:\"\";position:absolute;inset:0;z-index:-1;transform:translate(6px,6px);border:1px solid #16324A;background:#ECECEC}.ds-seated__num{font-size:2.6rem;font-weight:300;font-variation-settings:\"wdth\" 70;line-height:1}.ds-seated__act{font-size:.8rem}.ds-seated:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
-    },
-    {
-      "name": "Rail",
+      "name": "Top Bar Link",
       "kind": "nav",
-      "refersTo": "rail-neutral",
-      "description": "Sticky chassis rail: name, CV, LinkedIn, GitHub, call-to-action.",
-      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail__name\" href=\"#\">Josue Escobar</a><span class=\"ds-rail__links\"><span class=\"ds-pending\">CV</span><a href=\"#\">GitHub</a><a class=\"ds-rail__cta\" href=\"#\">Write to me</a></span></nav>",
-      "css": ".ds-rail{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 24px;background:#ECECEC;border-bottom:1px solid #16324A2E;font-family:Archivo,system-ui,sans-serif;color:#16324A}.ds-rail__name{font-weight:700;font-variation-settings:\"wdth\" 112;color:inherit;text-decoration:none}.ds-rail__links{display:flex;align-items:center;gap:20px;font-size:.875rem}.ds-rail__links a:not(.ds-rail__cta){color:#3E5568;text-decoration:none}.ds-rail__links a:not(.ds-rail__cta):hover{color:#16324A;text-decoration:underline}.ds-pending{color:#3E5568;text-decoration:underline dashed;text-underline-offset:.22em;cursor:help}.ds-rail__cta{padding:.7em 1.15em;border-radius:3px;background:#16324A;color:#ECECEC;font-weight:650;text-decoration:none}.ds-rail a:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
+      "refersTo": "nav-link",
+      "description": "Top bar link with an underline that wipes in from the left; pending links dashed.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nl\" href=\"#\"><span>LinkedIn</span></a><a class=\"ds-nl\" href=\"#\"><span>GitHub</span></a><span class=\"ds-nl ds-nl--pend\">CV</span></nav>",
+      "css": ".ds-nav{display:flex;gap:6px;font:400 .9rem \"Archivo Variable\",system-ui,sans-serif;color:var(--ink,#1B2A4A)}.ds-nl{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;border-radius:var(--radius,3px);color:inherit;text-decoration:none}.ds-nl span{position:relative}.ds-nl span::after{content:\"\";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.16,1,.3,1)}a.ds-nl:hover span::after{transform:scaleX(1);transform-origin:left}.ds-nl:focus-visible{outline:3px solid var(--ink,#1B2A4A);outline-offset:3px}.ds-nl--pend{border:1.5px dashed var(--rule,#1B2A4A2E);color:var(--ink-2,#3C4A66);cursor:not-allowed}"
     },
     {
-      "name": "Pending Link",
+      "name": "Area Card",
+      "kind": "card",
+      "refersTo": "area-card",
+      "description": "One of the four area selectors; the pressed card fills region.",
+      "html": "<button class=\"ds-ac\" aria-pressed=\"false\"><span class=\"ds-ac__num\">01</span><span class=\"ds-ac__name\">Full-stack &amp; Product</span><span class=\"ds-ac__meta\">1 project</span></button><button class=\"ds-ac\" aria-pressed=\"true\"><span class=\"ds-ac__num\">02</span><span class=\"ds-ac__name\">AI &amp; Agents</span><span class=\"ds-ac__meta\">1 project</span></button>",
+      "css": ".ds-ac{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px;width:220px;min-height:150px;margin:6px;padding:16px;text-align:left;cursor:pointer;background:var(--ground-2,#F2F6FD);color:var(--ink,#1B2A4A);border:1px solid var(--rule,#1B2A4A2E);border-radius:9px;box-shadow:0 1px 0 var(--rule,#1B2A4A2E),0 18px 30px -24px #0007;font-family:\"Archivo Variable\",system-ui,sans-serif;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .4s}.ds-ac:hover{transform:translateY(-6px);box-shadow:0 26px 40px -22px #0009}.ds-ac:focus-visible{outline:3px solid var(--ink,#1B2A4A);outline-offset:3px}.ds-ac[aria-pressed=\"true\"]{background:var(--region,#D3E3FC);color:var(--on-region,#1B2A4A);border-color:transparent}.ds-ac__num{align-self:flex-end;font-weight:700;font-size:.85rem;letter-spacing:.1em}.ds-ac__name{margin-top:auto;font-weight:750;font-size:1.15rem;line-height:1.12;letter-spacing:-.01em}.ds-ac__meta{font-size:.82rem;font-weight:600;color:var(--ink-2,#3C4A66)}.ds-ac[aria-pressed=\"true\"] .ds-ac__meta{color:var(--on-region-2,#33456B)}"
+    },
+    {
+      "name": "Console Key",
+      "kind": "button",
+      "refersTo": "console-key",
+      "description": "Pressable key inside the CRT screen; hard bottom edge, stepped press.",
+      "html": "<div class=\"ds-scr\"><button class=\"ds-pbtn\">View code</button> <button class=\"ds-pbtn ds-pbtn--ghost\">Back to slots</button></div>",
+      "css": ".ds-scr{padding:24px;background:var(--scr,#10203A);color:var(--scr-fg,#FFFFFF);border-radius:12px;box-shadow:0 0 0 2px #000,inset 0 0 90px rgba(0,0,0,.5)}.ds-pbtn{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:0;border-radius:6px;background:var(--scr-acc,#77A6F7);color:var(--on-acc,#10203A);font:750 1rem \"Archivo Variable\",system-ui,sans-serif;box-shadow:0 4px 0 color-mix(in srgb,var(--scr-acc,#77A6F7) 48%,#000);cursor:pointer;transition:transform .12s steps(2,end),box-shadow .12s steps(2,end)}.ds-pbtn:hover{transform:translateY(-1px);box-shadow:0 5px 0 color-mix(in srgb,var(--scr-acc,#77A6F7) 48%,#000)}.ds-pbtn:active{transform:translateY(3px);box-shadow:0 1px 0 color-mix(in srgb,var(--scr-acc,#77A6F7) 48%,#000)}.ds-pbtn:focus-visible{outline:3px solid var(--scr-acc,#77A6F7);outline-offset:3px}.ds-pbtn--ghost{background:transparent;color:var(--scr-fg,#FFFFFF);box-shadow:inset 0 0 0 2px var(--scr-fg,#FFFFFF),0 4px 0 color-mix(in srgb,var(--scr-fg,#FFFFFF) 24%,transparent)}"
+    },
+    {
+      "name": "Cartridge",
+      "kind": "custom",
+      "refersTo": "cartridge",
+      "description": "A project slot on the console select screen; lifts on hover, area-coloured label.",
+      "html": "<div class=\"ds-scr2\"><button class=\"ds-slot\"><span class=\"ds-slot__label\"><b>01</b>Full-stack &amp; Product</span><span class=\"ds-slot__title\">TrainLog</span><span class=\"ds-slot__go\"><i class=\"ds-tri\"></i>Load</span></button></div>",
+      "css": ".ds-scr2{padding:28px 24px;background:var(--scr,#10203A);border-radius:12px}.ds-slot{position:relative;display:grid;gap:10px;width:220px;padding:0 0 12px;border:0;text-align:left;border-radius:10px 10px 4px 4px;background:var(--scr-fg,#FFFFFF);color:var(--scr,#10203A);box-shadow:0 5px 0 color-mix(in srgb,var(--scr-fg,#FFFFFF) 45%,#000),0 0 0 2px #000;font-family:\"Archivo Variable\",system-ui,sans-serif;cursor:pointer;transition:transform .16s steps(3,end),box-shadow .16s steps(3,end)}.ds-slot:hover,.ds-slot:focus-visible{transform:translateY(-8px);box-shadow:0 13px 0 color-mix(in srgb,var(--scr-fg,#FFFFFF) 45%,#000),0 0 0 2px #000}.ds-slot:focus-visible{outline:3px solid var(--scr-acc,#77A6F7);outline-offset:5px}.ds-slot__label{display:grid;gap:4px;margin:10px 10px 0;padding:10px 12px;border-radius:5px;background:#3B8BEB;color:#0E1B36;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35);font-size:.8125rem;font-weight:750}.ds-slot__label b{font:900 1.65rem/.9 \"Doto Variable\",ui-monospace,monospace}.ds-slot__title{padding:0 12px;font:780 1.45rem/1.02 \"Archivo Variable\",system-ui,sans-serif;font-variation-settings:\"wdth\" 118;letter-spacing:-.035em}.ds-slot__go{display:flex;align-items:center;gap:.5em;padding:0 12px;font-weight:800;font-size:.875rem}.ds-tri{display:inline-block;width:.62em;height:.8em;background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%)}"
+    },
+    {
+      "name": "Stack Chip and Proof Badge",
       "kind": "chip",
-      "description": "A link without a target: dashed, muted, never reads as live.",
-      "html": "<span class=\"ds-pending-link\" tabindex=\"0\">LinkedIn</span> <span class=\"ds-pending-tag\">Live demo · URL pending</span>",
-      "css": ".ds-pending-link{font-family:Archivo,system-ui,sans-serif;color:#3E5568;text-decoration:underline dashed;text-underline-offset:.22em;text-decoration-thickness:1px;cursor:help}.ds-pending-link:focus-visible{outline:2px solid #16324A;outline-offset:3px;border-radius:3px}.ds-pending-tag{font-family:Archivo,system-ui,sans-serif;font-size:.8rem;color:#3E5568;border:1px dashed #16324A33;padding:.35em .6em;border-radius:3px}"
-    },
-    {
-      "name": "Project Plate (region)",
-      "kind": "card",
-      "refersTo": "project-region-neutral",
-      "description": "The inserted area's project, owned by the face region color.",
-      "html": "<article class=\"ds-plate\"><h3 class=\"ds-plate__title\">TrainLog</h3><p>An offline-first training PWA.</p><dl class=\"ds-spec\"><dt>Stack</dt><dd>React, TypeScript, PWA</dd></dl><a class=\"ds-plate__link\" href=\"#\">Source</a></article>",
-      "css": ".ds-plate{max-width:520px;padding:32px;background:#F3D250;color:#16324A;border-radius:3px;font-family:Archivo,system-ui,sans-serif}.ds-plate__title{font-size:2.6rem;font-weight:780;font-variation-settings:\"wdth\" 118;letter-spacing:-.035em;line-height:1;margin:0 0 16px}.ds-spec{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin:24px 0 0;padding-top:18px;border-top:1px solid #16324A38;font-size:.9rem}.ds-spec dt{color:#3E4A2A}.ds-spec dd{margin:0}.ds-plate__link{display:inline-block;margin-top:24px;color:inherit;font-weight:650;text-underline-offset:.22em}.ds-plate__link:focus-visible{outline:2px solid #16324A;outline-offset:3px}"
-    },
-    {
-      "name": "Project Plate (default)",
-      "kind": "card",
-      "refersTo": "project-plate-neutral",
-      "description": "Projects not owned by the active area: ground-2 with a hairline.",
-      "html": "<article class=\"ds-card\"><h3>ChangeSmith</h3><p>Plugins that make coding agents work like a careful engineer.</p></article>",
-      "css": ".ds-card{max-width:520px;padding:32px;background:#F7F7F7;color:#16324A;border:1px solid #16324A2E;border-radius:3px;font-family:Archivo,system-ui,sans-serif}.ds-card h3{font-size:2.2rem;font-weight:780;font-variation-settings:\"wdth\" 118;letter-spacing:-.035em;line-height:1;margin:0 0 16px}.ds-card p{margin:0;max-width:46ch}"
+      "refersTo": "chip",
+      "description": "Technology chips and proof badges inside a project view.",
+      "html": "<div class=\"ds-scr3\"><span class=\"ds-chip\">React</span> <span class=\"ds-chip\">TypeScript</span> <span class=\"ds-badge\"><i></i>Mutation testing</span></div>",
+      "css": ".ds-scr3{padding:20px;background:var(--scr,#10203A);border-radius:12px;font-family:\"Archivo Variable\",system-ui,sans-serif}.ds-chip{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:4px;box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--scr-fg,#FFFFFF) 24%,transparent);font-size:.875rem;font-weight:700;color:var(--scr-fg,#FFFFFF);transition:transform .15s steps(2,end),box-shadow .15s}.ds-chip:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px var(--scr-acc,#77A6F7)}.ds-badge{display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:0 12px;border-radius:4px;background:color-mix(in srgb,var(--scr-acc,#77A6F7) 20%,var(--scr,#10203A));color:var(--scr-fg,#FFFFFF);font-size:.75rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}.ds-badge i{width:8px;height:8px;background:var(--scr-acc,#77A6F7)}"
     }
   ],
   "narrative": {
-    "northStar": "The Modular Chassis",
-    "overview": "The site is one engineered instrument. The neutral face is the chassis: a light-gray plate with a sticky rail, the 10-second line, and four numbered slots (01–04). Inserting a module (Full-stack & Product, AI & Agents, Data & Analytics, 3D & Engineering design) changes the whole face: palette, display face, background texture, hover material and seat timing. Ejecting restores the neutral face intact. The chassis carries all content; choosing a module is optional.\n\nEvery face redefines the same set of roles (ground, ground-2, plate, ink, ink-2, signal, on-signal, cta, on-cta, region, on-region, on-region-2, rule, display face, display width/weight/tracking, a size multiplier `k`, texture, seat duration and easing). Layout reads only the roles, which is how five faces share one grid. Hardware cues are real structure: hairline rules are the mounting rails, slot numbers are the navigation, the five-color edge on each slot is that module's palette, set like a screen-printed legend.\n\nThe system refuses the dark-neon developer portfolio and the skill-bar résumé page. Depth is layer overlap, never soft shadow.",
+    "northStar": "One Bench, Five Lights",
+    "overview": "One engineer's workbench, lit five ways. The layout is a single fixed bench: a transparent top bar, a hero with a baked 3D piece and four area cards, a CRT game console that holds the work, a timeline, and a close. Choosing an area changes the light, not the bench: palette, display face, the grammar of the background dot field, the 3D piece and the motion timing all swap together through one set of role tokens, and every component reads only those roles. Neutral (no area chosen) is Flat Design Colors on white; Full-stack is Snowy Yet Warm; AI is Turquoise Amber Autumn on deep teal; Data is Metallic Chic lavender with pixel type; 3D & Engineering design is Gradient Pop on near-black.\n\nDensity is low and confident: big display headlines, generous section padding, few elements per viewport. Everything is touchable and reacts (magnetic buttons, rolling labels, ripples, tilting cards, a difference-blend ring cursor), but the reaction is always a bonus over content that reads with plain scrolling. Depth comes from the 3D piece and the console, not from stacked surfaces.\n\nThe work lives in a different material from the rest of the site: a console shell in the site's colours around a dark CRT screen with its own per-face palette, scanlines, pressable keys and cartridges. Inside the console, motion is stepped like a game; outside it, motion springs.",
     "keyCharacteristics": [
-      "Five faces, one grid; faces swap materials, never positions.",
-      "Each face's palette owns whole regions (a project plate, the close section), not scattered accents.",
-      "Seating motion has mass and a per-face rhythm; reduced motion cuts instantly.",
-      "Lining, tabular numerals everywhere; slot numbers and years in condensed light Archivo.",
-      "Flat plates with 1px rules and 3px milled corners."
+      "Five owner-pinned faces filling the same 13 roles plus 5 screen roles; layout never forks per face.",
+      "One display face per area, Archivo body everywhere; display sizes scaled by a per-face optical factor.",
+      "A fixed canvas dot field behind everything, one grammar per face, calmed behind text.",
+      "Baked Blender pieces that explode and reassemble on area change.",
+      "The Work console: CRT screen, cartridges, keys with hard bottom edges, stepped motion.",
+      "Every text pair at WCAG AA or better."
     ],
     "rules": [
       {
-        "name": "The Region Ownership Rule",
-        "body": "The active face's region color owns whole blocks: the inserted area's project plate and the close section. It never appears as a scattered accent over another face's ground.",
+        "name": "The Same Roles Rule",
+        "body": "Every face fills every role, and components reference roles only (`var(--cta)`, never a hex). A new surface that needs a colour a role doesn't cover needs a new role in all five faces, not a one-off.",
         "section": "colors"
       },
       {
-        "name": "The Snow Is Not a Ground Rule",
-        "body": "Full-stack's #E7E3D4 is a legend color only; the Full-stack face is never a beige ground with brown ink.",
+        "name": "The Signal Is Not a Background Rule",
+        "body": "Signal marks things (dots, lines, rails, underlines, icon strokes); it never carries text. `on-signal` is declared but unused, and neutral's pair measures 4.37:1, under AA.",
         "section": "colors"
       },
       {
-        "name": "The Pinned Palette Rule",
-        "body": "Palette values are owner-pinned and change only with the owner. The AI palette is approved as built and stays exactly as is.",
+        "name": "The AA Pair Rule",
+        "body": "Text pairs ship at 4.5:1 or better on every face. Measured from tokens.css: ink/ground 6.90–16.21, ink-2/ground 5.19–10.65, on-cta/cta 5.20–14.22, on-region/region 4.80–10.95, on-region-2/region 4.78–7.33, scr-fg/scr 11.72–17.72, on-acc/scr-acc 6.22–8.41.",
         "section": "colors"
       },
       {
-        "name": "The Size Multiplier Rule",
-        "body": "Display sizes are one clamp scale multiplied by the face's `k` (neutral 1, Full-stack 1.04, AI 0.86, Data 0.9, 3D 0.8), so wider faces shrink and the copy block keeps one height.",
+        "name": "The Optical Factor Rule",
+        "body": "Every display size is multiplied by the face's `--k` (neutral 1, fullstack 1.04, ai .86, data .9, design .8) so all five faces fill the same box and the layout never moves on a face change.",
         "section": "typography"
       },
       {
-        "name": "The Lining Numerals Rule",
-        "body": "The whole document sets `lining-nums tabular-nums`; slot numbers and years never use oldstyle figures.",
+        "name": "The Body Never Changes Rule",
+        "body": "Archivo carries all body, UI and label text on every face. The display face never sets paragraphs; Doto never sets running text.",
         "section": "typography"
       },
       {
-        "name": "The Doto Is Display Only Rule",
-        "body": "The dot-matrix face sets display roles only; Data body text stays Archivo.",
+        "name": "The Labels Are Silkscreen Rule",
+        "body": "Uppercase tracked labels name a device part or a data field (console header, cartridge fields, viewport tag, step names). They never sit over a headline as a kicker.",
         "section": "typography"
       },
       {
-        "name": "The Registration Rule",
-        "body": "All five faces share the grid to the pixel. Switching faces changes only what content is made of; it never moves the slot row or reflows the layout. Reordering projects by active area is the only sanctioned change, and it happens below the fold.",
+        "name": "The Bench Doesn't Move Rule",
+        "body": "A face change may alter colour, type and motion but never a box's position or size; anything whose height depends on the face reserves the tallest face's space.",
         "section": "layout"
       },
       {
-        "name": "The Seated Plate Rule",
-        "body": "The 6px offset plate is reserved for the seated state of a slot. It is a real layer with the ground's own color and an ink hairline, not a shadow, and it does not decorate resting elements.",
+        "name": "The Hard Edge Lives in the Console Rule",
+        "body": "Zero-blur offset shadows are the plastic of the console's keys and cartridges and appear nowhere else. Outside the console, shadows are soft, negative-spread and state-driven.",
         "section": "elevation"
       },
       {
-        "name": "The No Glow Rule",
-        "body": "No soft drop shadows, no glow, no blur.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Ballistics Rule",
-        "body": "Every reskin moves with mass and the face's own seat timing. No linear fades, no instant swaps, except the immediate cut under reduced motion.",
+        "name": "The Seat Timing Rule",
+        "body": "Every face-driven transition uses `--seat-dur` / `--seat-ease`: neutral .62s spring, fullstack .7s spring, ai .9s `cubic-bezier(.65, 0, .35, 1)`, data .48s `steps(8, end)`, design .8s spring. `prefers-reduced-motion` removes animation, the wipe and stage parallax and shows all content at rest.",
         "section": "components"
       }
     ],
     "dos": [
-      "Do define every new face or surface through the shared role set, so layout code reads only roles.",
-      "Do keep the copy block at its single shared height so the slot row registers across faces.",
-      "Do let the active palette own whole regions (project plate, close section).",
-      "Do give each face its own hover material and seat timing.",
-      "Do keep every text/ground pairing at WCAG AA and focus indicators at 3:1 or better against their ground.",
-      "Do render pending links as dashed ink-2 text that explains itself on tap."
+      "Do reference role tokens (`--ink`, `--cta`, `--region`, `--scr-acc`) so a component works on all five faces.",
+      "Do multiply every display size by `--k` and reserve the tallest face's height where a block's height depends on the face.",
+      "Do keep Archivo for body and UI on every face; the display face sets headlines, the wordmark, cartridge titles and the email.",
+      "Do keep text pairs at 4.5:1 or better on every face; check all five when adding a pair.",
+      "Do give touch targets at least 44px and a 3px ink focus ring.",
+      "Do mark text blocks as calm zones so the field damps behind them."
     ],
     "donts": [
-      "Don't move layout between faces.",
-      "Don't use soft drop shadows or glow; depth is layer overlap.",
-      "Don't put kicker or eyebrow labels above headings.",
-      "Don't make a pending link look live.",
-      "Don't use a beige ground or brown ink on the Full-stack face.",
-      "Don't add hardware costume (screws, knobs, LEDs) that does not map to structure or state.",
-      "Don't use dark-plus-neon glow, skill-percentage bars or contribution counters."
+      "Don't put text on `signal`; it is a marking colour.",
+      "Don't hardcode a face's hex in a component; the cartridge labels are the only pinned exception.",
+      "Don't use zero-blur offset shadows outside the console.",
+      "Don't set paragraphs in a display face or Doto.",
+      "Don't change layout per face; faces change light, not the bench.",
+      "Don't put uppercase tracked labels above headlines as kickers.",
+      "Don't use glyph or emoji icons; icons are inline SVG line drawings."
     ]
   }
 }

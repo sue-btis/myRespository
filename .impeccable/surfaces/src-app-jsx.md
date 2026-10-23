@@ -2,31 +2,31 @@
 version: 1
 slug: "src-app-jsx"
 primary_target: "src/App.jsx"
-related_targets: []
+related_targets: ["src/App.tsx"]
 ---
 
 # Home (one-page portfolio)
 
-Scope: the whole one-page site — neutral state, four area modules, projects, About timeline, contact. Visitor mode: Experience (the work leads), with Persuade discipline on the 10-second line and the contact action.
+Scope: the whole one-page site in src/App.tsx — top bar, hero with the 3D piece and four area cards, Work console, "How I got here", close. Visitor mode: Experience (the work leads), with Persuade discipline on the 10-second line and the contact action.
 
-Audience and action: recruiters for Full-stack / AI / Data roles skim on a phone; success is that they understand who Josue is in 10 seconds and write to him. CV, LinkedIn, GitHub always visible.
+Audience and action: recruiters for Full-stack / AI / Data roles, often on phones; understand who Josue is in 10 seconds and write to him. Write to me, GitHub, LinkedIn always reachable; CV pending.
 
-Proof: TrainLog (01 Full-stack & Product), ChangeSmith (02 AI & Agents). 03 and 04 appear only in mocks until they have a project.
+Proof: TrainLog (01 Full-stack & Product), ChangeSmith (02 AI & Agents). 03 Data & Analytics and 04 3D & Engineering design render as empty "In the works" slots until content.ts gives them a project.
 
-Pinned palettes (user): neutral Rich and Colorful #F78888 #F3D250 #ECECEC #90CCF4 #5DA2D5 (ink #16324A derived) · Full-stack Snowy Yet Warm #B23850 #3B8BEB #E7E3D4 #C4DBF6 #8590AA · AI & Agents Turquoise Amber Autumn #304C64 #26788E #631B08 #A4CCD4 #E2480C (approved as built) · Data & Analytics Metallic Chic #3D52A0 #7091E6 #8697C4 #ADBBDA #EDE8F5 · 3D Gradient Pop #141414 #273DB4 #C50900 #F95CA4 #ED7845. Display faces (user): Archivo, Funnel Display, Unbounded, Doto, Michroma.
+Pinned palettes and display faces (owner): see src/styles/tokens.css and DESIGN.md. Neutral face is Flat Design Colors on white.
 
-Unresolved: contact mechanism (email vs form); TrainLog demo URL; CV and LinkedIn URLs; Ecosat role title.
+Unresolved: TrainLog demo URL, CV link, Ecosat role title, domain.
 
 ## Direction contract
 
-THESIS: One machined chassis, four plug-in modules. Choosing an area slots its faceplate in and the whole instrument changes face; the layout never moves. Refuses the dark-neon dev portfolio and the skill-bar résumé page.
+THESIS: One engineer, four areas; choosing an area reskins the whole site (palette, display face, field grammar, 3D piece, motion timing) while layout stays put. Refuses the template dev portfolio and the skill-bar résumé.
 
-OWN-WORLD: Machined chassis face in Rich and Colorful light gray, screen-printed legends, visible mounting rails, slot numbers 01–04 in lining numerals. Each module owns whole regions in its pinned palette, own face and type voice; depth by layer overlap, not shadow.
+OWN-WORLD: Site-wide canvas dot field that reacts to the cursor and changes grammar per area; baked Blender pieces (reactor, arcade, neural network, data tower, V8) that explode and reassemble on change; a difference-blend cursor; a CRT game console for the work.
 
-STORY: Visitor reads the 10-second line, sees four numbered slots, understands range by structure, optionally inserts a module, sees projects with evidence, writes to Josue.
+STORY: Visitor reads the 10-second line, plays with the 3D piece, picks an area and sees everything change, loads a project cartridge to see proof, reads the timeline, writes to Josue.
 
-FIRST VIEWPORT: The 10-second line large on the chassis face, top two-thirds; four module slots 01–04 below in one row (2×2 on phone), each showing its palette edge; contact, CV, LinkedIn, GitHub fixed on the chassis rail.
+FIRST VIEWPORT: Headline and lead left with Write to me and GitHub; the area's 3D piece right, following the cursor; four area cards in a row below (2×2 on phones); top bar transparent over the field until scrolled.
 
-FORM: Modular Chassis, candidate 5 of 7 on my ordered list; seed key f616c19c. Raises: VU ballistics (mass, overshoot, damping on every reskin); folio registration (all five faces share the grid to the pixel); papercut layering (module pastes over neutral, eject restores it intact); toy catalogue (palette owns whole regions).
+FORM: Mix of the three approved prototypes (C field + top bar, B hero, A timeline + close + cursor) with the "Select project" console for Work; original seed key f616c19c (Modular Chassis) is retired.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

@@ -1,16 +1,25 @@
 ---
 name: Josue Escobar — Portfolio
-description: One machined chassis, four plug-in area modules that reskin the whole site.
+description: One engineer, four areas; choosing an area reskins the whole site while the layout stays put.
 colors:
-  neutral-ground: "#ECECEC"
-  neutral-ground-2: "#F7F7F7"
-  neutral-plate: "#90CCF4"
-  neutral-plate-blue: "#5DA2D5"
-  neutral-ink: "#16324A"
-  neutral-ink-2: "#3E5568"
-  neutral-signal: "#F78888"
-  neutral-region: "#F3D250"
-  neutral-on-region-2: "#3E4A2A"
+  neutral-ground: "#FFFFFF"
+  neutral-ground-2: "#F2F6FD"
+  neutral-plate: "#77A6F7"
+  neutral-ink: "#1B2A4A"
+  neutral-ink-2: "#3C4A66"
+  neutral-signal: "#00887A"
+  neutral-on-signal: "#FFFFFF"
+  neutral-cta: "#1B2A4A"
+  neutral-on-cta: "#FFFFFF"
+  neutral-region: "#D3E3FC"
+  neutral-on-region: "#1B2A4A"
+  neutral-on-region-2: "#33456B"
+  neutral-rule: "#1B2A4A2E"
+  neutral-scr: "#10203A"
+  neutral-scr-fg: "#FFFFFF"
+  neutral-scr-acc: "#77A6F7"
+  neutral-on-acc: "#10203A"
+  neutral-led: "#00887A"
   fullstack-ground: "#C4DBF6"
   fullstack-ground-2: "#D7E6F9"
   fullstack-plate: "#3B8BEB"
@@ -18,9 +27,17 @@ colors:
   fullstack-ink-2: "#33476B"
   fullstack-signal: "#B23850"
   fullstack-on-signal: "#F7EFF1"
+  fullstack-cta: "#B23850"
+  fullstack-on-cta: "#F7EFF1"
+  fullstack-region: "#3B8BEB"
   fullstack-on-region: "#0E1B36"
-  fullstack-snow: "#E7E3D4"
-  fullstack-slate: "#8590AA"
+  fullstack-on-region-2: "#0E1B36"
+  fullstack-rule: "#14264A2E"
+  fullstack-scr: "#0B1630"
+  fullstack-scr-fg: "#D7E6F9"
+  fullstack-scr-acc: "#6FAAF2"
+  fullstack-on-acc: "#0B1630"
+  fullstack-led: "#B23850"
   ai-ground: "#304C64"
   ai-ground-2: "#26425A"
   ai-plate: "#26788E"
@@ -28,9 +45,17 @@ colors:
   ai-ink-2: "#A4CCD4"
   ai-signal: "#E2480C"
   ai-on-signal: "#1A0703"
-  ai-on-region-2: "#3A1206"
+  ai-cta: "#A4CCD4"
   ai-on-cta: "#1F3445"
-  ai-rust: "#631B08"
+  ai-region: "#E2480C"
+  ai-on-region: "#1A0703"
+  ai-on-region-2: "#1A0703"
+  ai-rule: "#A4CCD42E"
+  ai-scr: "#13273A"
+  ai-scr-fg: "#CFE6EA"
+  ai-scr-acc: "#FF8A5C"
+  ai-on-acc: "#1A0703"
+  ai-led: "#E2480C"
   data-ground: "#EDE8F5"
   data-ground-2: "#E1DDF0"
   data-plate: "#ADBBDA"
@@ -38,293 +63,304 @@ colors:
   data-ink-2: "#3D52A0"
   data-signal: "#7091E6"
   data-on-signal: "#121A3A"
+  data-cta: "#3D52A0"
+  data-on-cta: "#EDE8F5"
+  data-region: "#3D52A0"
+  data-on-region: "#EDE8F5"
   data-on-region-2: "#C9D2EC"
-  data-scanline: "#8697C4"
+  data-rule: "#3D52A033"
+  data-scr: "#141C45"
+  data-scr-fg: "#EDE8F5"
+  data-scr-acc: "#9DB4F5"
+  data-on-acc: "#121A3A"
+  data-led: "#7091E6"
   design-ground: "#141414"
   design-ground-2: "#1E1E1E"
   design-plate: "#273DB4"
   design-ink: "#F2F0EE"
   design-ink-2: "#C9C4C0"
   design-signal: "#ED7845"
+  design-on-signal: "#141414"
   design-cta: "#F95CA4"
+  design-on-cta: "#141414"
+  design-region: "#273DB4"
+  design-on-region: "#F2F0EE"
   design-on-region-2: "#CDD3F2"
-  design-red: "#C50900"
+  design-rule: "#F2F0EE24"
+  design-scr: "#070707"
+  design-scr-fg: "#F2F0EE"
+  design-scr-acc: "#F95CA4"
+  design-on-acc: "#141414"
+  design-led: "#ED7845"
 typography:
   display-neutral:
-    fontFamily: "Archivo, system-ui, sans-serif"
+    fontFamily: "Archivo Variable, system-ui, sans-serif"
     fontWeight: 780
-    lineHeight: 1
+    lineHeight: 0.96
     letterSpacing: "-0.035em"
     fontVariation: "'wdth' 118"
   display-fullstack:
-    fontFamily: "Funnel Display, system-ui, sans-serif"
+    fontFamily: "Funnel Display Variable, system-ui, sans-serif"
     fontWeight: 800
-    lineHeight: 1
+    lineHeight: 0.96
     letterSpacing: "-0.025em"
   display-ai:
-    fontFamily: "Unbounded, system-ui, sans-serif"
+    fontFamily: "Unbounded Variable, system-ui, sans-serif"
     fontWeight: 600
-    lineHeight: 1
+    lineHeight: 0.96
     letterSpacing: "-0.03em"
   display-data:
-    fontFamily: "Doto, ui-monospace, monospace"
+    fontFamily: "Doto Variable, ui-monospace, monospace"
     fontWeight: 900
-    lineHeight: 1
+    lineHeight: 0.96
     letterSpacing: "-0.02em"
   display-design:
     fontFamily: "Michroma, system-ui, sans-serif"
     fontWeight: 400
-    lineHeight: 1
+    lineHeight: 0.96
     letterSpacing: "0em"
-  display:
-    fontSize: "calc(clamp(2.3rem, 5.4vw, 5rem) * var(--k))"
-    lineHeight: 1
-  headline:
-    fontSize: "calc(clamp(2.2rem, 4.4vw, 4rem) * var(--k))"
-    lineHeight: 1
-  title:
-    fontSize: "calc(clamp(2rem, 4vw, 3.4rem) * var(--k))"
-    lineHeight: 1
-  close:
-    fontSize: "calc(clamp(2.4rem, 7vw, 6rem) * var(--k))"
-    lineHeight: 1
+  headline-hero:
+    fontSize: "calc(clamp(2.05rem, 4.1vw, 4.2rem) * var(--k))"
+    lineHeight: 1.02
+  headline-section:
+    fontSize: "calc(clamp(3.2rem, 10vw, 7.5rem) * var(--k))"
+  title-card:
+    fontFamily: "Archivo Variable, system-ui, sans-serif"
+    fontSize: "clamp(.98rem, 1.35vw, 1.28rem)"
+    fontWeight: 750
+    lineHeight: 1.12
+    letterSpacing: "-.01em"
   body:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Archivo Variable, system-ui, sans-serif"
+    fontSize: "1.0625rem"
     fontWeight: 400
-    lineHeight: 1.5
-    fontFeature: "lnum, tnum"
-  body-lead:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "clamp(1rem, 1.3vw, 1.15rem)"
-    lineHeight: 1.5
-  numeral:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 3vw, 3rem)"
-    fontWeight: 300
-    lineHeight: 1
-    letterSpacing: "-0.02em"
-    fontVariation: "'wdth' 70"
+    lineHeight: 1.55
   label:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 650
-    lineHeight: 1.2
-  meta:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 400
+    fontFamily: "Archivo Variable, system-ui, sans-serif"
+    fontSize: ".75rem"
+    fontWeight: 700
+    letterSpacing: ".12em"
+  pixel:
+    fontFamily: "Doto Variable, ui-monospace, monospace"
+    fontWeight: 900
+    lineHeight: 1
+  mono:
+    fontFamily: "ui-monospace, Cascadia Mono, SF Mono, Consolas, monospace"
+    fontSize: "1rem"
+    lineHeight: 1.7
 rounded:
-  plate: "3px"
-  screen: "10px"
+  sm: "3px"
+  chip: "4px"
+  key: "6px"
+  viewport: "8px"
+  card: "9px"
+  cartridge: "10px 10px 4px 4px"
+  screen: "clamp(8px, 1.2vw, 14px)"
+  console: "clamp(16px, 2.2vw, 26px)"
+  full: "50%"
 spacing:
   gutter: "clamp(16px, 4vw, 56px)"
-  rail: "64px"
-  rail-mobile: "56px"
-  copy-height: "clamp(318px, 9vw + 250px, 384px)"
-  section: "clamp(72px, 12vh, 140px)"
-  stack: "clamp(20px, 3vh, 32px)"
-  plate-pad: "clamp(24px, 3vw, 44px)"
+  rail-h: "64px"
+  card-gap: "clamp(10px, 1.4vw, 18px)"
+  action-gap: "12px"
+  screen-pad: "clamp(14px, 2.4vw, 32px)"
+  section-top: "clamp(56px, 9vw, 130px)"
 components:
-  button-cta-neutral:
-    backgroundColor: "{colors.neutral-ink}"
-    textColor: "{colors.neutral-ground}"
-    typography: "{typography.label}"
-    rounded: "{rounded.plate}"
-    padding: "0.7em 1.15em"
-  button-cta-fullstack:
-    backgroundColor: "{colors.fullstack-signal}"
-    textColor: "{colors.fullstack-on-signal}"
-    rounded: "{rounded.plate}"
-    padding: "0.7em 1.15em"
-  button-cta-ai:
-    backgroundColor: "{colors.ai-ink-2}"
-    textColor: "{colors.ai-on-cta}"
-    rounded: "{rounded.plate}"
-    padding: "0.7em 1.15em"
-  button-cta-data:
-    backgroundColor: "{colors.data-ink-2}"
-    textColor: "{colors.data-ground}"
-    rounded: "{rounded.plate}"
-    padding: "0.7em 1.15em"
-  button-cta-design:
-    backgroundColor: "{colors.design-cta}"
-    textColor: "{colors.design-ground}"
-    rounded: "{rounded.plate}"
-    padding: "0.7em 1.15em"
-  slot-neutral:
+  button-primary:
+    backgroundColor: "{colors.neutral-cta}"
+    textColor: "{colors.neutral-on-cta}"
+    rounded: "{rounded.sm}"
+    padding: "0 24px"
+    height: "52px"
+  button-ghost:
+    backgroundColor: "transparent"
     textColor: "{colors.neutral-ink}"
-    padding: "0 clamp(14px, 1.6vw, 24px) clamp(14px, 2vh, 20px)"
-    height: "clamp(150px, 20vh, 200px)"
-  slot-seated-neutral:
+    rounded: "{rounded.sm}"
+    padding: "0 22px"
+    height: "48px"
+  nav-link:
+    textColor: "{colors.neutral-ink}"
+    rounded: "{rounded.sm}"
+    padding: "0 10px"
+    height: "44px"
+  area-card:
     backgroundColor: "{colors.neutral-ground-2}"
     textColor: "{colors.neutral-ink}"
-  project-plate-neutral:
-    backgroundColor: "{colors.neutral-ground-2}"
-    textColor: "{colors.neutral-ink}"
-    rounded: "{rounded.plate}"
-    padding: "{spacing.plate-pad}"
-  project-region-neutral:
+    rounded: "{rounded.card}"
+    padding: "clamp(12px, 1.4vw, 18px)"
+  area-card-selected:
     backgroundColor: "{colors.neutral-region}"
-    textColor: "{colors.neutral-ink}"
-    rounded: "{rounded.plate}"
-    padding: "{spacing.plate-pad}"
-  rail-neutral:
-    backgroundColor: "{colors.neutral-ground}"
-    textColor: "{colors.neutral-ink-2}"
-    height: "{spacing.rail}"
-    padding: "0 {spacing.gutter}"
-  close-neutral:
-    backgroundColor: "{colors.neutral-region}"
-    textColor: "{colors.neutral-ink}"
+    textColor: "{colors.neutral-on-region}"
+    rounded: "{rounded.card}"
+  console-key:
+    backgroundColor: "{colors.neutral-scr-acc}"
+    textColor: "{colors.neutral-on-acc}"
+    rounded: "{rounded.key}"
+    padding: "0 20px"
+    height: "48px"
+  console-key-ghost:
+    backgroundColor: "transparent"
+    textColor: "{colors.neutral-scr-fg}"
+    rounded: "{rounded.key}"
+    padding: "0 20px"
+    height: "48px"
+  cartridge:
+    backgroundColor: "{colors.neutral-scr-fg}"
+    textColor: "{colors.neutral-scr}"
+    rounded: "{rounded.cartridge}"
+  chip:
+    textColor: "{colors.neutral-scr-fg}"
+    rounded: "{rounded.chip}"
+    padding: "0 12px"
+    height: "32px"
 ---
 
 # Design System: Josue Escobar — Portfolio
 
 ## Overview
 
-**Creative North Star: "The Modular Chassis"**
+**Creative North Star: "One Bench, Five Lights"**
 
-The site is one engineered instrument. The neutral face is the chassis: a light-gray plate with a sticky rail, the 10-second line, and four numbered slots (01–04). Inserting a module (Full-stack & Product, AI & Agents, Data & Analytics, 3D & Engineering design) changes the whole face: palette, display face, background texture, hover material and seat timing. Ejecting restores the neutral face intact. The chassis carries all content; choosing a module is optional.
+One engineer's workbench, lit five ways. The layout is a single fixed bench: a transparent top bar, a hero with a baked 3D piece and four area cards, a CRT game console that holds the work, a timeline, and a close. Choosing an area changes the light, not the bench: palette, display face, the grammar of the background dot field, the 3D piece and the motion timing all swap together through one set of role tokens, and every component reads only those roles. Neutral (no area chosen) is Flat Design Colors on white; Full-stack is Snowy Yet Warm; AI is Turquoise Amber Autumn on deep teal; Data is Metallic Chic lavender with pixel type; 3D & Engineering design is Gradient Pop on near-black.
 
-Every face redefines the same set of roles (ground, ground-2, plate, ink, ink-2, signal, on-signal, cta, on-cta, region, on-region, on-region-2, rule, display face, display width/weight/tracking, a size multiplier `k`, texture, seat duration and easing). Layout reads only the roles, which is how five faces share one grid. Hardware cues are real structure: hairline rules are the mounting rails, slot numbers are the navigation, the five-color edge on each slot is that module's palette, set like a screen-printed legend.
+Density is low and confident: big display headlines, generous section padding, few elements per viewport. Everything is touchable and reacts (magnetic buttons, rolling labels, ripples, tilting cards, a difference-blend ring cursor), but the reaction is always a bonus over content that reads with plain scrolling. Depth comes from the 3D piece and the console, not from stacked surfaces.
 
-The system refuses the dark-neon developer portfolio and the skill-bar résumé page. Depth is layer overlap, never soft shadow.
+The work lives in a different material from the rest of the site: a console shell in the site's colours around a dark CRT screen with its own per-face palette, scanlines, pressable keys and cartridges. Inside the console, motion is stepped like a game; outside it, motion springs.
 
 **Key Characteristics:**
-- Five faces, one grid; faces swap materials, never positions.
-- Each face's palette owns whole regions (a project plate, the close section), not scattered accents.
-- Seating motion has mass and a per-face rhythm; reduced motion cuts instantly.
-- Lining, tabular numerals everywhere; slot numbers and years in condensed light Archivo.
-- Flat plates with 1px rules and 3px milled corners.
+- Five owner-pinned faces filling the same 13 roles plus 5 screen roles; layout never forks per face.
+- One display face per area, Archivo body everywhere; display sizes scaled by a per-face optical factor.
+- A fixed canvas dot field behind everything, one grammar per face, calmed behind text.
+- Baked Blender pieces that explode and reassemble on area change.
+- The Work console: CRT screen, cartridges, keys with hard bottom edges, stepped motion.
+- Every text pair at WCAG AA or better.
 
 ## Colors
 
-Five owner-pinned palettes, one per face, each mapped onto the same roles; derived inks exist only where a palette has no usable dark or light for text.
+Five complete palettes, each filling the same roles; the active face is set on `html[data-face]` and every role is a registered `@property` colour, so palettes interpolate on change instead of snapping.
 
 ### Primary
-- **Chassis Navy** (neutral-ink): text and the call-to-action plate on the neutral face. Derived from the Rich and Colorful blues because that palette has no dark.
-- **Snowy Crimson** (fullstack-signal): the Full-stack call-to-action and selection color.
-- **Amber Ember** (ai-signal): the AI region (own project plate and the close section) and the ripple hover.
-- **Metallic Indigo** (data-ink-2): the Data region, call-to-action and secondary ink.
-- **Pop Ultramarine** (design-plate): the 3D region and the close section, under a gradient bar.
+- **Action Fill** (`cta` per face: Navy Ink in neutral, Raspberry in fullstack, Pale Turquoise in ai, Royal Periwinkle in data, Hot Pink in design): fill of every primary action (Write to me, skip link, console Peek key outside the screen). Text on it is always the face's `on-cta`.
+- **Signal** (`signal` per face: Flat Teal, Raspberry, Burnt Amber, Cornflower, Tangerine): the live accent. Wordmark dot, timeline progress and nodes, the breathing underline under the email, icon accents, ripples, field highlights. Never a text background (see the rule below).
 
 ### Secondary
-- **Sky Plate** (neutral-plate): the neutral face's second project plate. **Chassis Blue** (neutral-plate-blue) belongs to the palette but is not yet used in the build beyond the slot edge legend.
-- **Signal Blue** (fullstack-plate): the Full-stack region and the hover fill rising from the slot base.
-- **Deep Teal** (ai-plate), **Lavender Steel** (data-plate): plate tones of their faces.
-- **Hot Pink** (design-cta): the 3D call-to-action.
+- **Plate** (`plate` per face: Flat Sky Blue, Snow Blue, Deep Turquoise, Metallic Lilac, Klein Blue): the colour of the circular wipe that sweeps the page on area change, and the fullstack field's tiles. A transition colour, not a surface.
+- **Region** (`region` / `on-region` / `on-region-2`): the selected area card fill and its two text levels.
 
 ### Tertiary
-- **Rich Yellow** (neutral-region): owns the neutral face's first project plate and the whole close section.
-- **Coral Signal** (neutral-signal): selection, focus and the timeline's current node on the neutral face.
-- **Steel Periwinkle** (data-signal), **Burnt Orange** (design-signal): selection, focus and the 3D hover outline.
+- **Screen** (`scr`, `scr-fg`, `scr-acc`, `on-acc`, `led`): the CRT palette inside the Work console. `scr-acc` fills keys, active tabs, progress cells, pixel counters; `led` is the console power light. Derived tints (`scr-dim` at 78% fg, `scr-line` at 24% fg) are computed with `color-mix`, not new tokens.
+- **Cartridge labels**: each project cartridge carries its own area's colour on every face (Full-stack `#3B8BEB`, AI `#E2480C`, Data `#7091E6`, Design `#ED7845`, with dark label text). These are the one deliberate place a component pins colours from another face.
 
 ### Neutral
-- Each face has a ground and a slightly lifted ground-2 (seated slot, project plates): Chassis Gray / Paper (neutral), Ice Blue / Pale Ice (Full-stack), Slate Teal / Deep Slate (AI), Lilac Mist / Pale Lilac (Data), Carbon / Graphite (3D).
-- Each face has ink and ink-2 (secondary text, rail links, meta). Derived inks: fullstack-ink, ai-ink (pale teal), data-ink, design-ink and design-ink-2 (warm off-whites).
-- Rules are the face's ink at 14–20% alpha (neutral `#16324A2E`, fullstack `#14264A2E`, AI `#A4CCD42E`, data `#3D52A033`, 3D `#F2F0EE24`).
-- Edge-only palette colors (fullstack-snow, fullstack-slate, ai-rust, design-red, data-scanline) appear in the slot edge legend, the Data scanline texture, and the 3D close gradient. They are never grounds.
+- **Ground / Ground 2** (`ground`, `ground-2`): page background and raised panels (area cards, console shell).
+- **Ink / Ink 2** (`ink`, `ink-2`): primary text and secondary text; ink also draws focus rings and ghost-button outlines.
+- **Rule** (`rule`, ink at 14–20% alpha): hairlines, card borders, timeline track, footer rule, stuck top-bar edge.
 
 ### Named Rules
-**The Region Ownership Rule.** The active face's region color owns whole blocks: the inserted area's project plate and the close section. It never appears as a scattered accent over another face's ground.
+**The Same Roles Rule.** Every face fills every role, and components reference roles only (`var(--cta)`, never a hex). A new surface that needs a colour a role doesn't cover needs a new role in all five faces, not a one-off.
 
-**The Snow Is Not a Ground Rule.** Full-stack's #E7E3D4 is a legend color only; the Full-stack face is never a beige ground with brown ink.
+**The Signal Is Not a Background Rule.** Signal marks things (dots, lines, rails, underlines, icon strokes); it never carries text. `on-signal` is declared but unused, and neutral's pair measures 4.37:1, under AA.
 
-**The Pinned Palette Rule.** Palette values are owner-pinned and change only with the owner. The AI palette is approved as built and stays exactly as is.
+**The AA Pair Rule.** Text pairs ship at 4.5:1 or better on every face. Measured from tokens.css: ink/ground 6.90–16.21, ink-2/ground 5.19–10.65, on-cta/cta 5.20–14.22, on-region/region 4.80–10.95, on-region-2/region 4.78–7.33, scr-fg/scr 11.72–17.72, on-acc/scr-acc 6.22–8.41.
 
 ## Typography
 
-**Display Font:** per face: Archivo at width 118 (neutral), Funnel Display (Full-stack), Unbounded (AI), Doto (Data, display only), Michroma (3D)
-**Body Font:** Archivo (with system-ui, sans-serif) on every face
-**Label/Mono Font:** none; code versions use Archivo at width 75
+**Display Font:** per face: Archivo (`wdth` 118, 780), Funnel Display (800), Unbounded (600), Doto (900), Michroma (400), each with a system fallback
+**Body Font:** Archivo Variable (with system-ui, sans-serif)
+**Label/Mono Font:** Doto 900 for console numerals on every face; the system monospace stack for the terminal and key caps
 
-**Character:** a wide, heavy engineered sans on the chassis; each module swaps only the display voice, so the face is recognizable with content removed while body text stays steady.
+**Character:** A steady, wide grotesque carries all reading while the display face changes personality per area: wide and heavy, friendly-geometric, rounded-futurist, dot-matrix, technical-extended. Doto belongs to display and counters only.
 
 ### Hierarchy
-- **Display** (face weight, 2.3–5rem × k, line-height 1): the 10-second line. Balanced wrapping, max 60rem.
-- **Close** (face weight, 2.4–6rem × k, 1): the closing question, max 12ch.
-- **Headline** (face weight, 2.2–4rem × k, 1): project titles.
-- **Title** (face weight, 2–3.4rem × k, 1): section titles ("Work", "How I got here").
-- **Numeral** (300, 2–3rem, 1, Archivo width 70): slot numbers 01–04; the timeline years use the same voice at 1.6rem.
-- **Body** (400, 1rem, 1.5): running text; lead line 1–1.15rem, max 52ch; project descriptions 1.05rem, max 46ch.
-- **Label** (650, 0.875–1.2rem): call-to-action, slot names (max 14ch), strong inline terms, links.
-- **Meta** (400, 0.8–0.9rem, ink-2): slot meta, spec terms, section notes.
+- **Display** (face weight, line-height .96, face tracking): every `h1`/`h2`/`h3`, the wordmark, cartridge titles, the closing email.
+- **Headline** (hero line `calc(clamp(2.05rem, 4.1vw, 4.2rem) * k)`, line-height 1.02; section titles from `clamp(2.3rem, 7vw, 6.6rem)` to `clamp(3.2rem, 10vw, 7.5rem)` times `k`): balanced with `text-wrap: balance`.
+- **Title** (750, `clamp(.98rem, 1.35vw, 1.28rem)`, 1.12): area card names; project titles inside the screen use the display face at `clamp(2.1rem, 3.4vw, 3.5rem) * k`.
+- **Body** (400, 1.0625rem, 1.55): running text; lead and notes held to 34rem–52ch, colour `ink-2`.
+- **Label** (700–800, .6875–.8125rem, .08–.14em tracking, uppercase): console silkscreen, field labels inside cartridges and project steps, badges, the hero interaction hint.
 
 ### Named Rules
-**The Size Multiplier Rule.** Display sizes are one clamp scale multiplied by the face's `k` (neutral 1, Full-stack 1.04, AI 0.86, Data 0.9, 3D 0.8), so wider faces shrink and the copy block keeps one height.
+**The Optical Factor Rule.** Every display size is multiplied by the face's `--k` (neutral 1, fullstack 1.04, ai .86, data .9, design .8) so all five faces fill the same box and the layout never moves on a face change.
 
-**The Lining Numerals Rule.** The whole document sets `lining-nums tabular-nums`; slot numbers and years never use oldstyle figures.
+**The Body Never Changes Rule.** Archivo carries all body, UI and label text on every face. The display face never sets paragraphs; Doto never sets running text.
 
-**The Doto Is Display Only Rule.** The dot-matrix face sets display roles only; Data body text stays Archivo.
+**The Labels Are Silkscreen Rule.** Uppercase tracked labels name a device part or a data field (console header, cartridge fields, viewport tag, step names). They never sit over a headline as a kicker.
 
 ## Layout
 
-A single column under a sticky rail (64px, 56px at 640px and below), with a fluid side gutter (16–56px). The first viewport is a fixed-height copy block (318–384px, bottom-aligned) holding the 10-second line and lead, then the slot row: four equal columns between hairline rules, a 2×2 grid at 640px and below. Because the copy block has one height for every face, the slot row lands at the same y on all five faces.
+A single column of full-bleed sections with a fluid gutter (`clamp(16px, 4vw, 56px)`) under a fixed 64px top bar. The hero fills `100svh`: copy left (max `min(760px, 64%)`), the 3D stage absolutely placed on the right 62%, four area cards in a row along the bottom. Work is capped at 1360px and centred; About splits into two columns from 900px; Close is a left-aligned stack.
 
-Below the fold: Work (project plates stacked with 20–32px gaps; the active area's project is reordered first), About (4/8 split: intro and a five-stop timeline that draws in), then the full-bleed close section. Sections are separated by 72–140px of top padding. Project plates split 5/7 (text, evidence); at 900px and below plates, About and the timeline go to one column, with the timeline turning vertical.
+Responsive: at 760px the hero restacks to stage, copy, cards with cards in a 2×2 grid, and the copy block reserves the tallest face's headline height per width band (310–482px) so the card row never jumps on a face change. Below 860px the console's slots go 2×2 and project views stack. At 640px nav labels collapse to icons with 44px targets. Section padding is fluid (`clamp(56px, 9vw, 130px)` to `clamp(80px, 13vw, 190px)`); gaps inside groups run 6–18px.
 
-**The Registration Rule.** All five faces share the grid to the pixel. Switching faces changes only what content is made of; it never moves the slot row or reflows the layout. Reordering projects by active area is the only sanctioned change, and it happens below the fold.
+**The Bench Doesn't Move Rule.** A face change may alter colour, type and motion but never a box's position or size; anything whose height depends on the face reserves the tallest face's space.
 
 ## Elevation & Depth
 
-No shadows anywhere. Depth comes from a plate laid over the layer beneath it: a seated slot lifts 6px up and left onto ground-2 while a ground-colored layer with a 1px ink border stays behind at the original position, so the offset reads as a module seated proud of the chassis. Everything else is flat, separated by 1px rules and ground/ground-2 tone.
+Depth is carried by two objects, not by layered cards. The 3D piece (baked Blender GLB per face with five material roles: body, secondary, metal, accent, glass; baked AO, flat soft lighting, environment only on metal) floats over the hero and follows the cursor, tilt or drag. The console is the one physical-looking surface. Everything else is flat on the field, with soft negative-spread shadows that appear on lift or hover.
+
+Behind all of it sit two fixed layers: the per-face texture (none; ai dot grid 22px; data 40px scanlines; design 40px graph grid) and the canvas dot field (neutral: scattered dots pushed by the cursor; fullstack: square tiles stacking into blocks; ai: node graph with lit edges and travelling pulses; data: dot-bar columns with signal caps; design: a rotating perspective wireframe plane). Elements marked as calm zones damp the field behind text.
+
+### Shadow Vocabulary
+- **Card rest** (`box-shadow: 0 1px 0 var(--rule), 0 18px 30px -24px #0007`): area cards at rest.
+- **Card lift** (`box-shadow: 0 26px 40px -22px #0009`): area card under the pointer, with 14px translateZ.
+- **Action glow** (`box-shadow: 0 10px 24px -14px var(--cta)`, hover `0 18px 30px -14px`): the top-bar Write to me; other primary buttons gain `0 10px 28px -12px` ink or cta at 55–70% on hover only.
+- **Console shell** (`box-shadow: 0 0 0 1px var(--rule), 0 36px 70px -36px rgba(8,14,28,.55), inset 0 1px 0 ink 8%`).
+- **CRT screen** (`box-shadow: 0 0 0 2px #000, inset 0 0 90px rgba(0,0,0,.5)`), plus 3px scanlines and a slow glare band.
+- **Console key edge** (`box-shadow: 0 4px 0 color-mix(scr-acc 48%, #000)`; 5px on hover, 1px pressed): keys and cartridges only.
+- **Stuck bar** (`backdrop-filter: blur(10px)`, ground at 82%, `0 1px 0 var(--rule)`).
 
 ### Named Rules
-**The Seated Plate Rule.** The 6px offset plate is reserved for the seated state of a slot. It is a real layer with the ground's own color and an ink hairline, not a shadow, and it does not decorate resting elements.
-
-**The No Glow Rule.** No soft drop shadows, no glow, no blur.
+**The Hard Edge Lives in the Console Rule.** Zero-blur offset shadows are the plastic of the console's keys and cartridges and appear nowhere else. Outside the console, shadows are soft, negative-spread and state-driven.
 
 ## Shapes
 
-Milled geometry: straight edges and one small radius (3px) on plates, buttons, pending tags, tooltips and focus rings. Device screenshots are the single exception at 10px, framing phone captures. Slots are square-cornered cells defined by hairline rules. The timeline nodes are the only circles. Textures are structural per face: AI a 22px dot grid, Data 40px horizontal scanlines, 3D a 40px blueprint grid; the neutral and Full-stack faces are plain.
+Small, near-square corners outside the console (3px; area cards 9px), rounder toys inside it: keys 6px, cartridges `10px 10px 4px 4px` with a grip tab on top and contact pins below, chips and badges 4px, the screen `clamp(8px, 1.2vw, 14px)`, the shell `clamp(16px, 2.2vw, 26px)`. Circles are reserved for the cursor ring, the signal dots, LEDs and square-round console arrows. Empty or pending things use a dashed outline (`1.5px dashed`) on the site and a 135° hatch inside the screen. Icons are inline SVG line drawings (stroke 2.2, round caps) that animate only on hover or selection.
 
 ## Components
 
 ### Buttons
-- **Shape:** gently milled corners (3px).
-- **Call-to-action:** one per surface, in the rail ("Write to me", with a mail icon). Each face assigns its own cta/on-cta pair; 650 weight, 0.7em × 1.15em padding (0.55em × 0.9em on phones).
-- **Hover / Active:** lifts 2px on the spring easing, presses 1px down on active.
+Tactile and quick: they lean toward the pointer, lift their glyph, and squash when pressed.
+- **Shape:** near-square (3px).
+- **Primary:** `cta` fill, `on-cta` text, 650–700 weight at 1rem, 48–52px tall (44px in the top bar), icon left.
+- **Hover / Focus:** arrow or icon lifts up-right on a spring, label letters hop or roll, a soft cursor-tracked spotlight; focus is a 3px ink outline at 3px offset. Pressed scales to .94–.96.
+- **Ghost:** transparent with a 1.5px ink outline and ink text; hover tints 8% ink.
 
-### Module Slot (signature)
-- **Structure:** a button cell with a five-color palette edge at the top (10px, 18px when seated), the slot number, the area name, and a meta line ("1 project" / "Mock only" with an Insert or Eject action).
-- **State:** `aria-pressed` carries the seated state; seated slots take ground-2 and the Seated Plate offset.
-- **Hover, per face in its own material:** neutral lifts 3px; Full-stack fills the lower 38% with the plate color from the base; AI spreads an amber ripple from the pointer position; Data steps its background and number color in four frames; 3D closes an outline in the signal color toward the edge.
+### Chips
+- **Style:** inside the screen only: 32px, 4px radius, 2px inset `scr-line` outline, `scr-fg` text 700.
+- **State:** hover lifts 2px and the outline turns `scr-acc`. Badges are the filled variant (scr-acc at 20%) with a square signal pip, uppercase.
 
-### Rail (navigation)
-- Sticky, ground-colored, bottom hairline. Name at left (700, width 112); CV, LinkedIn, GitHub and the call-to-action at right in ink-2, ink with underline on hover. Under 640px the labels give way to 18px line icons.
+### Cards / Containers
+- **Corner Style:** 9px.
+- **Background:** `ground-2`; selected card fills `region` with `on-region` text and icon.
+- **Shadow Strategy:** card rest / card lift (see Elevation).
+- **Border:** 1px `rule`; none when selected.
+- **Internal Padding:** `clamp(12px, 1.4vw, 18px)`. Each area card carries its icon, number, name, project count, and a five-swatch strip of its palette that extends on hover or selection. Cards tilt in 3D toward the pointer with a soft-light glare.
 
-### Project Plate
-- **Corner Style:** 3px. **Border:** 1px rule; transparent when the plate takes a region color.
-- **Background:** ground-2 by default; the active area's project takes the region color with on-region inks (neutral: first plate yellow, second plate sky blue).
-- **Internal Padding:** 24–44px. Contents: headline, description, a spec list (term/value grid under a rule), links, and evidence (phone screenshots staggered 28px, or a component tree).
+### Navigation
+- **Style:** transparent fixed bar over the field; after scrolling, ground at 82% with a 10px blur and a rule hairline. Wordmark in the display face with a pulsing signal dot; links at .9rem with an icon and a 2px underline that wipes in from the left; pending links (CV) render dashed and inert. Below 640px links show icons only at 44px.
 
-### Pending Link
-- A link with no target yet: ink-2, dashed underline, help cursor, never colored or underlined like a live link. A tap or Enter shows a "Link coming soon" tooltip in an ink plate. Pending actions inside a plate use a dashed 1px tag instead.
+### Work Console (signature)
+A handheld console: shell in site tokens, LED and "Projects" silkscreen on top, speaker grille, a hint line with key caps at the bottom. The screen switches views (select, loading bar of ten cells, project) without moving the console. Project views hold a framed viewport (corner brackets in `scr-acc`, a tag notched into the frame) with a phone-screenshot reel or a typed terminal, plus title, pitch, labelled steps, stack chips, proof badges and keys. Motion inside is stepped (`steps(2–8)`); a rejected action shakes the cartridge.
 
-### Close Section
-- Full-bleed region color with on-region inks: the closing question, the email address at 1.2–1.8rem, and secondary links in on-region-2. On the 3D face a 10px gradient bar runs red, orange, pink to ultramarine across its top.
+### Interaction Layer
+A 68px difference-blend ring cursor (white, scales to a filled disc over targets; hidden on coarse pointers); a circular `plate` wipe from the click point on area change (760ms); word-by-word headline reveals and 26px rise reveals that use the face's seat timing.
 
-### Motion
-Face changes run as a view transition: the new face grows from the pressed slot's box (eject shrinks back into it), using the face's own seat timing: neutral 0.62s spring, Full-stack 0.7s spring, AI 0.9s ease-in-out, Data 0.48s in eight steps, 3D 0.8s spring. The spring has overshoot and damping. Under `prefers-reduced-motion` every transition and animation is cut.
-
-**The Ballistics Rule.** Every reskin moves with mass and the face's own seat timing. No linear fades, no instant swaps, except the immediate cut under reduced motion.
+**The Seat Timing Rule.** Every face-driven transition uses `--seat-dur` / `--seat-ease`: neutral .62s spring, fullstack .7s spring, ai .9s `cubic-bezier(.65, 0, .35, 1)`, data .48s `steps(8, end)`, design .8s spring. `prefers-reduced-motion` removes animation, the wipe and stage parallax and shows all content at rest.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** define every new face or surface through the shared role set, so layout code reads only roles.
-- **Do** keep the copy block at its single shared height so the slot row registers across faces.
-- **Do** let the active palette own whole regions (project plate, close section).
-- **Do** give each face its own hover material and seat timing.
-- **Do** keep every text/ground pairing at WCAG AA and focus indicators at 3:1 or better against their ground.
-- **Do** render pending links as dashed ink-2 text that explains itself on tap.
+- **Do** reference role tokens (`--ink`, `--cta`, `--region`, `--scr-acc`) so a component works on all five faces.
+- **Do** multiply every display size by `--k` and reserve the tallest face's height where a block's height depends on the face.
+- **Do** keep Archivo for body and UI on every face; the display face sets headlines, the wordmark, cartridge titles and the email.
+- **Do** keep text pairs at 4.5:1 or better on every face; check all five when adding a pair.
+- **Do** give touch targets at least 44px and a 3px ink focus ring.
+- **Do** mark text blocks as calm zones so the field damps behind them.
 
 ### Don't:
-- **Don't** move layout between faces.
-- **Don't** use soft drop shadows or glow; depth is layer overlap.
-- **Don't** put kicker or eyebrow labels above headings.
-- **Don't** make a pending link look live.
-- **Don't** use a beige ground or brown ink on the Full-stack face.
-- **Don't** add hardware costume (screws, knobs, LEDs) that does not map to structure or state.
-- **Don't** use dark-plus-neon glow, skill-percentage bars or contribution counters.
+- **Don't** put text on `signal`; it is a marking colour.
+- **Don't** hardcode a face's hex in a component; the cartridge labels are the only pinned exception.
+- **Don't** use zero-blur offset shadows outside the console.
+- **Don't** set paragraphs in a display face or Doto.
+- **Don't** change layout per face; faces change light, not the bench.
+- **Don't** put uppercase tracked labels above headlines as kickers.
+- **Don't** use glyph or emoji icons; icons are inline SVG line drawings.

@@ -188,10 +188,11 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
           <section ref={screen.register('select')} className={`view v-select${view === 'select' ? ' on' : ''}`} inert={view !== 'select'} aria-labelledby="h-select">
             <div className="sel__head">
               <h3 className="display" id="h-select">Select project</h3>
-              <div className="sel__count" aria-label={`${LOADED} projects loaded, ${SLOTS.length - LOADED} empty slots`}>
+              <p className="sel__count">
                 <span className="eq" aria-hidden="true">{[0, 1, 2, 3, 4, 5].map((n) => <i key={n} style={{ '--n': n } as CSSProperties} />)}</span>
                 <span aria-hidden="true">{LOADED} loaded &middot; {SLOTS.length - LOADED} empty</span>
-              </div>
+                <span className="sr">{LOADED} projects loaded, {SLOTS.length - LOADED} empty slots</span>
+              </p>
             </div>
             <div className="slots">
               {SLOTS.map((slot, i) => (
@@ -202,7 +203,7 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
 
           <section ref={screen.register('load')} className={`view v-load${view === 'load' ? ' on' : ''}`} inert={view !== 'load'} aria-hidden="true">
             <p>{screen.load.no}</p>
-            <h3 className="display">{screen.load.name}</h3>
+            <p className="v-load__name display">{screen.load.name}</p>
             <div className="bar10">
               {Array.from({ length: screen.loadCells }, (_, n) => <i key={n} className={n < screen.load.filled ? 'f' : undefined} />)}
             </div>

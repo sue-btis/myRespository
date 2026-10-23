@@ -36,7 +36,6 @@ html[data-face="neutral"] {
   --ink: #1B2A4A; --ink-2: #3C4A66; --signal: #00887A;
   --on-signal: #FFFFFF; --cta: #1B2A4A; --on-cta: #FFFFFF;
   --region: #D3E3FC; --on-region: #1B2A4A; --on-region-2: #33456B;
-  --region-alt: #FFCCBC; --on-region-alt-2: #5A2F22;
   --rule: #1B2A4A2E;
   --display: "Archivo Variable", system-ui, sans-serif;
   --display-wdth: 118; --display-wght: 780; --display-track: -0.035em; --k: 1;
@@ -59,7 +58,6 @@ html[data-face="ai"] {
   --ink: #CFE6EA; --ink-2: #A4CCD4; --signal: #E2480C;
   --on-signal: #1A0703; --cta: #A4CCD4; --on-cta: #1F3445;
   --region: #E2480C; --on-region: #1A0703; --on-region-2: #1A0703;
-  --ripple: #E2480C38;
   --rule: #A4CCD42E;
   --display: "Unbounded Variable", system-ui, sans-serif;
   --display-wdth: 100; --display-wght: 600; --display-track: -0.03em; --k: .86;
@@ -90,3 +88,9 @@ html[data-face="design"] {
     linear-gradient(90deg, #F2F0EE0F 1px, transparent 1px) 0 0 / 40px 40px;
   --seat-dur: .8s; --seat-ease: var(--spring);
 }
+
+html[data-face="neutral"] { --scr: #10203A; --scr-fg: #FFFFFF; --scr-acc: #77A6F7; --on-acc: #10203A; --led: #00887A; }
+html[data-face="fullstack"] { --scr: #0B1630; --scr-fg: #D7E6F9; --scr-acc: #6FAAF2; --on-acc: #0B1630; --led: #B23850; }
+html[data-face="ai"] { --scr: #13273A; --scr-fg: #CFE6EA; --scr-acc: #FF8A5C; --on-acc: #1A0703; --led: #E2480C; }
+html[data-face="data"] { --scr: #141C45; --scr-fg: #EDE8F5; --scr-acc: #9DB4F5; --on-acc: #121A3A; --led: #7091E6; }
+html[data-face="design"] { --scr: #070707; --scr-fg: #F2F0EE; --scr-acc: #F95CA4; --on-acc: #141414; --led: #ED7845; }

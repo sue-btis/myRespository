@@ -1,5 +1,5 @@
 .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .05em .03em .16em; margin: -.05em -.03em -.16em; }
-.w__i { display: inline-block; will-change: transform; }
+.w__i { display: inline-block; }
 .js [data-split] .w__i { transform: translateY(118%); }
 .js [data-split].in .w__i { transform: none; transition: transform var(--seat-dur) var(--seat-ease); transition-delay: calc(var(--i) * 60ms + var(--d, 0) * 1ms); }
 .js [data-reveal] { opacity: 0; transform: translateY(26px); }
@@ -46,10 +46,11 @@
 }
 
 .cursor {
-  position: fixed; left: 0; top: 0; z-index: 130; width: 36px; height: 36px; margin: -18px 0 0 -18px; border: 1.5px solid #fff;
-  border-radius: 50%; mix-blend-mode: difference; pointer-events: none; opacity: 0;
-  transition: width .35s var(--spring), height .35s var(--spring), margin .35s var(--spring), opacity .3s, background .3s;
+  position: fixed; left: 0; top: 0; z-index: 130; width: 68px; height: 68px; margin: -34px 0 0 -34px; border: 2.8px solid #fff;
+  border-radius: 50%; mix-blend-mode: difference; pointer-events: none; opacity: 0; scale: .53;
+  transition: scale .35s var(--spring), opacity .3s, background .3s;
 }
 .cursor.on { opacity: 1; }
-.cursor.big { width: 68px; height: 68px; margin: -34px 0 0 -34px; background: #fff; }
+/* `scale` composes with the translate the cursor engine writes to `transform`, so growing it never triggers layout. */
+.cursor.big { scale: 1; background: #fff; }
 @media (hover: none), (pointer: coarse) { .cursor { display: none; } }

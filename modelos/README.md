@@ -16,7 +16,7 @@ En `ai`, cada `arista_NN` lleva `arista: "nodo_03>nodo_11"` (nombres de partes s
 
     & 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' -b --python-exit-code 1 --python modelos/piezas.py -- [--solo ai,data] [--muestras 96] [--muestras-ao 96] [--resolucion 100] [--sin-bake] [--sin-render]
 
-Salida: `modelos/piezas.blend`, `modelos/render/*.png` (`<pieza>.png`, `-explotado`, `-ao` = solo el AO; `hoja.png` solo sin `--solo`) y `public/models/<clave>.glb`.
+Salida: `modelos/piezas.blend`, `modelos/render/*.png` (`<pieza>.png`, `-explotado`, `-ao` = solo el AO; `hoja.png` solo sin `--solo`) y `src/assets/models/<clave>.glb`.
 Pasos: densifica las caras grandes, hornea AO (Cycles, por vertice) al atributo de color `ao` y exporta GLB con Draco, extras y Y-up.
 En el GLB el atributo `ao` sale como `COLOR_0` (glTF no nombra atributos de color); es gris lineal, para multiplicarlo con el color del rol.
 

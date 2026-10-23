@@ -6,15 +6,19 @@ import type { Face } from '../useFace'
 
 export type SceneApi = {
   setFace(face: Face): void
+  /** Starts fetching a face's piece without showing it, for when the visitor signals they may pick it. */
+  prefetch(face: Face): void
   setHeroProgress(p: number): void
   destroy(): void
 }
+
+// Imported through Vite so each GLB gets a content-hashed URL and a re-export busts the long cache.
+const MODEL_URLS = import.meta.glob<string>('../assets/models/*.glb', { query: '?url', import: 'default', eager: true })
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v))
 const easeInOut = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - (-2 * x + 2) ** 3 / 2)
 const pick = <T>(xs: T[]) => xs[Math.floor(Math.random() * xs.length)]
 
-const FACES: Face[] = ['neutral', 'fullstack', 'ai', 'data', 'design']
 const ROLES = ['cuerpo', 'secundario', 'metal', 'acento', 'vidrio'] as const
 type Role = (typeof ROLES)[number]
 
@@ -378,7 +382,7 @@ export async function initScene(stage: HTMLElement, startFace: Face, coarse: boo
   }
 
   async function build(face: Face): Promise<Piece> {
-    const gltf = await loader.loadAsync(`${import.meta.env.BASE_URL}models/${face}.glb`)
+    const gltf = await loader.loadAsync(MODEL_URLS[`../assets/models/${face}.glb`])
     const g = gltf.scene
     const nodes = [...g.children]
     g.traverse((o) => {
@@ -447,7 +451,13 @@ export async function initScene(stage: HTMLElement, startFace: Face, coarse: boo
   }
 
   try {
-    await ensure(startFace)
+    const first = await ensure(startFace)
+    // Compiling in parallel keeps the first render from blocking on shader linking. Invisible objects are skipped,
+    // and without the extension compileAsync only logs a warning.
+    if (renderer.extensions.has('KHR_parallel_shader_compile')) {
+      first.wrap.visible = true
+      await renderer.compileAsync(scene, camera)
+    }
   } catch (err) {
     teardown()
     throw err
@@ -572,16 +582,10 @@ export async function initScene(stage: HTMLElement, startFace: Face, coarse: boo
   stage.classList.add('live')
   run()
 
-  const rest = FACES.filter((f) => f !== startFace)
-  const whenIdle = (fn: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 4000 }) : setTimeout(fn, 1500))
-  const preload = () => {
-    const next = rest.shift()
-    if (!next || dead) return
-    whenIdle(() => { ensure(next).catch(() => {}).finally(preload) })
-  }
-  preload()
-
   return {
+    prefetch(face) {
+      if (!dead) ensure(face).catch(() => {})
+    },
     setFace(next) {
       st.face = next; st.punch = -0.2; st.pv = 0; st.wave = 1
       waveMat.color.set(PAL[next].signal)

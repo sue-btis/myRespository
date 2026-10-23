@@ -1538,7 +1538,7 @@ PIEZAS = [  # clave, funcion, nombre de archivo, rotulo
 ]
 PRESUPUESTO_TRIS = {'fullstack': 33000, 'ai': 27000, 'data': 32000, 'design': 28000}
 PRESUPUESTO_DEFECTO = 40000  # el tope real es el GLB: ~7-9 bytes por triangulo con Draco
-SALIDA_GLB = RAIZ.parent / 'public' / 'models'
+SALIDA_GLB = RAIZ.parent / 'src' / 'assets' / 'models'
 
 
 def esquinas(col):

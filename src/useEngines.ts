@@ -16,6 +16,25 @@ function setThemeColor() {
 
 const byId = <T extends HTMLElement>(id: string) => document.getElementById(id) as T
 
+function afterLoadAndIdle(run: () => void) {
+  let cancel = () => {}
+  const go = () => {
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(run, { timeout: 2500 })
+      cancel = () => cancelIdleCallback(id)
+    } else {
+      const id = setTimeout(run, 200)
+      cancel = () => clearTimeout(id)
+    }
+  }
+  if (document.readyState === 'complete') go()
+  else addEventListener('load', go, { once: true })
+  return () => {
+    removeEventListener('load', go)
+    cancel()
+  }
+}
+
 /**
  * Starts the imperative engines against the markup React rendered (field canvas, hero 3D scene, cursor, scroll
  * effects, pointer micro-interactions, reveals) and keeps them in step with the face. Returns whether the 3D
@@ -60,26 +79,41 @@ export function useEngines(face: Face, origin: MutableRefObject<Origin>): { scen
     scroll.update()
 
     let gone = false
+    let cancelStart = () => {}
     if (!reduced) {
-      import('./engine/scene')
-        .then(({ initScene }) => {
-          const started = faceRef.current
-          return initScene(byId('hstage'), started, coarsePointer()).then((s) => ({ s, started }))
-        })
-        .then(({ s, started }) => {
-          if (gone) { s.destroy(); return }
-          if (faceRef.current !== started) s.setFace(faceRef.current)
-          s.setHeroProgress(heroP)
-          scene.current = s
-        })
-        .catch((err) => {
-          console.warn('3D scene unavailable, using the static SVG fallback:', err)
-          if (!gone) setSceneFailed(true)
-        })
+      // The SVG fallback carries the first paint; three and the first piece start once the page has loaded and gone idle.
+      cancelStart = afterLoadAndIdle(() => {
+        import('./engine/scene')
+          .then(({ initScene }) => {
+            const started = faceRef.current
+            return initScene(byId('hstage'), started, coarsePointer()).then((s) => ({ s, started }))
+          })
+          .then(({ s, started }) => {
+            if (gone) { s.destroy(); return }
+            if (faceRef.current !== started) s.setFace(faceRef.current)
+            s.setHeroProgress(heroP)
+            scene.current = s
+          })
+          .catch((err) => {
+            console.warn('3D scene unavailable, using the static SVG fallback:', err)
+            if (!gone) setSceneFailed(true)
+          })
+      })
     }
+
+    // Hovering or focusing an area starts its piece early; delegated so Hero cards and Work slots share it.
+    const prefetch = (e: Event) => {
+      const area = (e.target as Element).closest?.<HTMLElement>('[data-area]')?.dataset.area
+      if (area) scene.current?.prefetch(area as Face)
+    }
+    document.addEventListener('pointerover', prefetch, { passive: true })
+    document.addEventListener('focusin', prefetch, { passive: true })
 
     return () => {
       gone = true
+      cancelStart()
+      document.removeEventListener('pointerover', prefetch)
+      document.removeEventListener('focusin', prefetch)
       clearTimeout(timer)
       mq.removeEventListener('change', reload)
       ro.disconnect()

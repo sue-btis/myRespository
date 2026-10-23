@@ -10,6 +10,7 @@ img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; }
 h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+main > section { scroll-margin-top: var(--rail-h); }
 ul, ol { list-style: none; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: var(--radius); }

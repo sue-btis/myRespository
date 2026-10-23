@@ -36,21 +36,11 @@ export function initInteractions(reduced: boolean, fine: boolean): () => void {
       ripple(rp, e, 'wave')
       timers.add(window.setTimeout(() => ripple(rp, null, 'wave'), 140))
     }
-    const fx = closest(e.target, '[data-rip]')
-    if (fx && enteredFrom(fx, e)) {
-      const r = fx.getBoundingClientRect(), f = document.createElement('span')
-      f.className = 'fx'
-      f.style.setProperty('--x', `${e.clientX - r.left}px`); f.style.setProperty('--y', `${e.clientY - r.top}px`)
-      fx.append(f)
-      timers.add(window.setTimeout(() => f.remove(), 900))
-    }
   })
 
   on('pointerout', (e) => {
     const card = closest(e.target, '.ac')
     if (card && enteredFrom(card, e)) off(card)
-    const wave = closest(e.target, '.hcta[data-wave]')
-    if (wave && enteredFrom(wave, e)) wave.style.transform = ''
   })
   on('pointercancel', (e) => {
     const card = closest(e.target, '.ac')
@@ -72,11 +62,6 @@ export function initInteractions(reduced: boolean, fine: boolean): () => void {
       c.style.setProperty('--rx', `${((0.5 - y) * 16).toFixed(2)}deg`)
       c.style.setProperty('--gx', `${(x * 100).toFixed(1)}%`)
       c.style.setProperty('--gy', `${(y * 100).toFixed(1)}%`)
-    }
-    const a = fine ? closest(e.target, '.hcta[data-wave]') : null
-    if (a) {
-      const r = a.getBoundingClientRect()
-      a.style.transform = `translate(${((e.clientX - r.left) / r.width - 0.5) * 10}px,${((e.clientY - r.top) / r.height - 0.5) * 8}px)`
     }
   }, true)
 

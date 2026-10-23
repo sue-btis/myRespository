@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type Ref } from 'react'
-import { AREAS, PROJECTS, WORK_NOTE, type Area, type AreaId, type Project } from '../content'
+import { useEffect, useRef, type CSSProperties, type Ref } from 'react'
+import { AREAS, PROJECTS, WORK_NOTE, type Area, type Project } from '../content'
 import { reducedMotion } from '../env'
 import type { Face } from '../useFace'
 import { useOnscreen } from '../useOnscreen'
@@ -8,37 +8,28 @@ import { Icon } from './Icon'
 import { Reel, type Stepper } from './Reel'
 import { Terminal } from './Terminal'
 
-type Toggle = (area: AreaId, src: MouseEvent<HTMLElement> | HTMLElement) => void
-type Slot = { no: string; area: Area; project?: Project }
-type Hint = { text: string; area?: Area }
+type Slot = { no: string; area: Area; project: Project }
 
 const pad = (n: number) => String(n).padStart(2, '0')
 const index = (n: number) => ({ '--i': n }) as CSSProperties
-const IDLE_HINT: Hint = { text: 'Choose a slot to load a project.' }
 const SKIP_KEYS = ['Enter', ' ', 'Escape']
 
-/** One cartridge per project, and one empty slot for each area that has none, so adding a project fills its slot. */
-const SLOTS: Slot[] = AREAS.flatMap((area) => {
-  const mine = PROJECTS.filter((p) => p.area === area.id)
-  return mine.length ? mine.map((project) => ({ area, project })) : [{ area }]
-}).map((s, i) => ({ ...s, no: pad(i + 1) }))
-const LOADED = SLOTS.filter((s) => s.project).length
+const SLOTS: Slot[] = AREAS.flatMap((area) => PROJECTS.filter((p) => p.area === area.id).map((project) => ({ area, project })))
+  .map((s, i) => ({ ...s, no: pad(i + 1) }))
 
 const linkedProject = () => PROJECTS.find((p) => p.id === location.hash.slice(1))?.id
 
 function SlotButton({ slot, ref, onOpen }: { slot: Slot; ref: Ref<HTMLButtonElement>; onOpen: (slot: Slot, el: HTMLButtonElement) => void }) {
   const { no, area, project } = slot
   return (
-    <button ref={ref} className={project ? 'slot' : 'slot slot--empty'} type="button" data-area={area.id} onClick={(e) => onOpen(slot, e.currentTarget)}>
+    <button ref={ref} className="slot" type="button" data-area={area.id} onClick={(e) => onOpen(slot, e.currentTarget)}>
       <span className="slot__label"><span className="slot__no">{no}</span><span className="slot__area">{area.name}</span></span>
-      <span className="slot__title"><span className="slot__cur" aria-hidden="true" />{project?.title ?? 'Empty slot'}</span>
+      <span className="slot__title"><span className="slot__cur" aria-hidden="true" />{project.title}</span>
       <span className="slot__meta">
-        {project
-          ? project.meta.map(([term, detail]) => <span key={term}><b>{term}</b>{detail}</span>)
-          : <span><b>Status</b>In the works</span>}
+        {project.meta.map(([term, detail]) => <span key={term}><b>{term}</b>{detail}</span>)}
       </span>
-      <span className="slot__go" aria-hidden="true"><span className="tri" />{project ? 'Load' : 'Peek'}</span>
-      {project && <span className="slot__pins" aria-hidden="true" />}
+      <span className="slot__go" aria-hidden="true"><span className="tri" />Load</span>
+      <span className="slot__pins" aria-hidden="true" />
     </button>
   )
 }
@@ -52,7 +43,8 @@ function ProjectView({ slot, project, active, live, register, stepper, onBack }:
   stepper: Ref<Stepper>
   onBack: () => void
 }) {
-  const visual = project.shots ? 'Screens' : project.plugins ? 'Workflow' : null
+  const visual = project.shots ? (project.wide ? 'Renders' : 'Screens') : project.plugins ? 'Workflow' : null
+  const hasKeys = project.links.length > 0 || !!project.pending
   return (
     <section
       ref={register}
@@ -71,7 +63,7 @@ function ProjectView({ slot, project, active, live, register, stepper, onBack }:
         {visual && (
           <div className="vp">
             <span className="vp__tag" aria-hidden="true">{visual}</span>
-            {project.shots && <Reel title={project.title} shots={project.shots} live={live} ref={stepper} />}
+            {project.shots && <Reel title={project.title} shots={project.shots} wide={project.wide} live={live} ref={stepper} />}
             {project.plugins && <Terminal plugins={project.plugins} live={live} ref={stepper} />}
           </div>
         )}
@@ -87,28 +79,52 @@ function ProjectView({ slot, project, active, live, register, stepper, onBack }:
           <div className="row" style={index(4)}>
             {project.proof.map((item) => <span className="badge" key={item}><i />{item}</span>)}
           </div>
-          <div className="ctas" style={index(5)}>
-            {project.links.map((l) => <a className="pbtn" key={l.href} href={l.href}>{l.label}<Icon name="arrow" /></a>)}
-            {project.pending && <button className="pbtn" type="button" disabled>{project.pending}</button>}
-          </div>
+          {hasKeys && (
+            <div className="ctas" style={index(5)}>
+              {project.links.map((l) => <a className="pbtn" key={l.href} href={l.href}>{l.label}<Icon name="arrow" /></a>)}
+              {project.pending && <span className="pending-note">{project.pending}</span>}
+            </div>
+          )}
         </div>
       </div>
     </section>
   )
 }
 
-export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
+export function Work({ face }: { face: Face }) {
   const screen = useScreen(linkedProject() ?? 'select')
   const consoleRef = useRef<HTMLDivElement>(null)
   const slotEls = useRef<(HTMLButtonElement | null)[]>([])
   const lastSlot = useRef<HTMLButtonElement | null>(null)
   const steppers = useRef<Record<string, Stepper | null>>({})
   const onscreen = useOnscreen(consoleRef)
-  const [hint, setHint] = useState<Hint>(IDLE_HINT)
   const { view } = screen
+  const loaded = PROJECTS.find((p) => p.id === view)
 
   useEffect(() => {
     if (linkedProject()) consoleRef.current?.scrollIntoView()
+  }, [])
+
+  // The first time the console comes into view it loads a project, so a skimmer sees one without pressing anything.
+  const autoBoot = useRef(() => {})
+  useEffect(() => {
+    autoBoot.current = () => {
+      if (view !== 'select' || screen.isBusy()) return
+      const i = Math.max(0, SLOTS.findIndex((s) => s.area.id === face))
+      lastSlot.current = slotEls.current[i]
+      void screen.go(SLOTS[i].project.id, { instant: true })
+    }
+  })
+  useEffect(() => {
+    const el = consoleRef.current
+    if (!el || linkedProject()) return
+    const io = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return
+      io.disconnect()
+      autoBoot.current()
+    }, { threshold: 0.3 })
+    io.observe(el)
+    return () => io.disconnect()
   }, [])
 
   const setHash = (id: string | null) => {
@@ -117,13 +133,7 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
 
   const open = async (slot: Slot, el: HTMLButtonElement) => {
     if (screen.isBusy()) return
-    if (!slot.project) {
-      el.classList.remove('slot--shake'); void el.offsetWidth; el.classList.add('slot--shake')
-      setHint({ text: slot.area.wip ?? 'Nothing here yet.', area: slot.area })
-      return
-    }
     lastSlot.current = el
-    setHint(IDLE_HINT)
     await screen.go(slot.project.id, { press: el, label: [slot.no, slot.project.title] })
     setHash(slot.project.id)
     screen.focus(slot.project.id)
@@ -144,7 +154,7 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
       if (SKIP_KEYS.includes(e.key)) { e.preventDefault(); e.stopPropagation(); screen.skip() }
       return
     }
-    if (e.key === 'Escape' && view !== 'select') { e.preventDefault(); e.stopPropagation(); void back(); return }
+    if (e.key === 'Escape' && view !== 'select' && onscreen) { e.preventDefault(); e.stopPropagation(); void back(); return }
     const slot = target?.closest('.slot')
     if (view === 'select' && slot) {
       const slots = slotEls.current.filter((s): s is HTMLButtonElement => !!s)
@@ -168,8 +178,6 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
     return () => document.removeEventListener('keydown', handler)
   }, [])
 
-  const peek = hint.area
-  const peeking = !!peek && face === peek.id
   return (
     <section className="work" id="work" aria-labelledby="work-title">
       <div className="work__head" data-calm>
@@ -190,11 +198,10 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
               <h3 className="display" id="h-select">Select project</h3>
               <p className="sel__count">
                 <span className="eq" aria-hidden="true">{[0, 1, 2, 3, 4, 5].map((n) => <i key={n} style={{ '--n': n } as CSSProperties} />)}</span>
-                <span aria-hidden="true">{LOADED} loaded &middot; {SLOTS.length - LOADED} empty</span>
-                <span className="sr">{LOADED} projects loaded, {SLOTS.length - LOADED} empty slots</span>
+                <span>{SLOTS.length} {SLOTS.length === 1 ? 'project' : 'projects'}</span>
               </p>
             </div>
-            <div className="slots">
+            <div className="slots" style={{ '--slots': SLOTS.length } as CSSProperties}>
               {SLOTS.map((slot, i) => (
                 <SlotButton key={slot.no} slot={slot} ref={(el) => { slotEls.current[i] = el }} onOpen={open} />
               ))}
@@ -210,7 +217,7 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
             <small>Loading</small>
           </section>
 
-          {SLOTS.map((slot) => slot.project && (
+          {SLOTS.map((slot) => (
             <ProjectView
               key={slot.project.id}
               slot={slot}
@@ -218,7 +225,7 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
               active={view === slot.project.id}
               live={view === slot.project.id && onscreen}
               register={screen.register(slot.project.id)}
-              stepper={(s) => { steppers.current[slot.project!.id] = s }}
+              stepper={(s) => { steppers.current[slot.project.id] = s }}
               onBack={() => void back()}
             />
           ))}
@@ -226,14 +233,13 @@ export function Work({ face, onToggle }: { face: Face; onToggle: Toggle }) {
 
         <div className="console__bot">
           <span className="console__hint" aria-live="polite">
-            <span>{hint.text}</span>
-            {peek && (
-              <button className="cbtn" type="button" aria-pressed={peeking} onClick={(e) => onToggle(peek.id, e.clientX || e.clientY ? e : e.currentTarget)}>
-                {peeking ? 'Back to neutral' : 'Preview this style'}
-              </button>
-            )}
+            {view === 'load' ? 'Loading.' : loaded ? `${loaded.title} loaded.` : 'Choose a project to load.'}
           </span>
-          <span className="keyhint" aria-hidden="true"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> move &nbsp; <kbd>Enter</kbd> load</span>
+          <span className="keyhint" aria-hidden="true">
+            {loaded
+              ? <><kbd>&larr;</kbd> <kbd>&rarr;</kbd> browse &nbsp; <kbd>Esc</kbd> back</>
+              : <><kbd>&larr;</kbd> <kbd>&rarr;</kbd> move &nbsp; <kbd>Enter</kbd> load</>}
+          </span>
         </div>
       </div>
     </section>

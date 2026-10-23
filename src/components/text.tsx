@@ -14,16 +14,6 @@ export function Chars({ text }: { text: string }) {
   )
 }
 
-/** Label that rolls to a copy of itself on hover. */
-export function Roll({ text }: { text: string }) {
-  return (
-    <span className="roll">
-      <span>{text}</span>
-      <span aria-hidden="true">{text}</span>
-    </span>
-  )
-}
-
 /** Words wrapped for the masked slide-in of [data-split] headings; the heading carries the aria-label. */
 export function Words({ text }: { text: string }) {
   return text.split(/\s+/).filter(Boolean).map((word, i, all) => (

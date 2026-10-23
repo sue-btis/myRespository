@@ -2,17 +2,20 @@ import today from './assets/trainlog/today.webp'
 import importReview from './assets/trainlog/import-review.webp'
 import progress from './assets/trainlog/progress.webp'
 import exerciseHistory from './assets/trainlog/exercise-history.webp'
+import reactor from './assets/pieces/reactor.webp'
+import arcade from './assets/pieces/arcade.webp'
+import neuralNetwork from './assets/pieces/neural-network.webp'
+import dataTower from './assets/pieces/data-tower.webp'
+import v8Engine from './assets/pieces/v8-engine.webp'
+import v8Exploded from './assets/pieces/v8-exploded.webp'
 
 export type AreaId = 'fullstack' | 'ai' | 'data' | 'design'
 
 export type Area = {
   id: AreaId
-  num: string
   name: string
   /** The area's palette, shown as the card's edge strip. */
   edge: string[]
-  /** Shown on the placeholder card while the area has no project. */
-  wip?: string
 }
 
 export type Plugin = {
@@ -39,8 +42,9 @@ export type Project = {
   meta: [term: string, detail: string][]
   links: { label: string; href: string }[]
   pending?: string
-  /** Screens for the carousel. */
+  /** Images for the carousel; `wide` frames them as landscape renders instead of phone screens. */
   shots?: { src: string; alt: string }[]
+  wide?: boolean
   /** Plugins for the terminal. */
   plugins?: Plugin[]
 }
@@ -49,11 +53,11 @@ export const EMAIL = 'josuee152@gmail.com'
 export const GITHUB = 'https://github.com/sue-btis'
 export const LINKEDIN = 'https://mx.linkedin.com/in/escobarjosue'
 
-export const AREAS: Area[] = [
-  { id: 'fullstack', num: '01', name: 'Full-stack & Product', edge: ['#B23850', '#3B8BEB', '#E7E3D4', '#C4DBF6', '#8590AA'] },
-  { id: 'ai', num: '02', name: 'AI & Agents', edge: ['#304C64', '#26788E', '#631B08', '#A4CCD4', '#E2480C'] },
-  { id: 'data', num: '03', name: 'Data & Analytics', edge: ['#3D52A0', '#7091E6', '#8697C4', '#ADBBDA', '#EDE8F5'], wip: 'No project here yet. A data project lands here; until then, you can preview how this area looks.' },
-  { id: 'design', num: '04', name: '3D & Engineering design', edge: ['#141414', '#273DB4', '#C50900', '#F95CA4', '#ED7845'], wip: 'No project here yet. A 3D or CAD piece lands here; until then, you can preview how this area looks.' },
+const AREA_DEFS: Area[] = [
+  { id: 'fullstack', name: 'Full-stack & Product', edge: ['#B23850', '#3B8BEB', '#E7E3D4', '#C4DBF6', '#8590AA'] },
+  { id: 'ai', name: 'AI & Agents', edge: ['#304C64', '#26788E', '#631B08', '#A4CCD4', '#E2480C'] },
+  { id: 'data', name: 'Data & Analytics', edge: ['#3D52A0', '#7091E6', '#8697C4', '#ADBBDA', '#EDE8F5'] },
+  { id: 'design', name: '3D & Engineering design', edge: ['#141414', '#273DB4', '#C50900', '#F95CA4', '#ED7845'] },
 ]
 
 export const PROJECTS: Project[] = [
@@ -110,14 +114,41 @@ export const PROJECTS: Project[] = [
       },
     ],
   },
+  {
+    id: 'pieces',
+    area: 'design',
+    title: 'Hero pieces',
+    pitch: 'The five 3D objects on this site, generated entirely from code.',
+    steps: [
+      ['Built', 'A Python script run headless in Blender 5.2 defines every part, its material role and its exploded position. The 3D & Engineering piece is a cross-plane V8 whose pistons and rods move with the crank angle.'],
+      ['Baked', 'Ambient occlusion is baked per vertex in Cycles, then each piece is exported as a Draco-compressed GLB.'],
+      ['Shipped', 'three.js loads them on demand: they are the hero object, and they come apart and reassemble when you change area.'],
+    ],
+    stack: { label: 'Pipeline', items: ['Blender 5.2', 'Python', 'Cycles', 'Draco GLB', 'three.js'] },
+    proof: ['5 pieces', '20 to 38 parts each', '23k to 31k triangles each'],
+    meta: [['Pipeline', 'Blender 5.2, Python'], ['Output', '5 Draco GLBs']],
+    links: [],
+    wide: true,
+    shots: [
+      { src: v8Engine, alt: 'V8 engine piece, assembled' },
+      { src: v8Exploded, alt: 'The same V8 engine, exploded into its parts' },
+      { src: reactor, alt: 'Reactor piece, the home object' },
+      { src: arcade, alt: 'Arcade cabinet piece, for Full-stack' },
+      { src: neuralNetwork, alt: 'Neural network piece, for AI' },
+      { src: dataTower, alt: 'Data tower piece, for Data' },
+    ],
+  },
 ]
 
-export const TIMELINE = [
+/** Areas shown on the site: an area appears once it has a project, so adding one brings it back. */
+export const AREAS: Area[] = AREA_DEFS.filter((a) => PROJECTS.some((p) => p.area === a.id))
+
+export const TIMELINE: { when: string; what: string; where?: string }[] = [
   { when: '2018', what: 'Mechatronics technician', where: 'CBTis 122' },
   { when: '2024', what: 'Biomedical engineer', where: 'UACH' },
   { when: '2024', what: 'QA data analysis intern', where: 'Teleflex' },
   { when: '2025', what: 'Data scientist', where: "Waldo's" },
-  { when: 'Now', what: 'Ecosat', where: 'Role title pending' },
+  { when: 'Now', what: 'Ecosat' },
 ]
 
 export const HERO = {
@@ -125,15 +156,14 @@ export const HERO = {
   by: 'Started in mechatronics, still building things that work.',
   lead: "I'm Josue Escobar, a full-stack and AI engineer. Pick an area to see the site the way that work looks, or just scroll.",
   hint: 'Move your cursor — the object follows',
-  hintTouch: 'Drag the object or tilt your phone',
 }
 
-export const WORK_NOTE = 'Each project carries its proof: code you can read and screens from the real thing. Pick a slot to load it.'
+export const WORK_NOTE = 'Each project carries its proof: code you can read and the real thing on screen.'
 
 export const ABOUT_INTRO = [
   'I learned to build on machines before I built software: wiring, controllers, parts that have to fit. That habit stayed. I start from how the thing is used, then build the whole of it.',
   'Off the clock: sports and music.',
 ]
 
+export const OWNER = 'Josue Escobar'
 export const CLOSE_LINE = 'Have something that needs building?'
-export const FOOTER = ['Josue Escobar', 'Dashed items have no link yet.']

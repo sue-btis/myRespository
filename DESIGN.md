@@ -140,8 +140,27 @@ typography:
     fontSize: ".75rem"
     fontWeight: 700
     letterSpacing: ".12em"
+  lead:
+    fontSize: "1.125rem"
+    lineHeight: 1.55
+  small:
+    fontSize: ".875rem"
+    fontWeight: 600
+  caption:
+    fontSize: ".8125rem"
+    fontWeight: 600
   pixel:
     fontFamily: "Doto Variable, ui-monospace, monospace"
+    fontWeight: 900
+    lineHeight: 1
+  numeral:
+    fontFamily: "Doto Variable, ui-monospace, monospace"
+    fontSize: "1.5rem"
+    fontWeight: 900
+    lineHeight: 1
+  numeral-lg:
+    fontFamily: "Doto Variable, ui-monospace, monospace"
+    fontSize: "2rem"
     fontWeight: 900
     lineHeight: 1
   mono:
@@ -149,6 +168,7 @@ typography:
     fontSize: "1rem"
     lineHeight: 1.7
 rounded:
+  pip: "2px"
   sm: "3px"
   chip: "4px"
   key: "6px"
@@ -170,8 +190,8 @@ components:
     backgroundColor: "{colors.neutral-cta}"
     textColor: "{colors.neutral-on-cta}"
     rounded: "{rounded.sm}"
-    padding: "0 24px"
-    height: "52px"
+    padding: "0 22px"
+    height: "48px"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.neutral-ink}"
@@ -221,7 +241,7 @@ components:
 
 **Creative North Star: "One Bench, Five Lights"**
 
-One engineer's workbench, lit five ways. The layout is a single fixed bench: a transparent top bar, a hero with a baked 3D piece and four area cards, a CRT game console that holds the work, a timeline, and a close. Choosing an area changes the light, not the bench: palette, display face, the grammar of the background dot field, the 3D piece and the motion timing all swap together through one set of role tokens, and every component reads only those roles. Neutral (no area chosen) is Flat Design Colors on white; Full-stack is Snowy Yet Warm; AI is Turquoise Amber Autumn on deep teal; Data is Metallic Chic lavender with pixel type; 3D & Engineering design is Gradient Pop on near-black.
+One engineer's workbench, lit five ways. The layout is a single fixed bench: a transparent top bar, a hero with a baked 3D piece and one card per area that has a project, a CRT game console that holds the work, a timeline, and a close. Choosing an area changes the light, not the bench: palette, display face, the grammar of the background dot field, the 3D piece and the motion timing all swap together through one set of role tokens, and every component reads only those roles. Neutral (no area chosen) is Flat Design Colors on white; Full-stack is Snowy Yet Warm; AI is Turquoise Amber Autumn on deep teal; Data is Metallic Chic lavender with pixel type; 3D & Engineering design is Gradient Pop on near-black.
 
 Density is low and confident: big display headlines, generous section padding, few elements per viewport. Everything is touchable and reacts (magnetic buttons, rolling labels, ripples, tilting cards, a difference-blend ring cursor), but the reaction is always a bonus over content that reads with plain scrolling. Depth comes from the 3D piece and the console, not from stacked surfaces.
 
@@ -276,7 +296,8 @@ Five complete palettes, each filling the same roles; the active face is set on `
 - **Headline** (hero line `calc(clamp(2.05rem, 4.1vw, 4.2rem) * k)`, line-height 1.02; section titles from `clamp(2.3rem, 7vw, 6.6rem)` to `clamp(3.2rem, 10vw, 7.5rem)` times `k`): balanced with `text-wrap: balance`.
 - **Title** (750, `clamp(.98rem, 1.35vw, 1.28rem)`, 1.12): area card names; project titles inside the screen use the display face at `clamp(2.1rem, 3.4vw, 3.5rem) * k`.
 - **Body** (400, 1.0625rem, 1.55): running text; lead and notes held to 34rem–52ch, colour `ink-2`.
-- **Label** (700–800, .6875–.8125rem, .08–.14em tracking, uppercase): console silkscreen, field labels inside cartridges and project steps, badges, the hero interaction hint.
+- **Label** (700–800, .75rem, .08–.14em tracking, uppercase): console silkscreen, field labels inside cartridges and project steps, badges.
+- **Lead / Small / Caption** (1.125rem; .875rem 600; .8125rem 600): About copy and timeline titles; nav links, pending notes and the hero email; card meta, footer and the hero interaction hint (sentence case, not uppercase). Console numerals use **Numeral** (Doto, 1.5rem) and the loading number **Numeral-lg** (2rem). Nothing else sets a font size.
 
 ### Named Rules
 **The Optical Factor Rule.** Every display size is multiplied by the face's `--k` (neutral 1, fullstack 1.04, ai .86, data .9, design .8) so all five faces fill the same box and the layout never moves on a face change.
@@ -287,9 +308,9 @@ Five complete palettes, each filling the same roles; the active face is set on `
 
 ## Layout
 
-A single column of full-bleed sections with a fluid gutter (`clamp(16px, 4vw, 56px)`) under a fixed 64px top bar. The hero fills `100svh`: copy left (max `min(760px, 64%)`), the 3D stage absolutely placed on the right 62%, four area cards in a row along the bottom. Work is capped at 1360px and centred; About splits into two columns from 900px; Close is a left-aligned stack.
+A single column of full-bleed sections with a fluid gutter (`clamp(16px, 4vw, 56px)`) under a fixed 64px top bar. The hero fills `100svh`: copy left (max `min(760px, 64%)`), the 3D stage absolutely placed on the right 62%, the area cards in a row along the bottom (three today; an area with no project is hidden until it has one). Work is capped at 1360px and centred; About splits into two columns from 900px; Close is a left-aligned stack.
 
-Responsive: at 760px the hero restacks to stage, copy, cards with cards in a 2×2 grid, and the copy block reserves the tallest face's headline height per width band (310–482px) so the card row never jumps on a face change. Below 860px the console's slots go 2×2 and project views stack. At 640px nav labels collapse to icons with 44px targets. Section padding is fluid (`clamp(56px, 9vw, 130px)` to `clamp(80px, 13vw, 190px)`); gaps inside groups run 6–18px.
+Responsive: at 760px the hero restacks to copy, a short stage (24svh, max 200px), then cards as compact one-per-row bars, so the headline, lead, buttons and email come first; the copy block reserves the tallest face's height per width band (295–503px) so the stage and cards never jump on a face change. The touch hint is not shown. Below 860px the console's slots go two per row and project views stack. At 640px nav labels collapse to icons with 44px targets. Section padding is fluid (`clamp(56px, 9vw, 130px)` to `clamp(80px, 13vw, 190px)`); gaps inside groups run 6–18px.
 
 **The Bench Doesn't Move Rule.** A face change may alter colour, type and motion but never a box's position or size; anything whose height depends on the face reserves the tallest face's space.
 
@@ -319,10 +340,12 @@ Small, near-square corners outside the console (3px; area cards 9px), rounder to
 
 ### Buttons
 Tactile and quick: they lean toward the pointer, lift their glyph, and squash when pressed.
+One family, `.btn`, in the hero, top bar and close: every instance shares size, weight, hover and press; each face supplies only the colours.
 - **Shape:** near-square (3px).
-- **Primary:** `cta` fill, `on-cta` text, 650–700 weight at 1rem, 48–52px tall (44px in the top bar), icon left.
-- **Hover / Focus:** arrow or icon lifts up-right on a spring, label letters hop or roll, a soft cursor-tracked spotlight; focus is a 3px ink outline at 3px offset. Pressed scales to .94–.96.
-- **Ghost:** transparent with a 1.5px ink outline and ink text; hover tints 8% ink.
+- **Primary:** `cta` fill, `on-cta` text, 700 weight at 1rem, 48px tall (`.btn--sm`, 44px, in the top bar), icon left.
+- **Hover / Focus:** icon lifts up-right on a spring, label letters hop, a soft cursor-tracked spotlight, a magnetic lean on fine pointers; focus is a 3px ink outline at 3px offset. Pressed scales to .95.
+- **Ghost:** transparent with a 1.5px outline of ink at 45% and ink text, so it always reads below the primary; hover tints 8% ink and solidifies the outline.
+- **Write to me** is a mailto link that also copies the address; a "Email copied" status (live region, visible chip) confirms it. Pending items (CV) are dashed and inert, sized like the buttons in the close row; inside the screen a pending item is plain muted text.
 
 ### Chips
 - **Style:** inside the screen only: 32px, 4px radius, 2px inset `scr-line` outline, `scr-fg` text 700.
@@ -336,13 +359,13 @@ Tactile and quick: they lean toward the pointer, lift their glyph, and squash wh
 - **Internal Padding:** `clamp(12px, 1.4vw, 18px)`. Each area card carries its icon, number, name, project count, and a five-swatch strip of its palette that extends on hover or selection. Cards tilt in 3D toward the pointer with a soft-light glare.
 
 ### Navigation
-- **Style:** transparent fixed bar over the field; after scrolling, ground at 82% with a 10px blur and a rule hairline. Wordmark in the display face with a pulsing signal dot; links at .9rem with an icon and a 2px underline that wipes in from the left; pending links (CV) render dashed and inert. Below 640px links show icons only at 44px.
+- **Style:** transparent fixed bar over the field; after scrolling, ground at 82% with a 10px blur and a rule hairline. Wordmark in the display face (scaled by `--k`) with a signal dot that pulses three times on load; links at .9rem with an icon and a 2px underline that wipes in from the left; pending links (CV) render dashed and inert. Below 640px links show icons only at 44px.
 
 ### Work Console (signature)
-A handheld console: shell in site tokens, LED and "Projects" silkscreen on top, speaker grille, a hint line with key caps at the bottom. The screen switches views (select, loading bar of ten cells, project) without moving the console. Project views hold a framed viewport (corner brackets in `scr-acc`, a tag notched into the frame) with a phone-screenshot reel or a typed terminal, plus title, pitch, labelled steps, stack chips, proof badges and keys. Motion inside is stepped (`steps(2–8)`); a rejected action shakes the cartridge.
+A handheld console: shell in site tokens, LED and "Projects" silkscreen on top, speaker grille, a status line with key caps at the bottom that follows the screen ("Choose a project to load" or "<Project> loaded" with Esc back). The first time it scrolls into view it loads the active area's project (else the first) with no animation; cartridges switch projects and Back returns to the slots. Only areas with a project get a cartridge. The screen switches views (select, loading bar of ten cells, project) without moving the console. Project views hold a framed viewport (corner brackets in `scr-acc`, a tag notched into the frame) with a phone-screenshot reel, a landscape render reel (the 3D showcase: stills exported from the Blender pipeline's renders) or a typed terminal, plus title, pitch, labelled steps, stack chips, proof badges and keys. Motion inside is stepped (`steps(2–8)`); a rejected action shakes the cartridge.
 
 ### Interaction Layer
-A 68px difference-blend ring cursor (white, scales to a filled disc over targets; hidden on coarse pointers); a circular `plate` wipe from the click point on area change (760ms); word-by-word headline reveals and 26px rise reveals that use the face's seat timing.
+A 44px difference-blend ring cursor (white; over targets it grows to full size with a faint 16% fill so labels stay readable; hidden on coarse pointers); a circular `plate` wipe from the click point on area change (760ms); word-by-word headline reveals and 26px rise reveals that use the face's seat timing.
 
 **The Seat Timing Rule.** Every face-driven transition uses `--seat-dur` / `--seat-ease`: neutral .62s spring, fullstack .7s spring, ai .9s `cubic-bezier(.65, 0, .35, 1)`, data .48s `steps(8, end)`, design .8s spring. `prefers-reduced-motion` removes animation, the wipe and stage parallax and shows all content at rest.
 

@@ -7,21 +7,6 @@
   100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
 }
 
-.hcta {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px;
-  border: 0; border-radius: var(--radius); background: var(--cta); color: var(--on-cta); font-weight: 700; font-size: 1rem;
-  text-decoration: none; cursor: pointer; transition: transform .45s var(--spring), box-shadow .3s, background-color .3s;
-}
-.hcta svg { width: 18px; height: 18px; flex: none; transition: transform .45s var(--spring); }
-.hcta:hover { box-shadow: 0 10px 28px -10px color-mix(in srgb, var(--cta) 70%, transparent); }
-.hcta:hover svg { transform: translate(3px, -3px); }
-.hcta:active { transform: scale(.95); }
-.hcta .lbl { white-space: nowrap; }
-.hcta .ch { display: inline-block; transition: transform .35s var(--spring); transition-delay: calc(var(--i) * 28ms); }
-.hcta:hover .ch, .hcta:focus-visible .ch { transform: translateY(-3px); }
-.hcta--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
-.hcta--ghost:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); box-shadow: inset 0 0 0 1.5px var(--ink); }
-
 .hero {
   position: relative; min-height: 100svh;
   padding: calc(var(--rail-h) + clamp(20px, 4vh, 48px)) var(--gutter) clamp(24px, 4vh, 40px);
@@ -40,18 +25,19 @@
 .hline { font-size: calc(clamp(2.05rem, 4.1vw, 4.2rem) * var(--k)); line-height: 1.02; text-wrap: balance; }
 .hw { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .04em .1em; margin: 0 -.04em -.1em; }
 .hw > span { display: inline-block; }
-.hby { margin-top: clamp(14px, 2.4vh, 24px); max-width: 52ch; font-size: clamp(1rem, 1.25vw, 1.15rem); color: var(--ink-2); }
+.hby { margin-top: clamp(14px, 2.4vh, 24px); max-width: 52ch; font-size: clamp(1rem, 1.25vw, 1.125rem); color: var(--ink-2); }
 .hby strong { color: var(--ink); }
 .hctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(18px, 3vh, 30px); }
+.hmail { margin-top: 12px; font-size: .875rem; font-weight: 600; color: var(--ink-2); overflow-wrap: anywhere; user-select: all; }
 .hint {
   position: absolute; z-index: 2; right: var(--gutter); top: calc(var(--rail-h) + 14px); display: flex; align-items: center; gap: 8px;
-  font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2);
+  font-size: .8125rem; font-weight: 600; color: var(--ink-2);
 }
 .hint svg { width: 22px; height: 22px; animation: nudge 2.4s var(--ease-out) infinite; }
 @keyframes nudge { 0%, 100% { transform: translateX(-4px); } 50% { transform: translateX(5px); } }
 
 .cards {
-  position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  position: relative; z-index: 2; display: grid; grid-template-columns: repeat(var(--areas, 4), minmax(0, 1fr));
   gap: clamp(10px, 1.4vw, 18px); perspective: 1000px; margin-top: clamp(20px, 3vh, 36px);
 }
 .ac {
@@ -76,9 +62,9 @@
 .ac__ico { width: clamp(44px, 4.4vw, 64px); height: clamp(44px, 4.4vw, 64px); color: var(--ink); }
 .ac__ico svg { width: 100%; height: 100%; }
 .ac[aria-pressed="true"] .ac__ico { color: var(--on-region); }
-.ac__num { font-weight: 700; font-size: .85rem; letter-spacing: .1em; font-variant-numeric: tabular-nums; }
+.ac__num { font-weight: 700; font-size: .8125rem; letter-spacing: .1em; font-variant-numeric: tabular-nums; }
 .ac__name { font-weight: 750; font-size: clamp(.98rem, 1.35vw, 1.28rem); line-height: 1.12; letter-spacing: -.01em; margin-top: auto; }
-.ac__meta { font-size: .82rem; font-weight: 600; color: var(--ink-2); display: flex; justify-content: space-between; gap: 8px; width: 100%; }
+.ac__meta { font-size: .8125rem; font-weight: 600; color: var(--ink-2); display: flex; justify-content: space-between; gap: 8px; width: 100%; }
 .ac[aria-pressed="true"] .ac__meta { color: var(--on-region-2); }
 .ac__edge { display: flex; width: 100%; height: 5px; border-radius: 3px; overflow: hidden; margin-top: 6px; }
 .ac__edge i { flex: 1; transform-origin: left; transition: transform .5s var(--ease-out); }
@@ -120,21 +106,30 @@
 @keyframes lift { 50% { transform: translateY(-9px); } }
 
 @media (max-width: 760px) {
-  .hero { grid-template-rows: auto 1fr auto; padding-top: var(--rail-h); align-items: start; }
+  .hero { grid-template-rows: auto auto auto; padding-top: calc(var(--rail-h) + 8px); align-items: start; }
+  .hcopy { max-width: 100%; grid-row: 1; align-self: start; padding-top: 0; }
   .hstage {
     position: relative; top: auto; right: auto; width: calc(100% + var(--gutter) * 2); margin: 0 calc(var(--gutter) * -1);
-    height: min(40svh, 360px); grid-row: 1;
+    height: min(24svh, 200px); grid-row: 2;
   }
-  .hcopy { max-width: 100%; grid-row: 2; align-self: start; padding-top: 0; }
-  .hint { right: auto; left: var(--gutter); top: calc(var(--rail-h) + min(40svh, 360px) - 28px); }
-  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-row: 3; }
-  .ac { min-height: 150px; }
+  .hint { display: none; }
+  .cards { grid-template-columns: minmax(0, 1fr); grid-row: 3; gap: 8px; margin-top: 8px; }
+  .ac { flex-direction: row; align-items: center; gap: 12px; min-height: 64px; padding: 10px 14px; }
+  .ac__top { width: auto; }
+  .ac__num { display: none; }
+  .ac__ico { width: 40px; height: 40px; }
+  .ac__name { flex: 1; margin-top: 0; font-size: 1rem; }
+  .ac__meta { width: auto; flex-direction: column; align-items: flex-end; gap: 0; }
+  .ac__edge { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; height: 4px; border-radius: 0 0 calc(var(--radius) * 3) calc(var(--radius) * 3); }
 }
 
-/* On a phone the hero is taller than the screen, so the headline's height decides where the card row sits.
-   Reserve the tallest face's headline (measured per width band) to keep the row still when the face changes. */
-@media (max-width: 760px) { .hcopy { min-height: 310px; } }
-@media (max-width: 520px) { .hcopy { min-height: 332px; } }
-@media (max-width: 420px) { .hcopy { min-height: 362px; } }
-@media (max-width: 375px) { .hcopy { min-height: 366px; } }
-@media (max-width: 340px) { .hcopy { min-height: 482px; } }
+/* On a phone the headline's height decides where everything below it sits. Reserve the tallest face's copy block
+   (measured per width band) to keep the stage and cards still when the face changes. */
+@media (max-width: 760px) { .hcopy { min-height: 301px; } }
+@media (max-width: 609px) { .hcopy { min-height: 332px; } }
+@media (max-width: 539px) { .hcopy { min-height: 336px; } }
+@media (max-width: 449px) { .hcopy { min-height: 361px; } }
+@media (max-width: 409px) { .hcopy { min-height: 390px; } }
+@media (max-width: 369px) { .hcopy { min-height: 396px; } }
+@media (max-width: 349px) { .hcopy { min-height: 420px; } }
+@media (max-width: 339px) { .hcopy { min-height: 509px; } }

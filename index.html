@@ -9,7 +9,8 @@
         const r = document.documentElement
         r.classList.add('js')
         const f = new URLSearchParams(location.search).get('face')
-        if (['fullstack', 'ai', 'data', 'design'].includes(f)) r.dataset.face = f
+        // Keep in sync with AREAS: an area without a project is hidden, so its face is not linkable.
+        if (['fullstack', 'ai', 'design'].includes(f)) r.dataset.face = f
       })()
     </script>
     <title>Josue Escobar — Full-stack &amp; AI engineer</title>

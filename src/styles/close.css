@@ -19,3 +19,4 @@ footer {
   padding: 22px var(--gutter) 40px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap;
   justify-content: space-between; gap: 8px; font-size: .8125rem; color: var(--ink-2);
 }
+footer a { text-underline-offset: 3px; }

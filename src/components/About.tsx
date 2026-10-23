@@ -12,7 +12,7 @@ export function About() {
       </div>
       <ol className="tl" id="tl" data-calm>
         {TIMELINE.map((t) => (
-          <li key={`${t.when}-${t.what}`} data-reveal><time>{t.when}</time><b>{t.what}</b><span>{t.where}</span></li>
+          <li key={`${t.when}-${t.what}`} data-reveal><time>{t.when}</time><b>{t.what}</b>{t.where && <span>{t.where}</span>}</li>
         ))}
       </ol>
     </section>

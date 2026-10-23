@@ -4,6 +4,7 @@ import { coarsePointer, reducedMotion } from '../env'
 import type { Face } from '../useFace'
 import { AreaIcon } from './AreaIcon'
 import { Icon } from './Icon'
+import { MailLink } from './MailLink'
 import { Chars } from './text'
 
 const EASE: Record<Face, string> = {
@@ -41,10 +42,10 @@ export function Hero({ face, hint, onToggle }: Props) {
       <div className="hstage" id="hstage" aria-hidden="true" data-calm="soft">
         <div className="fallback"><AreaIcon face={face} live /></div>
       </div>
-      {hint && (
+      {hint && !coarsePointer() && (
         <p className="hint" aria-hidden="true">
           <Icon name="drag" />
-          <span>{coarsePointer() ? HERO.hintTouch : HERO.hint}</span>
+          <span>{HERO.hint}</span>
         </p>
       )}
 
@@ -59,19 +60,21 @@ export function Hero({ face, hint, onToggle }: Props) {
         </h1>
         <p className="hby"><strong>{HERO.by}</strong> {HERO.lead}</p>
         <div className="hctas">
-          <a className="hcta" href={`mailto:${EMAIL}`} data-ripple data-wave>
+          <MailLink className="btn spot" data-mag="0.2">
             <Icon name="mail" /><span className="lbl"><Chars text="Write to me" /></span>
-          </a>
-          <a className="hcta hcta--ghost" href={GITHUB} data-ripple data-wave>
+          </MailLink>
+          <a className="btn btn--ghost spot" href={GITHUB} data-mag="0.2">
             <Icon name="github" /><span className="lbl"><Chars text="GitHub" /></span>
           </a>
         </div>
+        <p className="hmail">{EMAIL}</p>
       </div>
 
-      <div className="cards" role="group" aria-label="Choose an area. Keys 1 to 4 also work, Escape resets.">
+      <div className="cards" role="group" aria-label={`Choose an area. Keys 1 to ${AREAS.length} also work, Escape resets.`} style={{ '--areas': AREAS.length } as CSSProperties}>
         {AREAS.map((area, n) => {
           const count = PROJECTS.filter((p) => p.area === area.id).length
           const on = face === area.id
+          const projects = `${count} ${count === 1 ? 'project' : 'projects'}`
           return (
             <button
               key={area.id}
@@ -79,18 +82,19 @@ export function Hero({ face, hint, onToggle }: Props) {
               type="button"
               data-area={area.id}
               data-ripple
+              aria-label={`${area.name}, ${projects}`}
               aria-pressed={on}
               style={{ '--n': n } as CSSProperties}
               onClick={(e) => onToggle(area.id, e.clientX || e.clientY ? e : e.currentTarget)}
             >
               <span className="ac__top">
                 <span className="ac__ico"><AreaIcon face={area.id} /></span>
-                <span className="ac__num">{area.num}</span>
+                <span className="ac__num" aria-hidden="true">{String(n + 1).padStart(2, '0')}</span>
               </span>
               <span className="ac__name">{area.name}</span>
-              <span className="ac__meta">
-                <span>{count ? `${count} ${count === 1 ? 'project' : 'projects'}` : 'In the works'}</span>
-                <span>{on ? 'Selected' : 'Pick'}</span>
+              <span className="ac__meta" aria-hidden="true">
+                <span>{projects}</span>
+                {on && <span>Selected</span>}
               </span>
               <span className="ac__edge" aria-hidden="true">
                 {area.edge.map((c) => <i key={c} style={{ background: c }} />)}

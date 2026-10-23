@@ -8,8 +8,8 @@ const INTERVAL = 3400
 const SWIPE_PX = 40
 const pad = (n: number) => String(n).padStart(2, '0')
 
-/** Phone screens as a 3D carousel. Autoplays only while `live`, and stops for hover, keyboard focus and any change. */
-export function Reel({ title, shots, live, ref }: { title: string; shots: Shot[]; live: boolean; ref?: Ref<Stepper> }) {
+/** Phone screens, or landscape renders when `wide`, as a 3D carousel. Autoplays only while `live`, and stops for hover, keyboard focus and any change. */
+export function Reel({ title, shots, wide, live, ref }: { title: string; shots: Shot[]; wide?: boolean; live: boolean; ref?: Ref<Stepper> }) {
   const n = shots.length
   const [i, setI] = useState(0)
   const [moved, setMoved] = useState(false)
@@ -43,7 +43,7 @@ export function Reel({ title, shots, live, ref }: { title: string; shots: Shot[]
 
   return (
     <div
-      className="reel"
+      className={wide ? 'reel reel--wide' : 'reel'}
       role="group"
       aria-roledescription="carousel"
       aria-label={`${title} screens`}
@@ -70,7 +70,7 @@ export function Reel({ title, shots, live, ref }: { title: string; shots: Shot[]
               style={{ '--o': o, '--a': Math.min(a, 2) } as CSSProperties}
               onClick={() => { if (!dragged.current) show(k) }}
             >
-              <img src={s.src} alt={s.alt} width={780} height={1688} draggable={false} loading="lazy" />
+              <img src={s.src} alt={s.alt} width={wide ? 1000 : 780} height={wide ? 750 : 1688} draggable={false} loading="lazy" />
             </figure>
           )
         })}

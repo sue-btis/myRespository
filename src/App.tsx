@@ -3,7 +3,7 @@ import { Close } from './components/Close'
 import { Hero } from './components/Hero'
 import { Rail } from './components/Rail'
 import { Work } from './components/Work'
-import { FOOTER } from './content'
+import { OWNER } from './content'
 import { reducedMotion } from './env'
 import { useEngines } from './useEngines'
 import { useFace } from './useFace'
@@ -22,11 +22,11 @@ export function App() {
       <Rail />
       <main id="top">
         <Hero face={face} hint={!reducedMotion() && !sceneFailed} onToggle={toggle} />
-        <Work face={face} onToggle={toggle} />
+        <Work face={face} />
         <About />
         <Close />
       </main>
-      <footer>{FOOTER.map((line) => <span key={line}>{line}</span>)}</footer>
+      <footer><span>{OWNER}</span><a href="#top">Back to top</a></footer>
     </>
   )
 }

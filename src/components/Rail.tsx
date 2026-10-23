@@ -1,6 +1,7 @@
-import { EMAIL, GITHUB, LINKEDIN } from '../content'
+import { GITHUB, LINKEDIN } from '../content'
 import { Chars } from './text'
 import { Icon } from './Icon'
+import { MailLink } from './MailLink'
 import { PendingLink } from './PendingLink'
 
 export function Rail() {
@@ -18,9 +19,9 @@ export function Rail() {
           <a className="nl" href={GITHUB} aria-label="GitHub" data-mag="0.25"><Icon name="github" /><span className="t" aria-hidden="true">GitHub</span></a>
         </li>
         <li>
-          <a className="cta" href={`mailto:${EMAIL}`} aria-label="Write to me" data-mag="0.3" data-rip data-wave>
+          <MailLink side="right" className="btn btn--sm spot" aria-label="Write to me" data-mag="0.3">
             <Icon name="mail" /><span className="lbl"><Chars text="Write to me" /></span>
-          </a>
+          </MailLink>
         </li>
       </ul>
     </header>

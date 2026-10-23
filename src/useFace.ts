@@ -51,9 +51,9 @@ export function useFace(): {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey || (e.target instanceof Element && /input|textarea|select/i.test(e.target.tagName))) return
-      const i = '1234'.indexOf(e.key)
+      const area = /^[1-9]$/.test(e.key) ? AREAS[Number(e.key) - 1] : undefined
       const card = (id: string) => document.querySelector(`.ac[data-area="${id}"]`) ?? undefined
-      if (i >= 0 && e.key.length === 1) toggle(AREAS[i].id, card(AREAS[i].id))
+      if (area) toggle(area.id, card(area.id))
       else if (e.key === 'Escape' && faceRef.current !== 'neutral') change('neutral', card(faceRef.current))
     }
     addEventListener('keydown', onKey)

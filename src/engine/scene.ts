@@ -477,10 +477,10 @@ export async function initScene(stage: HTMLElement, startFace: Face, coarse: boo
     const onTilt = (e: DeviceOrientationEvent) => {
       if (e.gamma != null && e.beta != null) { tx = clamp(e.gamma / 30, -1, 1); ty = clamp((e.beta - 45) / 30, -1, 1) }
     }
-    // iOS gates tilt behind a permission that must be requested from a gesture.
+    // iOS gates tilt behind a permission that must be requested from a click; the first tap on the stage asks, and without it drag still works.
     const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DOE.requestPermission === 'function') {
-      stage.addEventListener('pointerdown', () => {
+      stage.addEventListener('click', () => {
         DOE.requestPermission!().then((r) => { if (r === 'granted') addEventListener('deviceorientation', onTilt, { signal }) }).catch(() => {})
       }, { once: true, signal })
     } else addEventListener('deviceorientation', onTilt, { signal })

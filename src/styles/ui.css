@@ -10,18 +10,21 @@
 
 .btn {
   position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center;
-  gap: .7em; white-space: nowrap; flex: none; min-height: 52px; padding: 0 26px; border: 1.5px solid transparent;
-  border-radius: var(--radius); background: var(--cta); color: var(--on-cta); font-weight: 650; font-size: 1rem; text-decoration: none;
-  transition: transform .35s var(--spring), box-shadow .35s var(--ease-out);
+  gap: 10px; white-space: nowrap; flex: none; min-height: 48px; padding: 0 22px; border: 1.5px solid transparent;
+  border-radius: var(--radius); background: var(--cta); color: var(--on-cta); font-weight: 700; font-size: 1rem; text-decoration: none;
+  cursor: pointer; transition: transform .35s var(--spring), box-shadow .3s var(--ease-out), background-color .3s, border-color .3s;
 }
-.btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn:hover { box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--ink) 55%, transparent); }
-.btn:active { transform: scale(.96); }
+.btn--sm { min-height: 44px; padding: 0 18px; }
+.btn--ghost { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--ink) 45%, transparent); }
+.btn:hover { box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--cta) 65%, transparent); }
+.btn--ghost:hover { box-shadow: none; border-color: var(--ink); background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.btn:active { transform: scale(.95); }
 .btn svg { width: 18px; height: 18px; flex: none; transition: transform .45s var(--spring); }
 .btn:hover svg { transform: translate(3px, -3px) rotate(8deg); }
-.roll { display: inline-block; overflow: hidden; height: 1.25em; line-height: 1.25; }
-.roll > span { display: block; transition: transform .5s var(--ease-out); }
-:is(.btn, .lnk):hover .roll > span, :is(.btn, .lnk):focus-visible .roll > span { transform: translateY(-100%); }
+.btn .lbl { white-space: nowrap; }
+.btn .ch { display: inline-block; transition: transform .35s var(--spring); transition-delay: calc(var(--i) * 28ms); }
+.btn:hover .ch, .btn:focus-visible .ch { transform: translateY(-3px); }
+.ch.sp { width: .3em; }
 .spot::after {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .35s;
   background: radial-gradient(circle 140px at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, currentColor 22%, transparent), transparent 70%);
@@ -32,25 +35,27 @@
   background: color-mix(in srgb, currentColor 30%, transparent); transform: scale(0); animation: rpl .7s var(--ease-out) forwards;
 }
 @keyframes rpl { to { transform: scale(1); opacity: 0; } }
-.lnk { display: inline-flex; align-items: center; gap: .45em; font-weight: 650; text-decoration: none; position: relative; padding-bottom: 3px; }
-.lnk::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: currentColor;
-  transform: scaleX(.18); transform-origin: left; transition: transform .5s var(--ease-out);
-}
-.lnk:hover::after, .lnk:focus-visible::after { transform: scaleX(1); }
-.lnk svg { width: 14px; height: 14px; transition: transform .4s var(--spring); }
-.lnk:hover svg { transform: translate(3px, -3px); }
 .pend {
   display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px; border: 1.5px dashed var(--ink-2); border-radius: var(--radius);
   color: var(--ink-2); font-size: .875rem; font-weight: 600; cursor: not-allowed;
 }
+.cta-row .pend { min-height: 48px; padding: 0 22px; font-size: 1rem; }
+
+.mailwrap { position: relative; display: inline-flex; }
+.copied {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 5; padding: 4px 10px; border-radius: var(--radius);
+  background: var(--ink); color: var(--ground); font-size: .8125rem; font-weight: 700; white-space: nowrap; pointer-events: none;
+  opacity: 0; transform: translateY(-4px); transition: opacity .2s, transform .3s var(--spring);
+}
+.copied[data-side="right"] { left: auto; right: 0; }
+.copied[data-on] { opacity: 1; transform: none; }
 
 .cursor {
-  position: fixed; left: 0; top: 0; z-index: 130; width: 68px; height: 68px; margin: -34px 0 0 -34px; border: 2.8px solid #fff;
-  border-radius: 50%; mix-blend-mode: difference; pointer-events: none; opacity: 0; scale: .53;
+  position: fixed; left: 0; top: 0; z-index: 130; width: 44px; height: 44px; margin: -22px 0 0 -22px; border: 2.4px solid #fff;
+  border-radius: 50%; mix-blend-mode: difference; pointer-events: none; opacity: 0; scale: .6;
   transition: scale .35s var(--spring), opacity .3s, background .3s;
 }
 .cursor.on { opacity: 1; }
-/* `scale` composes with the translate the cursor engine writes to `transform`, so growing it never triggers layout. */
-.cursor.big { scale: 1; background: #fff; }
+/* Grows with `scale` so it never triggers layout; the engine positions it with `translate`. */
+.cursor.big { scale: 1; background: rgb(255 255 255 / .16); }
 @media (hover: none), (pointer: coarse) { .cursor { display: none; } }

@@ -6,7 +6,8 @@ export function initCursor(el: HTMLElement): () => void {
 
   function step() {
     cx += (px - cx) * 0.22; cy += (py - cy) * 0.22
-    el.style.transform = `translate3d(${cx}px,${cy}px,0)`
+    // `translate` (not `transform`) so the CSS `scale` that grows the circle never scales its position.
+    el.style.translate = `${cx}px ${cy}px`
     raf = Math.abs(px - cx) + Math.abs(py - cy) > 0.2 && !document.hidden ? requestAnimationFrame(step) : 0
   }
 

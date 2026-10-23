@@ -1,6 +1,6 @@
 # Josue Escobar — portfolio
 
-One-page portfolio. Choosing one of the area modules (01–04) reskins the whole site; the layout never moves.
+One-page portfolio. Choosing one of the four area cards (01–04, or keys 1–4) reskins the whole site: palette, type, the canvas dot field and the 3D hero object. Esc returns to neutral.
 
 - Product direction: [docs/product/brief.md](docs/product/brief.md), [PRODUCT.md](PRODUCT.md)
 - Visual system: [DESIGN.md](DESIGN.md)
@@ -17,4 +17,4 @@ npm run dev
 
 ## Adding a project
 
-Add it to `PROJECTS` in `src/content.ts`. An area's slot appears only once the area holds at least one project.
+Add it to `PROJECTS` in `src/content.ts`. Each project is a cartridge in the Work console. A project with `shots` boots into the screens carousel, one with `plugins` into the terminal; any other shows only its details. Every area always has a hero card; an area with no project shows an empty slot in Work until one is added.

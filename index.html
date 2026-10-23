@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Before first paint: enable the JS-only hidden states and apply ?face=, so nothing flashes.
+      ;(() => {
+        const r = document.documentElement
+        r.classList.add('js')
+        const f = new URLSearchParams(location.search).get('face')
+        if (['fullstack', 'ai', 'data', 'design'].includes(f)) r.dataset.face = f
+      })()
+    </script>
     <title>Josue Escobar — Full-stack &amp; AI engineer</title>
     <meta name="description" content="Engineer who builds across the stack — web, data, AI and 3D. Started in mechatronics, still building things that work." />
     <meta name="theme-color" content="#ECECEC" />
@@ -27,7 +36,7 @@
         "email": "mailto:josuee152@gmail.com",
         "worksFor": { "@type": "Organization", "name": "Ecosat" },
         "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Autónoma de Chihuahua" },
-        "sameAs": ["https://github.com/sue-btis"]
+        "sameAs": ["https://github.com/sue-btis", "https://mx.linkedin.com/in/escobarjosue"]
       }
     </script>
   </head>

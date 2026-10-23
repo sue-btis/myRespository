@@ -1,24 +1,16 @@
-.about { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 80px); }
-.about__intro { font-size: 1.1rem; max-width: 40ch; }
-.about__intro p + p { margin-top: 1em; color: var(--ink-2); }
-
-.timeline { --drawn: 1; list-style: none; padding: 28px 0 0; position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-.timeline[data-state="armed"] { --drawn: 0; }
-.timeline::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--ink);
-  transform-origin: left; transform: scaleX(var(--drawn));
-  transition: transform 1.4s var(--ease-out);
+.about { padding: clamp(72px, 11vw, 160px) var(--gutter) 0; display: grid; gap: 40px; }
+@media (min-width: 900px) { .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); } }
+.about h2 { font-size: calc(clamp(2.3rem, 7vw, 6.6rem) * var(--k)); text-wrap: balance; }
+.about__intro { display: grid; gap: 14px; margin-top: 22px; max-width: 34rem; color: var(--ink-2); font-size: 1.1rem; }
+.tl { --p: 0; position: relative; padding-left: 34px; display: grid; gap: 4px; }
+.tl::before, .tl::after { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--rule); }
+.tl::after { background: var(--signal); transform: scaleY(var(--p)); transform-origin: top; }
+.tl li { position: relative; display: grid; grid-template-columns: 4.2rem 1fr; gap: 2px 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.tl li::before {
+  content: ""; position: absolute; left: -34px; top: 24px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--ground); box-shadow: 0 0 0 2px var(--ink); transition: background .4s, transform .5s var(--spring);
 }
-.timeline li { position: relative; }
-.timeline li::before { content: ""; position: absolute; top: -33px; left: 0; width: 12px; height: 12px; background: var(--ground); border: 2px solid var(--ink); border-radius: 50%; }
-.timeline li:last-child::before { background: var(--signal); border-color: var(--signal); }
-.timeline time { display: block; font-size: 1.6rem; font-weight: 300; font-variation-settings: "wdth" 70; line-height: 1.1; }
-.timeline b { display: block; font-weight: 650; margin-top: 8px; line-height: 1.25; }
-.timeline span { display: block; color: var(--ink-2); font-size: .875rem; margin-top: 4px; }
-
-@media (max-width: 900px) {
-  .about { grid-template-columns: 1fr; }
-  .timeline { grid-template-columns: 1fr; padding: 0 0 0 28px; gap: 22px; }
-  .timeline::before { top: 0; bottom: 0; left: 5px; right: auto; width: 2px; height: auto; transform-origin: top; transform: scaleY(var(--drawn)); }
-  .timeline li::before { top: 6px; left: -28px; }
-}
+.tl li.in::before { background: var(--signal); transform: scale(1.15); }
+.tl time { font-weight: 800; font-variant-numeric: tabular-nums; grid-row: span 2; }
+.tl b { font-size: 1.15rem; }
+.tl span { color: var(--ink-2); font-size: .9375rem; }

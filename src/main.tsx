@@ -9,9 +9,11 @@ import './styles/tokens.css'
 import './styles/base.css'
 import './styles/rail.css'
 import './styles/hero.css'
+import './styles/ui.css'
 import './styles/work.css'
 import './styles/about.css'
 import './styles/close.css'
+import './styles/reduced.css'
 import { App } from './App'
 
 createRoot(document.getElementById('root')!).render(

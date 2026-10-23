@@ -1,48 +1,99 @@
-import type { CSSProperties, PointerEvent } from 'react'
-import { PROJECTS, PUBLISHED_AREAS, type AreaId } from '../content'
+import { useEffect, useRef, type CSSProperties, type MouseEvent } from 'react'
+import { AREAS, EMAIL, GITHUB, HERO, PROJECTS, type AreaId } from '../content'
+import { coarsePointer, reducedMotion } from '../env'
 import type { Face } from '../useFace'
+import { AreaIcon } from './AreaIcon'
+import { Icon } from './Icon'
+import { Chars } from './text'
 
-// Feeds the AI face's ripple, which spreads from where the pointer entered.
-function trackPointer(e: PointerEvent<HTMLButtonElement>) {
-  const r = e.currentTarget.getBoundingClientRect()
-  e.currentTarget.style.setProperty('--x', `${e.clientX - r.left}px`)
-  e.currentTarget.style.setProperty('--y', `${e.clientY - r.top}px`)
+const EASE: Record<Face, string> = {
+  neutral: 'cubic-bezier(.16,1,.3,1)',
+  fullstack: 'cubic-bezier(.16,1,.3,1)',
+  ai: 'cubic-bezier(.65,0,.35,1)',
+  data: 'steps(6,end)',
+  design: 'cubic-bezier(.16,1,.3,1)',
 }
 
-export function Hero({ face, onToggle }: { face: Face; onToggle: (area: AreaId, slot: HTMLElement) => void }) {
+const words = HERO.line.split(' ')
+
+type Props = {
+  face: Face
+  hint: boolean
+  onToggle: (area: AreaId, src: MouseEvent<HTMLElement> | HTMLElement) => void
+}
+
+export function Hero({ face, hint, onToggle }: Props) {
+  const line = useRef<HTMLHeadingElement>(null)
+  const first = useRef(true)
+
+  useEffect(() => {
+    const slow = first.current
+    first.current = false
+    if (reducedMotion() || !line.current) return
+    line.current.querySelectorAll<HTMLElement>('.hw > span').forEach((s, i) => s.animate(
+      [{ transform: 'translateY(112%) rotate(5deg)' }, { transform: 'none' }],
+      { duration: slow ? 1000 : 650, delay: i * (slow ? 55 : 28), easing: EASE[face], fill: 'backwards' },
+    ))
+  }, [face])
+
   return (
-    <section className="face" id="top" aria-labelledby="line">
-      <div className="face__copy">
-        <h1 className="face__line display" id="line">
-          Engineer who builds across the stack — web, data, AI and&nbsp;3D.
-        </h1>
-        <p className="face__by">
-          <strong>Started in mechatronics, still building things that work.</strong> I'm Josue Escobar, a full-stack and AI
-          engineer. Pick an area to see the site the way that work looks, or just scroll.
+    <section className="hero" aria-labelledby="line">
+      <div className="hstage" id="hstage" aria-hidden="true" data-calm="soft">
+        <div className="fallback"><AreaIcon face={face} live /></div>
+      </div>
+      {hint && (
+        <p className="hint" aria-hidden="true">
+          <Icon name="drag" />
+          <span>{coarsePointer() ? HERO.hintTouch : HERO.hint}</span>
         </p>
+      )}
+
+      <div className="hcopy" data-calm>
+        <h1 className="hline display" id="line" ref={line} aria-label={HERO.line}>
+          {words.map((w, i) => (
+            <span key={i}>
+              <span className="hw" aria-hidden="true"><span>{w}</span></span>
+              {i < words.length - 1 ? ' ' : null}
+            </span>
+          ))}
+        </h1>
+        <p className="hby"><strong>{HERO.by}</strong> {HERO.lead}</p>
+        <div className="hctas">
+          <a className="hcta" href={`mailto:${EMAIL}`} data-ripple data-wave>
+            <Icon name="mail" /><span className="lbl"><Chars text="Write to me" /></span>
+          </a>
+          <a className="hcta hcta--ghost" href={GITHUB} data-ripple data-wave>
+            <Icon name="github" /><span className="lbl"><Chars text="GitHub" /></span>
+          </a>
+        </div>
       </div>
 
-      <div className="slots" role="group" aria-label="Choose an area" style={{ '--slots': PUBLISHED_AREAS.length } as CSSProperties}>
-        {PUBLISHED_AREAS.map((area) => {
-          const seated = face === area.id
+      <div className="cards" role="group" aria-label="Choose an area. Keys 1 to 4 also work, Escape resets.">
+        {AREAS.map((area, n) => {
           const count = PROJECTS.filter((p) => p.area === area.id).length
+          const on = face === area.id
           return (
             <button
               key={area.id}
-              className="slot"
+              className="ac"
               type="button"
-              aria-pressed={seated}
-              onClick={(e) => onToggle(area.id, e.currentTarget)}
-              onPointerEnter={trackPointer}
+              data-area={area.id}
+              data-ripple
+              aria-pressed={on}
+              style={{ '--n': n } as CSSProperties}
+              onClick={(e) => onToggle(area.id, e.clientX || e.clientY ? e : e.currentTarget)}
             >
-              <span className="slot__edge" aria-hidden="true">
-                {area.edge.map((c) => <i key={c} style={{ background: c }} />)}
+              <span className="ac__top">
+                <span className="ac__ico"><AreaIcon face={area.id} /></span>
+                <span className="ac__num">{area.num}</span>
               </span>
-              <span className="slot__num">{area.num}</span>
-              <span className="slot__name">{area.name}</span>
-              <span className="slot__meta">
-                <span>{count} {count === 1 ? 'project' : 'projects'}</span>
-                <span className="slot__act">{seated ? 'Eject' : 'Insert'}</span>
+              <span className="ac__name">{area.name}</span>
+              <span className="ac__meta">
+                <span>{count ? `${count} ${count === 1 ? 'project' : 'projects'}` : 'In the works'}</span>
+                <span>{on ? 'Selected' : 'Pick'}</span>
+              </span>
+              <span className="ac__edge" aria-hidden="true">
+                {area.edge.map((c) => <i key={c} style={{ background: c }} />)}
               </span>
             </button>
           )

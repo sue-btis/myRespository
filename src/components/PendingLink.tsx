@@ -1,31 +1,11 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
-/** A link whose target does not exist yet: never looks live, and says so when tapped (touch has no tooltip). */
-export function PendingLink({ label, children }: { label: string; children: ReactNode }) {
-  const [told, setTold] = useState(false)
-
-  useEffect(() => {
-    if (!told) return
-    const t = setTimeout(() => setTold(false), 1800)
-    return () => clearTimeout(t)
-  }, [told])
-
+/** A link whose target does not exist yet: dashed, never an anchor, and named as pending for assistive tech. */
+export function PendingLink({ label, className = 'pend', children }: { label: string; className?: string; children: ReactNode }) {
   return (
-    <span
-      className={told ? 'pending-link is-told' : 'pending-link'}
-      role="note"
-      tabIndex={0}
-      title="Link pending"
-      onClick={() => setTold(true)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          setTold(true)
-        }
-      }}
-    >
+    <span className={className} title="Link pending">
       {children}
-      <span className="visually-hidden">{label} (link pending)</span>
+      <span className="sr">{label} (link pending)</span>
     </span>
   )
 }

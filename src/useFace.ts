@@ -1,47 +1,64 @@
-import { useCallback, useLayoutEffect, useState } from 'react'
-import { flushSync } from 'react-dom'
-import { PUBLISHED_AREAS, type AreaId } from './content'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type MutableRefObject } from 'react'
+import { AREAS, type AreaId } from './content'
 
 export type Face = 'neutral' | AreaId
+export type Origin = [x: number, y: number]
+type Source = { clientX: number; clientY: number } | Element | undefined
 
 function linkedFace(): Face {
-  const asked = new URLSearchParams(location.search).get('face')
-  return PUBLISHED_AREAS.find((a) => a.id === asked)?.id ?? 'neutral'
+  const asked = document.documentElement.dataset.face
+  return AREAS.find((a) => a.id === asked)?.id ?? 'neutral'
 }
 
-// The seat animation grows out of (or, on eject, back into) the pressed slot's box.
-function setSeatOrigin(slot: HTMLElement) {
-  const r = slot.getBoundingClientRect()
-  const s = document.documentElement.style
-  s.setProperty('--from-t', `${Math.max(0, r.top)}px`)
-  s.setProperty('--from-r', `${innerWidth - r.right}px`)
-  s.setProperty('--from-b', `${Math.max(0, innerHeight - r.bottom)}px`)
-  s.setProperty('--from-l', `${r.left}px`)
+function originOf(src: Source): Origin {
+  if (src && 'clientX' in src && (src.clientX || src.clientY)) return [src.clientX, src.clientY]
+  if (src instanceof Element) {
+    const r = src.getBoundingClientRect()
+    return [r.left + r.width / 2, r.top + r.height / 2]
+  }
+  return [innerWidth / 2, innerHeight / 2]
 }
 
-/** Current face of the site, applied to <html data-face>, with the view-transition seat when switching. */
-export function useFace() {
+/**
+ * The one face of the site. It is mirrored on <html data-face>, which drives the CSS tokens; the engines (field,
+ * 3D scene, wipe) follow the same state and read where the change started from `origin`.
+ * `?face=` is applied to <html> by the script in index.html before first paint, so this only reads it back.
+ */
+export function useFace(): {
+  face: Face
+  origin: MutableRefObject<Origin>
+  toggle: (area: AreaId, src?: Source) => void
+} {
   const [face, setFace] = useState<Face>(linkedFace)
+  const faceRef = useRef(face)
+  const origin = useRef<Origin>([0, 0])
 
   useLayoutEffect(() => {
+    faceRef.current = face
     document.documentElement.dataset.face = face
   }, [face])
 
-  const toggle = useCallback((area: AreaId, slot: HTMLElement) => {
-    const root = document.documentElement
-    const next: Face = root.dataset.face === area ? 'neutral' : area
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!document.startViewTransition || reduce) {
-      setFace(next)
-      return
-    }
-    setSeatOrigin(slot)
-    root.classList.toggle('ejecting', next === 'neutral')
-    // flushSync so the new face is in the DOM before the transition snapshots it.
-    document
-      .startViewTransition(() => flushSync(() => setFace(next)))
-      .finished.finally(() => root.classList.remove('ejecting'))
+  const change = useCallback((next: Face, src?: Source) => {
+    if (next === faceRef.current) return
+    origin.current = originOf(src)
+    setFace(next)
   }, [])
 
-  return { face, toggle }
+  const toggle = useCallback((area: AreaId, src?: Source) => {
+    change(faceRef.current === area ? 'neutral' : area, src)
+  }, [change])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey || (e.target instanceof Element && /input|textarea|select/i.test(e.target.tagName))) return
+      const i = '1234'.indexOf(e.key)
+      const card = (id: string) => document.querySelector(`.ac[data-area="${id}"]`) ?? undefined
+      if (i >= 0 && e.key.length === 1) toggle(AREAS[i].id, card(AREAS[i].id))
+      else if (e.key === 'Escape' && faceRef.current !== 'neutral') change('neutral', card(faceRef.current))
+    }
+    addEventListener('keydown', onKey)
+    return () => removeEventListener('keydown', onKey)
+  }, [toggle, change])
+
+  return { face, origin, toggle }
 }

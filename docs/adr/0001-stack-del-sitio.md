@@ -13,11 +13,11 @@ El portafolio se reconstruye desde cero a partir del mock aprobado (`.impeccable
 - **Estilos:** CSS plano con custom properties: un archivo de tokens con las 5 caras y uno por sección. Sin Tailwind.
 - **Íconos:** SVG propios (correo, flecha, CV, LinkedIn, GitHub). Se elimina FontAwesome.
 - **Fuentes:** alojadas en el propio sitio con Fontsource: `@fontsource-variable/archivo`, `funnel-display`, `unbounded`, `doto` y `@fontsource/michroma`. Antes de usar Archivo hay que verificar que su paquete incluye el eje `wdth`.
-- **Animación:** View Transitions API nativa y CSS. Sin librería de animación.
+- **Animación:** CSS, Web Animations y canvas 2D propios, sin librería de animación. La escena 3D del hero usa `three` 0.170.0 (carga diferida) porque el objeto que cambia de forma por área y sigue al cursor necesita WebGL instanciado.
 - **SEO:** metadatos fijos en `index.html` (title, description, canonical, Open Graph/Twitter con una imagen de 1200×630), JSON-LD `Person`, `robots.txt`, `sitemap.xml` y favicon. Sin prerender ni librería de SEO.
 - **Hosting:** Cloudflare Pages con dominio propio (el nombre está pendiente). Reemplaza a `gh-pages`.
 - **Analítica:** Cloudflare Web Analytics. No usa cookies, así que no requiere banner.
-- **Calidad:** lint y build en CI, más un smoke test de Playwright que cambia de cara y verifica que la fila de slots no se mueve.
+- **Calidad:** lint y build en CI, más un smoke test de Playwright que cambia de cara y verifica que la fila de tarjetas de área no se mueve.
 
 ## Alternativas descartadas
 

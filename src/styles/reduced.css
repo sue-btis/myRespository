@@ -1,0 +1,8 @@
+/* Last in the cascade so the stage rule overrides hero.css. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+  .js [data-split] .w__i, .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .hstage { transform: none; opacity: 1; }
+  .wipe { display: none; }
+}

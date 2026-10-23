@@ -1,54 +1,29 @@
-* { box-sizing: border-box; margin: 0; }
-html { color-scheme: light; scroll-behavior: smooth; scrollbar-color: var(--ink-2) var(--ground-2); accent-color: var(--signal); }
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: clip; scroll-behavior: smooth; color-scheme: light; -webkit-text-size-adjust: 100%; }
 html[data-face="ai"], html[data-face="design"] { color-scheme: dark; }
 body {
-  font-family: var(--body);
-  font-variant-numeric: lining-nums tabular-nums;
-  color: var(--ink); background: var(--ground);
-  background-image: var(--texture);
-  caret-color: var(--signal);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.55;
+  overflow-x: clip; -webkit-font-smoothing: antialiased;
 }
-::selection { background: var(--signal); color: var(--on-signal); }
-a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
-/* currentColor is the text's own AA-passing color, so the ring holds 3:1 on every face and region. */
-:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: var(--radius); }
-img { display: block; max-width: 100%; }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: var(--radius); }
+.skip {
+  position: fixed; left: 12px; top: -80px; z-index: 200; background: var(--cta); color: var(--on-cta);
+  padding: 12px 18px; border-radius: var(--radius); transition: top .2s;
+}
+.skip:focus { top: 12px; }
 .display {
-  font-family: var(--display);
-  font-variation-settings: "wdth" var(--display-wdth);
-  font-weight: var(--display-wght);
-  letter-spacing: var(--display-track);
-  line-height: 1;
-  text-wrap: balance;
+  font-family: var(--display); font-weight: var(--display-wght);
+  font-variation-settings: "wdth" var(--display-wdth); letter-spacing: var(--display-track); line-height: .96;
 }
 
-.pending-link { position: relative; color: var(--ink-2); text-decoration: underline dashed; text-underline-offset: .22em; cursor: help; }
-.pending-link.is-told::after {
-  content: "Link coming soon"; position: absolute; top: calc(100% + 8px); right: 0; z-index: 20;
-  white-space: nowrap; font-size: .75rem; padding: .35em .6em; border-radius: var(--radius);
-  background: var(--ink); color: var(--ground);
-}
-
-.section { padding: clamp(72px, 12vh, 140px) var(--gutter) 0; }
-.section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vh, 48px); }
-.section__title { font-size: calc(clamp(2rem, 4vw, 3.4rem) * var(--k)); }
-.section__note { color: var(--ink-2); font-size: .9rem; max-width: 46ch; }
-
-/* Seating: the new face grows out of the slot that was pressed, with that face's own timing. */
-::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
-::view-transition-new(root) { animation: seat var(--seat-dur) var(--seat-ease) both; z-index: 1; }
-html.ejecting::view-transition-new(root) { animation: none; z-index: 0; }
-html.ejecting::view-transition-old(root) { animation: seat var(--seat-dur) var(--ease-out) reverse both; z-index: 1; }
-@keyframes seat {
-  from { clip-path: inset(var(--from-t) var(--from-r) var(--from-b) var(--from-l)); }
-  to { clip-path: inset(0 0 0 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; animation: none !important; }
-  html { scroll-behavior: auto; }
-}
+/* The texture layer and the canvas field are the one fixed background. */
+.tex { position: fixed; inset: 0; z-index: -2; background: var(--texture); pointer-events: none; }
+#field { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; display: block; }
+.wipe { position: fixed; inset: 0; z-index: 90; pointer-events: none; background: var(--plate); clip-path: circle(0 at 50% 50%); }

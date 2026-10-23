@@ -1,23 +1,26 @@
-import { EMAIL, GITHUB } from '../content'
+import { EMAIL, GITHUB, LINKEDIN } from '../content'
+import { Chars } from './text'
 import { Icon } from './Icon'
 import { PendingLink } from './PendingLink'
 
 export function Rail() {
   return (
-    <header className="rail">
-      <a className="rail__name" href="#top">Josue Escobar</a>
-      <ul className="rail__links">
+    <header className="top" id="bar">
+      <a className="name" href="#top" data-mag="0.2"><b aria-hidden="true" />Josue Escobar</a>
+      <ul className="nav">
         <li>
-          <PendingLink label="CV"><Icon name="cv" className="icon" /><span className="label">CV</span></PendingLink>
+          <PendingLink label="CV" className="nl pend"><Icon name="cv" /><span className="t" aria-hidden="true">CV</span></PendingLink>
         </li>
         <li>
-          <PendingLink label="LinkedIn"><Icon name="linkedin" className="icon" /><span className="label">LinkedIn</span></PendingLink>
+          <a className="nl" href={LINKEDIN} data-mag="0.25"><Icon name="linkedin" /><span className="t">LinkedIn</span><span className="sr">LinkedIn</span></a>
         </li>
         <li>
-          <a href={GITHUB} aria-label="GitHub"><Icon name="github" className="icon" /><span className="label">GitHub</span></a>
+          <a className="nl" href={GITHUB} data-mag="0.25"><Icon name="github" /><span className="t">GitHub</span><span className="sr">GitHub</span></a>
         </li>
         <li>
-          <a className="cta" href={`mailto:${EMAIL}`}><Icon name="mail" />Write to me</a>
+          <a className="cta" href={`mailto:${EMAIL}`} data-mag="0.3" data-rip data-wave>
+            <Icon name="mail" /><span className="lbl"><Chars text="Write to me" /></span>
+          </a>
         </li>
       </ul>
     </header>

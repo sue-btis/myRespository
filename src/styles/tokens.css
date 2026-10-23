@@ -1,14 +1,35 @@
+/* Registered so the palette interpolates when the face changes instead of snapping. */
+@property --ground { syntax: '<color>'; inherits: true; initial-value: #ECECEC; }
+@property --ground-2 { syntax: '<color>'; inherits: true; initial-value: #F7F7F7; }
+@property --plate { syntax: '<color>'; inherits: true; initial-value: #90CCF4; }
+@property --ink { syntax: '<color>'; inherits: true; initial-value: #16324A; }
+@property --ink-2 { syntax: '<color>'; inherits: true; initial-value: #3E5568; }
+@property --signal { syntax: '<color>'; inherits: true; initial-value: #F78888; }
+@property --on-signal { syntax: '<color>'; inherits: true; initial-value: #16324A; }
+@property --cta { syntax: '<color>'; inherits: true; initial-value: #16324A; }
+@property --on-cta { syntax: '<color>'; inherits: true; initial-value: #ECECEC; }
+@property --region { syntax: '<color>'; inherits: true; initial-value: #F3D250; }
+@property --on-region { syntax: '<color>'; inherits: true; initial-value: #16324A; }
+@property --on-region-2 { syntax: '<color>'; inherits: true; initial-value: #3E4A2A; }
+@property --rule { syntax: '<color>'; inherits: true; initial-value: #16324A2E; }
+
 :root {
   --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
   --spring: linear(0, 0.06 2%, 0.23 5%, 0.5 9%, 0.78 14%, 0.95 19%, 1.035 25%, 1.045 30%, 1.02 40%, 0.995 55%, 1.002 70%, 1);
   --body: "Archivo Variable", system-ui, sans-serif;
   --gutter: clamp(16px, 4vw, 56px);
   --rail-h: 64px;
   --radius: 3px;
-  /* One copy block height for every face, so the slot row never moves between faces. */
-  --copy-h: clamp(318px, 9vw + 250px, 384px);
+  transition:
+    --ground var(--seat-dur) var(--seat-ease), --ground-2 var(--seat-dur) var(--seat-ease),
+    --plate var(--seat-dur) var(--seat-ease), --ink var(--seat-dur) var(--seat-ease),
+    --ink-2 var(--seat-dur) var(--seat-ease), --signal var(--seat-dur) var(--seat-ease),
+    --on-signal var(--seat-dur) var(--seat-ease), --cta var(--seat-dur) var(--seat-ease),
+    --on-cta var(--seat-dur) var(--seat-ease), --region var(--seat-dur) var(--seat-ease),
+    --on-region var(--seat-dur) var(--seat-ease), --on-region-2 var(--seat-dur) var(--seat-ease),
+    --rule var(--seat-dur) var(--seat-ease);
 }
-
 /* Faces. Every face fills the same roles; layout reads only the roles. Palettes are owner-pinned (DESIGN.md). */
 html[data-face="neutral"] {
   --ground: #ECECEC; --ground-2: #F7F7F7; --plate: #90CCF4;

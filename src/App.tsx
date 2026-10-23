@@ -3,19 +3,30 @@ import { Close } from './components/Close'
 import { Hero } from './components/Hero'
 import { Rail } from './components/Rail'
 import { Work } from './components/Work'
+import { FOOTER } from './content'
+import { reducedMotion } from './env'
+import { useEngines } from './useEngines'
 import { useFace } from './useFace'
 
 export function App() {
-  const { face, toggle } = useFace()
+  const { face, origin, toggle } = useFace()
+  const { sceneFailed } = useEngines(face, origin)
   return (
     <>
+      <a className="skip" href="#work">Skip to work</a>
+      <div className="tex" aria-hidden="true" />
+      <canvas id="field" aria-hidden="true" />
+      <div className="wipe" id="wipe" aria-hidden="true" />
+      <div className="cursor" id="cursor" aria-hidden="true" />
+      <p className="sr" id="live" aria-live="polite" />
       <Rail />
-      <main>
-        <Hero face={face} onToggle={toggle} />
-        <Work />
+      <main id="top">
+        <Hero face={face} hint={!reducedMotion() && !sceneFailed} onToggle={toggle} />
+        <Work face={face} onToggle={toggle} />
         <About />
         <Close />
       </main>
+      <footer>{FOOTER.map((line) => <span key={line}>{line}</span>)}</footer>
     </>
   )
 }

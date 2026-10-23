@@ -15,7 +15,7 @@ El portafolio se reconstruye desde cero a partir del mock aprobado (`.impeccable
 - **Fuentes:** alojadas en el propio sitio con Fontsource: `@fontsource-variable/archivo`, `funnel-display`, `unbounded`, `doto` y `@fontsource/michroma`. Antes de usar Archivo hay que verificar que su paquete incluye el eje `wdth`.
 - **Animación:** CSS, Web Animations y canvas 2D propios, sin librería de animación. La escena 3D del hero usa `three` 0.170.0 (carga diferida) porque el objeto que cambia de forma por área y sigue al cursor necesita WebGL instanciado.
 - **SEO:** metadatos fijos en `index.html` (title, description, canonical, Open Graph/Twitter con una imagen de 1200×630), JSON-LD `Person`, `robots.txt`, `sitemap.xml` y favicon. Sin prerender ni librería de SEO.
-- **Hosting:** Cloudflare Pages con dominio propio (el nombre está pendiente). Reemplaza a `gh-pages`.
+- **Hosting:** Cloudflare (Workers con archivos estáticos, que respetan `public/_headers`) en `myrespository.josuee152.workers.dev`, publicado desde `main`; `bit.ly/JosueDev` apunta ahí. El dominio propio sigue pendiente. Reemplaza a `gh-pages`.
 - **Analítica:** Cloudflare Web Analytics. No usa cookies, así que no requiere banner.
 - **Calidad:** lint y build en CI, más un smoke test de Playwright que cambia de cara y verifica que la fila de tarjetas de área no se mueve.
 
@@ -31,5 +31,5 @@ El portafolio se reconstruye desde cero a partir del mock aprobado (`.impeccable
 
 - Salen FontAwesome, `gh-pages`, los componentes actuales, los respaldos `*~` y el `.env` versionado.
 - El contacto es correo directo (`mailto:`), así que `@emailjs/browser` también sale.
-- Mientras no haya dominio, `index.html` no lleva `canonical` ni `og:url`, no hay `sitemap.xml` y `og:image` usa una ruta relativa. Varios lectores de vista previa exigen URL absoluta, así que se completa al definir el dominio.
+- `canonical`, `og:url`, `og:image`, el JSON-LD, `sitemap.xml` y `robots.txt` usan la URL de `workers.dev`; al tener dominio propio se cambia en `index.html`, `public/sitemap.xml` y `public/robots.txt`.
 - La corrección de los 3 detalles de contraste que señaló la revisión (foco, texto pequeño sobre regiones, íconos atenuados) entra en esta reconstrucción.

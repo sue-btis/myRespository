@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://myrespository.josuee152.workers.dev/sitemap.xml

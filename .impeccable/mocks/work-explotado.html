@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="en" data-face="neutral">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work mock, Exploded diagram</title>
+<meta name="theme-color" content="#ECECEC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Doto:wght@100..900&family=Funnel+Display:wght@300..800&family=Michroma&family=Unbounded:wght@200..900&display=swap">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>
+@property --ground{syntax:'<color>';inherits:true;initial-value:#ECECEC}
+@property --ground-2{syntax:'<color>';inherits:true;initial-value:#F7F7F7}
+@property --plate{syntax:'<color>';inherits:true;initial-value:#90CCF4}
+@property --ink{syntax:'<color>';inherits:true;initial-value:#16324A}
+@property --ink-2{syntax:'<color>';inherits:true;initial-value:#3E5568}
+@property --signal{syntax:'<color>';inherits:true;initial-value:#F78888}
+@property --on-signal{syntax:'<color>';inherits:true;initial-value:#16324A}
+@property --cta{syntax:'<color>';inherits:true;initial-value:#16324A}
+@property --on-cta{syntax:'<color>';inherits:true;initial-value:#ECECEC}
+@property --region{syntax:'<color>';inherits:true;initial-value:#F3D250}
+@property --on-region{syntax:'<color>';inherits:true;initial-value:#16324A}
+@property --on-region-2{syntax:'<color>';inherits:true;initial-value:#3E4A2A}
+@property --rule{syntax:'<color>';inherits:true;initial-value:#16324A2E}
+:root{
+  --ease-out:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.65,0,.35,1);
+  --spring:linear(0,.06 2%,.23 5%,.5 9%,.78 14%,.95 19%,1.035 25%,1.045 30%,1.02 40%,.995 55%,1.002 70%,1);
+  --body:"Archivo",system-ui,sans-serif;--gutter:clamp(16px,4vw,56px);--bar-h:56px;--radius:3px;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,monospace;
+  transition:--ground var(--seat-dur) var(--seat-ease),--ground-2 var(--seat-dur) var(--seat-ease),--plate var(--seat-dur) var(--seat-ease),--ink var(--seat-dur) var(--seat-ease),--ink-2 var(--seat-dur) var(--seat-ease),--signal var(--seat-dur) var(--seat-ease),--on-signal var(--seat-dur) var(--seat-ease),--cta var(--seat-dur) var(--seat-ease),--on-cta var(--seat-dur) var(--seat-ease),--region var(--seat-dur) var(--seat-ease),--on-region var(--seat-dur) var(--seat-ease),--on-region-2 var(--seat-dur) var(--seat-ease),--rule var(--seat-dur) var(--seat-ease);
+}
+html[data-face="neutral"]{--ground:#ECECEC;--ground-2:#F7F7F7;--plate:#90CCF4;--ink:#16324A;--ink-2:#3E5568;--signal:#F78888;--on-signal:#16324A;--cta:#16324A;--on-cta:#ECECEC;--region:#F3D250;--on-region:#16324A;--on-region-2:#3E4A2A;--rule:#16324A2E;--display:"Archivo",system-ui,sans-serif;--display-wdth:118;--display-wght:780;--display-track:-.035em;--k:1;--texture:none;--seat-dur:.62s;--seat-ease:var(--spring)}
+html[data-face="fullstack"]{--ground:#C4DBF6;--ground-2:#D7E6F9;--plate:#3B8BEB;--ink:#14264A;--ink-2:#33476B;--signal:#B23850;--on-signal:#F7EFF1;--cta:#B23850;--on-cta:#F7EFF1;--region:#3B8BEB;--on-region:#0E1B36;--on-region-2:#0E1B36;--rule:#14264A2E;--display:"Funnel Display",system-ui,sans-serif;--display-wdth:100;--display-wght:800;--display-track:-.025em;--k:1.04;--texture:none;--seat-dur:.7s;--seat-ease:var(--spring)}
+html[data-face="ai"]{--ground:#304C64;--ground-2:#26425A;--plate:#26788E;--ink:#CFE6EA;--ink-2:#A4CCD4;--signal:#E2480C;--on-signal:#1A0703;--cta:#A4CCD4;--on-cta:#1F3445;--region:#E2480C;--on-region:#1A0703;--on-region-2:#1A0703;--rule:#A4CCD42E;--display:"Unbounded",system-ui,sans-serif;--display-wdth:100;--display-wght:600;--display-track:-.03em;--k:.86;--texture:radial-gradient(#A4CCD41F 1px,transparent 1.4px) 0 0/22px 22px;--seat-dur:.9s;--seat-ease:cubic-bezier(.65,0,.35,1)}
+html[data-face="data"]{--ground:#EDE8F5;--ground-2:#E1DDF0;--plate:#ADBBDA;--ink:#26346B;--ink-2:#3D52A0;--signal:#7091E6;--on-signal:#121A3A;--cta:#3D52A0;--on-cta:#EDE8F5;--region:#3D52A0;--on-region:#EDE8F5;--on-region-2:#C9D2EC;--rule:#3D52A033;--display:"Doto",ui-monospace,monospace;--display-wdth:100;--display-wght:900;--display-track:-.02em;--k:.9;--texture:repeating-linear-gradient(180deg,transparent 0 39px,#8697C42E 39px 40px);--seat-dur:.48s;--seat-ease:steps(8,end)}
+html[data-face="design"]{--ground:#141414;--ground-2:#1E1E1E;--plate:#273DB4;--ink:#F2F0EE;--ink-2:#C9C4C0;--signal:#ED7845;--on-signal:#141414;--cta:#F95CA4;--on-cta:#141414;--region:#273DB4;--on-region:#F2F0EE;--on-region-2:#CDD3F2;--rule:#F2F0EE24;--display:"Michroma",system-ui,sans-serif;--display-wdth:100;--display-wght:400;--display-track:0em;--k:.8;--texture:linear-gradient(#F2F0EE0F 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,#F2F0EE0F 1px,transparent 1px) 0 0/40px 40px;--seat-dur:.8s;--seat-ease:var(--spring)}
+
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{background:var(--ground);color-scheme:light;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html[data-face="ai"],html[data-face="design"]{color-scheme:dark}
+body{background:var(--ground);color:var(--ink);font:400 1rem/1.55 var(--body);overflow-x:clip;min-height:100svh}
+body::before{content:"";position:fixed;inset:0;background:var(--texture);pointer-events:none;z-index:0}
+main,.bar{position:relative;z-index:1}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+img{display:block;max-width:100%}
+ul,ol{list-style:none;padding:0}
+:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.display{font-family:var(--display);font-weight:var(--display-wght);font-variation-settings:"wdth" var(--display-wdth);letter-spacing:var(--display-track);line-height:.94;text-wrap:balance}
+.eyebrow{font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--bar-h);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 var(--gutter);background:color-mix(in srgb,var(--ground) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.bar__tag{font-size:.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.faces{display:flex;gap:4px;padding:3px;border-radius:99px;box-shadow:inset 0 0 0 1px var(--rule)}
+.faces button{min-height:40px;padding:0 14px;border:0;border-radius:99px;background:transparent;font-size:.8125rem;font-weight:650;transition:background .3s,color .3s,transform .35s var(--spring)}
+.faces button:hover{transform:translateY(-1px)}
+.faces button[aria-pressed="true"]{background:var(--cta);color:var(--on-cta)}
+@media (max-width:640px){.bar__tag{display:none}.bar{justify-content:center}.faces button{padding:0 9px;font-size:.75rem}}
+
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.7em;white-space:nowrap;flex:none;min-height:48px;padding:0 24px;border:1.5px solid transparent;border-radius:var(--radius);background:var(--cta);color:var(--on-cta);font-weight:650;font-size:1rem;text-decoration:none;transition:transform .35s var(--spring),box-shadow .35s var(--ease-out)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn:hover{box-shadow:0 10px 28px -12px color-mix(in srgb,var(--ink) 55%,transparent)}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .45s var(--spring)}
+.btn:hover svg{transform:translate(3px,-3px) rotate(8deg)}
+.btn[disabled]{background:transparent;color:var(--ink-2);border:1.5px dashed var(--ink-2);cursor:not-allowed;box-shadow:none;transform:none}
+.roll{display:inline-block;overflow:hidden;height:1.25em;line-height:1.25}
+.roll>span{display:block;transition:transform .5s var(--ease-out)}
+.roll>span::after{content:attr(data-t);display:block}
+.btn:hover .roll>span,.btn:focus-visible .roll>span{transform:translateY(-100%)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:99px;background:var(--ground-2);box-shadow:inset 0 0 0 1px var(--rule);font-size:.875rem;font-weight:600;transition:transform .4s var(--spring),box-shadow .3s}
+.chip:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px var(--ink-2)}
+.badge{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 12px;border-radius:99px;background:var(--ink);color:var(--ground);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--signal)}
+.badge--wip i{animation:beat 1.4s var(--ease-io) infinite}
+@keyframes beat{50%{transform:scale(1.5)}}
+.proof{display:flex;flex-wrap:wrap;gap:8px}
+
+.steps{display:grid;gap:0;border-top:1px solid var(--rule)}
+.steps li{display:grid;grid-template-columns:7.5rem 1fr;gap:6px 18px;padding:14px 0;border-bottom:1px solid var(--rule);transition:padding .4s var(--ease-out)}
+.steps li:hover{padding-left:8px}
+.steps b{font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:.2em}
+.steps span{font-size:1rem}
+@media (max-width:520px){.steps li{grid-template-columns:1fr}}
+
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(26px)}
+.js .rv.in{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform var(--seat-dur) var(--seat-ease);transition-delay:calc(var(--d,0) * 1ms)}
+
+/* phone reel */
+.reel{position:relative;--stage-h:min(600px,calc(100svh - var(--bar-h) - 150px));--pw:min(calc(var(--stage-h) / 2.35),56vw,300px)}
+.reel__stage{position:relative;height:var(--stage-h);overflow:hidden;perspective:1300px;touch-action:pan-y;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);user-select:none;-webkit-user-select:none;cursor:grab}
+.reel__stage:active{cursor:grabbing}
+.reel__big{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:var(--display-wght);font-variation-settings:"wdth" var(--display-wdth);font-size:calc(var(--stage-h) * .55 * var(--k));line-height:1;color:transparent;-webkit-text-stroke:2px var(--rule);letter-spacing:var(--display-track);pointer-events:none}
+.reel__big.pop{animation:pop .6s var(--ease-out)}
+@keyframes pop{from{opacity:.2;transform:translate(-50%,-44%) scale(.94)}}
+.ph{position:absolute;left:50%;top:50%;width:var(--pw);aspect-ratio:780/1688;border-radius:calc(var(--pw) * .11);overflow:hidden;background:var(--ground-2);box-shadow:0 0 0 1px var(--rule),0 40px 60px -28px rgba(8,14,28,.6);
+  transform:translate(-50%,-50%) translateX(calc(var(--o) * var(--pw) * .84)) rotateY(calc(var(--o) * -18deg)) scale(calc(1 - var(--a) * .13));
+  opacity:calc(1 - var(--a) * .45);transition:transform .8s var(--ease-out),opacity .6s;z-index:calc(10 - var(--a));cursor:pointer}
+.ph[data-hide]{opacity:0;pointer-events:none}
+.ph img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ph:not(.on)::after{content:"";position:absolute;inset:0;background:var(--ground);opacity:.28}
+.reel__bar{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+.reel__arrow{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1.5px solid var(--ink);background:transparent;transition:transform .35s var(--spring),background .25s,color .25s}
+.reel__arrow:hover{background:var(--ink);color:var(--ground);transform:scale(1.08)}
+.reel__arrow svg{width:18px;height:18px}
+.dots{display:flex;gap:4px}
+.dots button{width:44px;height:44px;padding:0;border:0;background:transparent;display:grid;place-items:center}
+.dots button::before{content:"";width:28px;height:4px;border-radius:2px;background:var(--rule);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 18%,transparent);transition:background .3s,transform .4s var(--spring)}
+.dots button[aria-current="true"]::before{background:var(--ink);transform:scaleX(1.35)}
+.reel__count{font-family:var(--display);font-variation-settings:"wdth" var(--display-wdth);font-weight:var(--display-wght);font-size:1.1rem;min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
+.reel__count{white-space:nowrap}
+@media (max-width:520px){.reel__bar{gap:6px}.dots{gap:0}.dots button{width:28px}.dots button::before{width:16px}.reel__count{min-width:0;font-size:.95rem}.term{--term-h:400px}.term__top{padding:8px 10px}.term__tabs{margin-left:4px}}
+.reel__cap{text-align:center;font-weight:600;min-height:3.1em;max-width:30rem;margin:4px auto 0;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+
+/* terminal / flow */
+.term{--lh:1.7;border-radius:10px;background:var(--ink);color:var(--ground);box-shadow:0 0 0 1px var(--rule),0 40px 60px -34px rgba(8,14,28,.55);overflow:hidden;display:flex;flex-direction:column;min-height:var(--term-h,520px);font-family:var(--mono)}
+.term__top{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid color-mix(in srgb,var(--ground) 20%,transparent)}
+.term__top i{width:10px;height:10px;border-radius:50%;background:color-mix(in srgb,var(--ground) 38%,transparent)}
+.term__tabs{flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px;margin-left:10px}
+.term__tabs button{min-height:44px;padding:4px 12px;border:1px solid color-mix(in srgb,var(--ground) 30%,transparent);border-radius:6px;background:transparent;color:var(--ground);font:600 .75rem/1.3 var(--mono);text-align:left;transition:background .25s,color .25s}
+.term__tabs button:hover{background:color-mix(in srgb,var(--ground) 16%,transparent)}
+.term__tabs button[aria-pressed="true"]{background:var(--ground);color:var(--ink);border-color:var(--ground)}
+.term__tabs small{display:block;font:inherit;opacity:.8}
+.term__rail{display:flex;flex-wrap:wrap;gap:6px;padding:16px 16px 0;align-items:center}
+.nd{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 10px;border-radius:99px;font-size:.75rem;font-weight:700;border:1px solid color-mix(in srgb,var(--ground) 32%,transparent);color:color-mix(in srgb,var(--ground) 82%,var(--ink));transition:background .35s,color .35s,transform .5s var(--spring),border-color .35s}
+.nd.on{background:var(--signal);color:var(--on-signal);border-color:var(--signal);transform:scale(1.08)}
+.nd.done{background:var(--ground);color:var(--ink);border-color:var(--ground)}
+.nc{width:14px;height:2px;background:color-mix(in srgb,var(--ground) 32%,transparent);position:relative;overflow:hidden}
+.nc::after{content:"";position:absolute;inset:0;background:var(--ground);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-out)}
+.nc.done::after{transform:none}
+.term__body{flex:1;padding:18px 16px;font-size:1rem;line-height:var(--lh);white-space:pre-wrap;overflow:hidden}
+.term__line{display:block;min-height:calc(var(--lh) * 1em)}
+.term__line .p{font-weight:700;opacity:.8}
+.term__line .ok{color:var(--ground);opacity:.9}
+.term__line .dim{opacity:.78}
+.cur{display:inline-block;width:.6em;height:1.1em;margin-left:2px;vertical-align:-.2em;background:var(--ground);animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+.term__foot{padding:12px 16px 16px;border-top:1px solid color-mix(in srgb,var(--ground) 20%,transparent);font:500 .8125rem/1.5 var(--body);opacity:.95}
+
+/* teaser rows */
+.tease{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 18px;padding:16px 18px;border:1.5px dashed var(--ink-2);border-radius:8px;transition:transform .5s var(--spring),background .3s,border-color .3s}
+.tease:hover{transform:translateX(6px);background:var(--ground-2);border-style:solid}
+.tease__num{font-family:var(--display);font-variation-settings:"wdth" var(--display-wdth);font-weight:var(--display-wght);font-size:calc(1.6rem * var(--k));color:var(--ink-2)}
+.tease h3{font-size:calc(1.2rem * var(--k));line-height:1.1}
+.tease p{font-size:.9375rem;color:var(--ink-2)}
+.tease__skel{grid-column:1/-1;height:6px;border-radius:3px;position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,transparent 0 6px,var(--rule) 6px 7px)}
+.tease__skel::after{content:"";position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ink) 20%,transparent),transparent);animation:sheen 2.4s var(--ease-io) infinite}
+@keyframes sheen{from{transform:translateX(-120%)}to{transform:translateX(420%)}}
+@media (max-width:640px){.tease{grid-template-columns:auto 1fr}.tease .btn{grid-column:1/-1;justify-self:start;min-height:44px}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  .js .rv{opacity:1;transform:none}
+}
+
+.work{padding:calc(var(--bar-h) + clamp(40px,7vw,96px)) var(--gutter) clamp(60px,9vw,120px)}
+.work__head{display:grid;gap:14px;margin-bottom:clamp(28px,5vw,60px)}
+.work__head h2{font-size:calc(clamp(3.6rem,13vw,11rem) * var(--k))}
+.work__note{max-width:34rem;color:var(--ink-2)}
+.sel{display:grid;gap:20px;align-items:start}
+@media (min-width:1100px){.sel{grid-template-columns:300px minmax(0,1fr);gap:36px}.sel__side{position:sticky;top:calc(var(--bar-h) + 20px)}}
+
+.sel__list{position:relative;display:grid;gap:8px;grid-template-columns:1fr 1fr}
+@media (min-width:700px) and (max-width:1099px){.sel__list{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:1100px){.sel__list{grid-template-columns:1fr}}
+.sel__thumb{position:absolute;left:0;top:0;border-radius:8px;background:var(--cta);pointer-events:none;transition:transform .7s var(--spring),width .5s var(--ease-out),height .5s var(--ease-out);z-index:0}
+.tab{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:0 12px;align-items:center;text-align:left;min-height:64px;padding:10px 14px;border:1.5px solid var(--rule);border-radius:8px;background:transparent;transition:transform .45s var(--spring),border-color .3s,color .3s}
+.tab:hover{transform:translateX(4px);border-color:var(--ink-2)}
+.tab__n{grid-row:1/3;font-family:var(--display);font-variation-settings:"wdth" var(--display-wdth);font-weight:var(--display-wght);font-size:calc(1.5rem * var(--k));line-height:1;color:var(--ink-2);transition:color .3s}
+.tab__t{font-weight:700;font-size:1rem;line-height:1.2;align-self:end}
+.tab__m{font-size:.8125rem;color:var(--ink-2);align-self:start;transition:color .3s}
+.tab[aria-selected="true"]{color:var(--on-cta);border-color:transparent}
+.tab[aria-selected="true"] .tab__n,.tab[aria-selected="true"] .tab__m{color:var(--on-cta)}
+.tab--wip{border-style:dashed;border-color:var(--ink-2)}
+.tab--wip .tab__t{color:var(--ink-2)}
+.tab--wip[aria-selected="true"] .tab__t{color:var(--on-cta)}
+@media (max-width:699px){.tab{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:2px;min-height:84px}.tab__n{grid-row:auto;font-size:1.2rem}.tab:hover{transform:none}}
+.keys{font-size:.8125rem;color:var(--ink-2);margin-top:14px}
+@media (hover:none){.keys{display:none}}
+.keys kbd{font:600 .75rem var(--mono);padding:2px 6px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--ink-2)}
+
+.main{display:grid;gap:clamp(20px,3vw,36px);min-width:0}
+
+/* drawing board */
+.bench{position:relative;min-width:0;--stage-h:clamp(540px,74svh,660px);--lab-w:clamp(150px,19vw,224px)}
+@media (max-width:759px){.bench{--stage-h:min(112vw,470px)}}
+.bench__stage{position:relative;height:var(--stage-h);border-radius:14px;overflow:hidden;background:var(--ground-2);box-shadow:0 0 0 1px var(--rule)}
+.bench__stage::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--rule) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--rule) 1px,transparent 1px) 0 0/32px 32px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 78%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 78%);opacity:.9}
+.bench__stage::after{content:"";position:absolute;inset:10px;border-radius:8px;border:1px solid var(--rule);pointer-events:none}
+.bench canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+.bench canvas:active{cursor:grabbing}
+.leads{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.lead path{fill:none;stroke:var(--ink);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .25s var(--ease-io)}
+.lead .pin{fill:var(--ink);transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .3s var(--ease-out)}
+.lead .pn{fill:var(--ground);font:700 11px var(--mono);text-anchor:middle;dominant-baseline:central;opacity:0;transition:opacity .2s}
+.lead .ring{fill:none;stroke:var(--signal);stroke-width:2;transform-box:fill-box;transform-origin:center;transform:scale(0)}
+.leads.on .lead path{stroke-dashoffset:0;transition:stroke-dashoffset .9s var(--ease-out) var(--d)}
+.leads.on .lead .pin{transform:scale(1);transition:transform .5s var(--spring) var(--d)}
+.leads.on .lead .pn{opacity:1;transition:opacity .3s var(--d)}
+.leads.on .lead .ring{animation:ping 2.6s var(--ease-out) infinite;animation-delay:calc(var(--d) + .6s)}
+@keyframes ping{0%{transform:scale(.8);opacity:.9}70%,100%{transform:scale(2.2);opacity:0}}
+.lead--dash path{stroke-dasharray:5 4;stroke-dashoffset:0;opacity:0}
+.leads.on .lead--dash path{opacity:1;transition:opacity .6s var(--d)}
+.insp{fill:none;stroke:var(--ink);stroke-width:1.25;stroke-dasharray:5 4;opacity:0;transition:opacity .15s}
+.insp.on{opacity:1}
+.inspt{font:700 11px var(--mono);fill:var(--ink);opacity:0}
+.inspt.on{opacity:1}
+.pk{position:absolute;left:0;top:0;pointer-events:none;padding:4px 10px;border-radius:99px;background:var(--signal);color:var(--on-signal);font:700 .8125rem/1.2 var(--mono);white-space:nowrap;box-shadow:0 0 0 1.5px var(--ink);opacity:0;z-index:2}
+.pk.on{opacity:1}
+.tb{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;flex-wrap:wrap;justify-content:center;gap:0;max-width:calc(100% - 32px);border:1.5px solid var(--ink);background:var(--ground-2);font:600 .6875rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;pointer-events:none;z-index:2}
+.tb span{padding:7px 10px;border-right:1px solid var(--ink)}
+.tb span:last-child{border-right:0;min-width:15ch}
+.tb b{font-weight:800}
+.status{position:absolute;left:0;right:0;top:calc(var(--stage-h) / 2);transform:translateY(-50%);text-align:center;font:600 .875rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);pointer-events:none;transition:opacity .4s}
+.status[hidden]{display:block;opacity:0}
+.hint{position:absolute;left:50%;transform:translateX(-50%);top:16px;white-space:nowrap;font:600 .6875rem/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);pointer-events:none}
+@media (max-width:759px){.tb,.hint{display:none}}
+
+.cos{list-style:none;padding:0;margin:0}
+.co{--d:0ms}
+.co__box{display:block;width:100%;padding:8px 0 0;border:0;border-top:1.5px solid var(--ink);border-radius:0;background:transparent;color:var(--ink);text-align:inherit;font:inherit}
+.co__k{display:flex;align-items:center;gap:8px;font:700 .6875rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.co__n{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--ground);font:700 .6875rem var(--mono);letter-spacing:0}
+.co__t{display:block;margin-top:5px;font-weight:700;font-size:1rem;line-height:1.2}
+.co__s{display:block;margin-top:3px;font-size:.8125rem;line-height:1.4;color:var(--ink-2)}
+button.co__box{cursor:pointer;padding:8px 10px 10px;margin:0;transition:background .25s,color .25s}
+button.co__box:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}
+button.co__box[aria-pressed="true"]{background:var(--cta);color:var(--on-cta);border-top-color:var(--cta)}
+button.co__box[aria-pressed="true"] .co__k,button.co__box[aria-pressed="true"] .co__s{color:var(--on-cta)}
+button.co__box[aria-pressed="true"] .co__n{background:var(--on-cta);color:var(--cta)}
+.co--dash .co__box{border-top-style:dashed;border-top-color:var(--ink-2)}
+@media (min-width:760px){
+  .cos{position:absolute;left:0;right:0;top:0;height:var(--stage-h);pointer-events:none}
+  .co{position:absolute;top:0;width:var(--lab-w);opacity:0;pointer-events:none}
+  .co[data-side="L"]{left:20px;text-align:right}
+  .co[data-side="L"] .co__k{justify-content:flex-end}
+  .co[data-side="R"]{right:20px}
+  .co__in{transform:translateX(var(--sx,12px));transition:transform .5s var(--ease-out)}
+  .co[data-side="L"] .co__in{--sx:-12px}
+  .cos.on .co{opacity:1;pointer-events:auto;transition:opacity .5s var(--ease-out) calc(var(--d) + .45s)}
+  .cos.on .co__in{transform:none;transition-delay:calc(var(--d) + .45s)}
+  .co__box{background:color-mix(in srgb,var(--ground-2) 82%,transparent)}
+  button.co__box[aria-pressed="true"]{background:var(--cta)}
+}
+@media (max-width:759px){
+  .cos{margin-top:14px;border-bottom:1px solid var(--rule)}
+  .co{padding:0}
+  .co__box{padding:12px 0;border-top:1px solid var(--rule)}
+  button.co__box{padding:12px 10px}
+  .co__t{margin-top:4px}
+  .lead path,.lead .ring{display:none}
+}
+.no3d .bench__stage{height:auto;min-height:120px}
+.no3d .cos{position:static;height:auto}
+.no3d .co{position:static;opacity:1;width:auto;pointer-events:auto}
+.no3d .co__in{transform:none}
+
+.bench__bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:14px}
+.bench__bar .btn{min-height:48px}
+.bench__bar [hidden]{display:none!important}
+.bench__bar .reel__bar{margin:0;flex:1 1 auto;justify-content:center}
+.bench__cap{margin-top:8px;font-weight:600;text-align:center;min-height:1.6em;color:var(--ink)}
+.stages{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.stages[hidden]{display:none}
+.stages li{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:0 14px;border-radius:99px;box-shadow:inset 0 0 0 1.5px var(--ink-2);font:700 .8125rem var(--mono);transition:background .3s,color .3s,transform .5s var(--spring),box-shadow .3s}
+.stages li small{font:600 .6875rem var(--mono);opacity:.9}
+.stages li.on{background:var(--signal);color:var(--on-signal);box-shadow:none;transform:scale(1.07)}
+.stages li.done{background:var(--ink);color:var(--ground);box-shadow:none}
+.stages__lab{font:700 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-right:4px}
+.motion{min-width:48px;padding:0 18px}
+.motion[hidden]{display:none}
+
+/* details */
+.panes{display:grid;min-width:0}
+.pane{grid-area:1/1;min-width:0;display:grid;gap:clamp(18px,2.6vw,36px);padding:clamp(16px,2.4vw,32px);border-radius:14px;background:var(--ground-2);box-shadow:0 0 0 1px var(--rule);align-content:start;
+  opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);filter:blur(6px);transition:opacity .45s var(--ease-out),transform .7s var(--ease-out),filter .45s,visibility 0s .45s}
+.pane.on{opacity:1;visibility:visible;transform:none;filter:none;transition:opacity .55s var(--ease-out) .08s,transform .8s var(--ease-out) .08s,filter .5s .08s,visibility 0s}
+@media (min-width:860px){.pane{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.pane--one{grid-template-columns:minmax(0,1fr)}}
+.det{display:grid;gap:18px;align-content:start;min-width:0}
+.det h3{font-size:calc(clamp(2.1rem,3.2vw,3.4rem) * var(--k));overflow-wrap:anywhere}
+.det .pitch{font-size:clamp(1.05rem,.4vw + 1rem,1.2rem)}
+.det .steps li{grid-template-columns:1fr;gap:2px;padding:12px 0}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.det>*{animation:none}
+.pane.on .det>*{animation:in .7s var(--ease-out) both;animation-delay:calc(var(--i,0) * 55ms + 120ms)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <span class="bar__tag">Work mock &middot; Exploded diagram</span>
+  <div class="faces" role="group" aria-label="Palette face"></div>
+</header>
+<main>
+<section class="work" aria-labelledby="work-title">
+  <div class="work__head">
+    <h2 class="display rv" id="work-title">Work</h2>
+    <p class="work__note rv" style="--d:120">Each project carries its proof: code you can read and screens from the real thing.</p>
+  </div>
+
+  <div class="sel rv" style="--d:160">
+    <div class="sel__side">
+      <div class="sel__list" role="tablist" aria-label="Projects" aria-orientation="vertical" id="tabs">
+        <span class="sel__thumb" aria-hidden="true"></span>
+        <button class="tab" role="tab" type="button" id="tab-trainlog" aria-controls="p-trainlog" data-id="trainlog"><span class="tab__n" aria-hidden="true">01</span><span class="tab__t">TrainLog</span><span class="tab__m">React, TypeScript, PWA</span></button>
+        <button class="tab" role="tab" type="button" id="tab-changesmith" aria-controls="p-changesmith" data-id="changesmith"><span class="tab__n" aria-hidden="true">02</span><span class="tab__t">ChangeSmith</span><span class="tab__m">Claude Code, Codex</span></button>
+        <button class="tab tab--wip" role="tab" type="button" id="tab-data" aria-controls="p-data" data-id="data"><span class="tab__n" aria-hidden="true">03</span><span class="tab__t">Data &amp; Analytics</span><span class="tab__m">In the works</span></button>
+        <button class="tab tab--wip" role="tab" type="button" id="tab-design" aria-controls="p-design" data-id="design"><span class="tab__n" aria-hidden="true">04</span><span class="tab__t">3D &amp; Engineering</span><span class="tab__m">In the works</span></button>
+      </div>
+      <p class="keys" id="keys"><kbd>&uarr;</kbd> <kbd>&darr;</kbd> to switch project</p>
+    </div>
+
+    <div class="main">
+      <div class="bench" id="bench">
+        <div class="bench__stage" id="stage" role="img" aria-label="">
+          <svg class="leads" id="leads" aria-hidden="true"></svg>
+          <span class="pk" id="pk" aria-hidden="true"></span>
+          <p class="hint" aria-hidden="true">Drag to turn &middot; point at a part</p>
+          <p class="tb" id="tb" aria-hidden="true"><span><b id="tb-p">TrainLog</b></span><span id="tb-a">01 Full-stack</span><span id="tb-v">Assembled</span><span id="tb-n">33 parts</span><span id="tb-i">Inspect &mdash;</span></p>
+        </div>
+        <p class="status" id="status" role="status">Loading parts&hellip;</p>
+        <ul class="cos" id="cos" aria-label="Annotated parts"></ul>
+
+        <div class="bench__bar">
+          <button class="btn btn--ghost" type="button" id="explode" aria-pressed="false"><span class="roll"><span data-t="Reassemble">Reassemble</span></span></button>
+          <div class="reel__bar" id="reelbar" hidden>
+            <button class="reel__arrow" type="button" data-dir="-1" aria-label="Previous screen"></button>
+            <div class="dots" id="dots"></div>
+            <span class="reel__count" id="count" aria-hidden="true"></span>
+            <button class="reel__arrow" type="button" data-dir="1" aria-label="Next screen"></button>
+          </div>
+          <button class="btn btn--ghost motion" type="button" id="motion" aria-pressed="false" aria-label="Pause motion"><span class="roll"><span data-t="Pause">Pause</span></span></button>
+        </div>
+        <p class="bench__cap" id="cap" aria-live="polite" hidden></p>
+        <ol class="stages" id="stages" hidden aria-label="Workflow stages"></ol>
+      </div>
+
+      <div class="panes">
+        <section class="pane" role="tabpanel" id="p-trainlog" aria-labelledby="tab-trainlog">
+          <div class="det">
+            <p class="eyebrow" style="--i:0">01 &middot; Full-stack &amp; Product</p>
+            <h3 class="display" style="--i:1">TrainLog</h3>
+            <p class="pitch" style="--i:2">Write your programme as a YAML file. The app runs it in the gym and works out your next load.</p>
+            <div class="chips" style="--i:3" aria-label="Stack"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">PWA</span></div>
+            <div class="ctas" style="--i:4">
+              <a class="btn" href="https://github.com/sue-btis/TrainLog"><span class="roll"><span data-t="Source">Source</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+              <button class="btn" type="button" disabled>Live demo &middot; URL pending</button>
+            </div>
+          </div>
+          <div class="det">
+            <ul class="steps" style="--i:3">
+              <li><b>Problem</b><span>A phone, in a gym, with unreliable signal. No account, no server.</span></li>
+              <li><b>Built</b><span>An offline-first training PWA. It records what you actually did and works out your next load from that record.</span></li>
+              <li><b>Proof</b><span>Mutation testing and architecture decision records, with the source open on GitHub.</span></li>
+            </ul>
+            <div class="proof" style="--i:5"><span class="badge"><i></i>Mutation testing</span><span class="badge"><i></i>ADRs</span><span class="badge"><i></i>Offline-first</span></div>
+          </div>
+        </section>
+
+        <section class="pane" role="tabpanel" id="p-changesmith" aria-labelledby="tab-changesmith">
+          <div class="det">
+            <p class="eyebrow" style="--i:0">02 &middot; AI &amp; Agents</p>
+            <h3 class="display" style="--i:1">ChangeSmith</h3>
+            <p class="pitch" style="--i:2">Plugins that make coding agents work like a careful engineer.</p>
+            <div class="chips" style="--i:3" aria-label="Runs in"><span class="chip">Claude Code</span><span class="chip">Codex</span></div>
+            <div class="ctas" style="--i:4">
+              <a class="btn" href="https://github.com/sue-btis/ChangeSmith"><span class="roll"><span data-t="Source">Source</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+          <div class="det">
+            <ul class="steps" style="--i:3">
+              <li><b>Aim</b><span>Coding agents that shape the change, write the spec, plan, implement, then verify it independently.</span></li>
+              <li><b>Built</b><span>Two plugins: <code>software-design-skills</code> from brief to build plan, and <code>compact-change-skills</code> from shape to verify, one change at a time.</span></li>
+              <li><b>Proof</b><span>CI on Node 24 and plugin validation, with the source open on GitHub.</span></li>
+            </ul>
+            <div class="proof" style="--i:5"><span class="badge"><i></i>CI on Node 24</span><span class="badge"><i></i>Plugin validation</span></div>
+          </div>
+        </section>
+
+        <section class="pane pane--one" role="tabpanel" id="p-data" aria-labelledby="tab-data">
+          <div class="det">
+            <p class="eyebrow" style="--i:0">03 &middot; Data &amp; Analytics</p>
+            <h3 class="display" style="--i:1">Data &amp; Analytics</h3>
+            <div style="--i:2"><span class="badge badge--wip"><i></i>In the works</span></div>
+            <p class="pitch" style="--i:3">No project here yet. A data project lands here; until then, you can preview how this area looks.</p>
+            <div class="ctas" style="--i:4"><button class="btn btn--ghost" type="button" data-preview="data" aria-pressed="false"><span class="roll"><span data-t="Preview this style">Preview this style</span></span></button></div>
+          </div>
+        </section>
+
+        <section class="pane pane--one" role="tabpanel" id="p-design" aria-labelledby="tab-design">
+          <div class="det">
+            <p class="eyebrow" style="--i:0">04 &middot; 3D &amp; Engineering design</p>
+            <h3 class="display" style="--i:1">3D &amp; Engineering design</h3>
+            <div style="--i:2"><span class="badge badge--wip"><i></i>In the works</span></div>
+            <p class="pitch" style="--i:3">No project here yet. A 3D or CAD piece lands here; until then, you can preview how this area looks.</p>
+            <div class="ctas" style="--i:4"><button class="btn btn--ghost" type="button" data-preview="design" aria-pressed="false"><span class="roll"><span data-t="Preview this style">Preview this style</span></span></button></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+const SHOTS = [
+  { src: 'assets/work/today.webp', alt: 'TrainLog Today screen: the workout planned for today' },
+  { src: 'assets/work/import-review.webp', alt: 'Reviewing an imported routine file' },
+  { src: 'assets/work/progress.webp', alt: 'Progress: best estimated 1RM and load over time' },
+  { src: 'assets/work/exercise-history.webp', alt: 'Front Squat history: working weight and every session' },
+];
+const PLUGINS = [
+  { name: 'software-design-skills', version: '1.2.0', stages: ['brief', 'PRD', 'system design', 'design review', 'build plan'], note: [], desc: 'From product brief to PRD, system design, design review and a build plan.' },
+  { name: 'compact-change-skills', version: '3.0.0', stages: ['shape', 'audit', 'spec', 'plan', 'implement', 'verify'], note: { verify: 'independently' }, desc: 'Shape, audit, spec, plan, implement and verify one change at a time.' },
+];
+const ICON = {
+  prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+  next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
+};
+
+/* faces */
+const FACES = [['neutral', 'Neutral'], ['fullstack', 'Full-stack'], ['ai', 'AI'], ['data', 'Data'], ['design', '3D']];
+function setFace(f) {
+  document.documentElement.dataset.face = f;
+  $$('.faces button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.face === f)));
+  const m = $('meta[name=theme-color]'); if (m) m.content = getComputedStyle(document.documentElement).getPropertyValue('--ground');
+}
+function initFaces() {
+  const g = $('.faces');
+  g.innerHTML = FACES.map(([id, l]) => `<button type="button" data-face="${id}" aria-pressed="false">${l}</button>`).join('');
+  g.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setFace(b.dataset.face); });
+  const q = new URLSearchParams(location.search).get('face');
+  setFace(FACES.some(([id]) => id === q) ? q : 'neutral');
+  $$('[data-preview]').forEach((b) => b.addEventListener('click', () => {
+    const f = b.dataset.preview; const on = document.documentElement.dataset.face === f;
+    setFace(on ? 'neutral' : f);
+  }));
+  const sync = () => $$('[data-preview]').forEach((b) => { const on = document.documentElement.dataset.face === b.dataset.preview; b.setAttribute('aria-pressed', String(on)); $('.roll>span', b).textContent = on ? 'Back to neutral' : 'Preview this style'; $('.roll>span', b).dataset.t = on ? 'Back to neutral' : 'Preview this style'; });
+  new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['data-face'] }); sync();
+}
+
+/* reveals */
+function initReveal() {
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  $$('.rv').forEach((el) => io.observe(el));
+}
+
+/* visibility helper */
+function whenVisible(el, cb) {
+  const io = new IntersectionObserver(([e]) => cb(e.isIntersecting), { threshold: 0.25 });
+  io.observe(el);
+}
+
+/* phone reel: returns {set, next, prev, index, setPlaying} */
+function makeReel(host, { autoplay = true, interval = 3600 } = {}) {
+  host.innerHTML = `
+    <div class="reel__stage" aria-hidden="false">
+      <div class="reel__big" aria-hidden="true">01</div>
+      ${SHOTS.map((s, i) => `<figure class="ph" data-i="${i}"><img src="${s.src}" alt="${s.alt}" width="780" height="1688" ${i ? 'loading="lazy"' : ''} draggable="false"></figure>`).join('')}
+    </div>
+    <div class="reel__bar">
+      <button class="reel__arrow" type="button" data-dir="-1" aria-label="Previous screen">${ICON.prev}</button>
+      <div class="dots">${SHOTS.map((s, i) => `<button type="button" data-i="${i}" aria-label="Show screen ${i + 1} of ${SHOTS.length}"></button>`).join('')}</div>
+      <span class="reel__count" aria-hidden="true"></span>
+      <button class="reel__arrow" type="button" data-dir="1" aria-label="Next screen">${ICON.next}</button>
+    </div>
+    <p class="reel__cap" aria-live="polite"></p>`;
+  host.setAttribute('role', 'group'); host.setAttribute('aria-roledescription', 'carousel'); host.tabIndex = 0;
+  const n = SHOTS.length, phs = $$('.ph', host), dots = $$('.dots button', host);
+  const big = $('.reel__big', host), cap = $('.reel__cap', host), count = $('.reel__count', host), stage = $('.reel__stage', host);
+  let cur = -1, playing = autoplay && !reduce.matches, timer = 0, hold = false, vis = true;
+  function set(i) {
+    i = (i + n) % n; if (i === cur) return;
+    const first = cur < 0; cur = i;
+    phs.forEach((p, k) => {
+      const o = k - i, a = Math.abs(o);
+      p.style.setProperty('--o', o); p.style.setProperty('--a', Math.min(a, 2));
+      p.classList.toggle('on', o === 0);
+      p.toggleAttribute('data-hide', a > 1);
+      p.setAttribute('aria-hidden', String(o !== 0));
+    });
+    dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i)));
+    big.textContent = String(i + 1).padStart(2, '0'); count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
+    cap.textContent = SHOTS[i].alt;
+    if (!first) { big.classList.remove('pop'); void big.offsetWidth; big.classList.add('pop'); }
+  }
+  const api = { set, next: () => set(cur + 1), prev: () => set(cur - 1), get index() { return cur; } };
+  const arm = () => { clearInterval(timer); if (playing && !hold && vis) timer = setInterval(api.next, interval); };
+  api.setPlaying = (v) => { playing = v && !reduce.matches; arm(); };
+  host.addEventListener('click', (e) => {
+    const d = e.target.closest('[data-dir]'), dot = e.target.closest('.dots button'), ph = e.target.closest('.ph');
+    if (d) set(cur + Number(d.dataset.dir)); else if (dot) set(Number(dot.dataset.i)); else if (ph && !stage.dataset.dragged) set(Number(ph.dataset.i));
+    host.dispatchEvent(new CustomEvent('reelinput', { detail: cur }));
+  });
+  host.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); api.next(); } else if (e.key === 'ArrowLeft') { e.preventDefault(); api.prev(); }
+    else if (e.key === 'Home') { e.preventDefault(); set(0); } else if (e.key === 'End') { e.preventDefault(); set(n - 1); } else return;
+    host.dispatchEvent(new CustomEvent('reelinput', { detail: cur }));
+  });
+  let x0 = null;
+  stage.addEventListener('pointerdown', (e) => { x0 = e.clientX; delete stage.dataset.dragged; hold = true; arm(); });
+  const end = (e) => { if (x0 === null) return; const dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 40) { stage.dataset.dragged = '1'; set(cur + (dx < 0 ? 1 : -1)); host.dispatchEvent(new CustomEvent('reelinput', { detail: cur })); setTimeout(() => delete stage.dataset.dragged, 60); } hold = host.matches(':hover,:focus-within'); arm(); };
+  stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', () => { x0 = null; });
+  host.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { hold = true; arm(); } });
+  host.addEventListener('pointerleave', () => { hold = false; arm(); });
+  host.addEventListener('focusin', () => { hold = true; arm(); });
+  host.addEventListener('focusout', () => { hold = host.matches(':hover'); arm(); });
+  whenVisible(host, (v) => { vis = v; arm(); });
+  set(0); arm();
+  return api;
+}
+
+/* terminal / flow panel */
+function makeTerm(host) {
+  host.innerHTML = `
+    <div class="term" data-term>
+      <div class="term__top"><i></i><i></i><i></i>
+        <div class="term__tabs" role="group" aria-label="Plugin">${PLUGINS.map((p, i) => `<button type="button" data-p="${i}" aria-pressed="${i === 0}">${p.name}<small>${p.version}</small></button>`).join('')}</div>
+      </div>
+      <div class="term__rail" aria-hidden="true"></div>
+      <div class="term__body" aria-hidden="true"></div>
+      <p class="term__foot"></p>
+      <ol class="sr" aria-label="Workflow stages"></ol>
+    </div>`;
+  const rail = $('.term__rail', host), body = $('.term__body', host), foot = $('.term__foot', host), sr = $('.sr', host);
+  let run = 0, p = 0, vis = false, paused = false;
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  function draw(i) {
+    p = i; const pl = PLUGINS[i];
+    $$('.term__tabs button', host).forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
+    rail.innerHTML = pl.stages.map((s, k) => `${k ? '<span class="nc"></span>' : ''}<span class="nd" data-k="${k}">${String(k + 1).padStart(2, '0')} ${s}</span>`).join('');
+    body.innerHTML = ''; foot.textContent = pl.desc;
+    sr.innerHTML = pl.stages.map((s) => `<li>${s}${pl.note[s] ? ' ' + pl.note[s] : ''}</li>`).join('');
+  }
+  function mark(k, st) { const nd = $(`.nd[data-k="${k}"]`, rail); if (!nd) return; nd.classList.toggle('on', st === 'on'); nd.classList.toggle('done', st === 'done'); const c = rail.querySelectorAll('.nc')[k - 1]; if (c && st !== 'idle') c.classList.add('done'); }
+  function finished(pl) { pl.stages.forEach((_, k) => mark(k, 'done')); body.innerHTML = pl.stages.map((s, k) => `<span class="term__line"><span class="p">$</span> ${String(k + 1).padStart(2, '0')} ${s}${pl.note[s] ? ' (' + pl.note[s] + ')' : ''}  <span class="ok">✓</span></span>`).join('') + (pl.name === 'compact-change-skills' ? '<span class="term__line dim">one change at a time</span>' : ''); }
+  async function play(i) {
+    const id = ++run; draw(i); const pl = PLUGINS[i];
+    if (reduce.matches) { finished(pl); return; }
+    while (id === run) {
+      if (!vis || paused) { await wait(300); continue; }
+      body.innerHTML = ''; $$('.nd,.nc', rail).forEach((e) => e.classList.remove('on', 'done'));
+      for (let k = 0; k < pl.stages.length; k++) {
+        if (id !== run) return;
+        mark(k, 'on');
+        const line = document.createElement('span'); line.className = 'term__line'; body.append(line);
+        const txt = `${String(k + 1).padStart(2, '0')} ${pl.stages[k]}${pl.note[pl.stages[k]] ? ' (' + pl.note[pl.stages[k]] + ')' : ''}`;
+        line.innerHTML = '<span class="p">$</span> <span class="t"></span><span class="cur"></span>';
+        for (let c = 1; c <= txt.length; c++) { if (id !== run) return; $('.t', line).textContent = txt.slice(0, c); await wait(34); }
+        await wait(380); if (id !== run) return;
+        $('.cur', line).remove(); line.insertAdjacentHTML('beforeend', '  <span class="ok">✓</span>');
+        mark(k, 'done'); await wait(260);
+      }
+      if (pl.name === 'compact-change-skills') body.insertAdjacentHTML('beforeend', '<span class="term__line dim">one change at a time</span>');
+      await wait(3200);
+    }
+  }
+  host.addEventListener('click', (e) => { const b = e.target.closest('[data-p]'); if (b && Number(b.dataset.p) !== p) play(Number(b.dataset.p)); });
+  whenVisible(host, (v) => { vis = v; });
+  play(0);
+  return { setActive: (v) => { paused = !v; } };
+}
+
+function initCommon() { initFaces(); initReveal(); }
+
+initCommon();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const SHOTS = [
+  { src: 'assets/work3d/today.webp', alt: 'TrainLog Today screen: the workout planned for today' },
+  { src: 'assets/work3d/import-review.webp', alt: 'Reviewing an imported routine file' },
+  { src: 'assets/work3d/progress.webp', alt: 'Progress: best estimated 1RM and load over time' },
+  { src: 'assets/work3d/exercise-history.webp', alt: 'Front Squat history: working weight and every session' },
+];
+
+// Duplicated from the CSS tokens: during a face switch the computed styles are mid-transition.
+const PAL = {
+  neutral: { plate: '#90CCF4', ink: '#16324A', signal: '#F78888', line: '#3E5568' },
+  fullstack: { plate: '#3B8BEB', ink: '#14264A', signal: '#B23850', line: '#33476B' },
+  ai: { plate: '#26788E', ink: '#26425A', signal: '#E2480C', line: '#A4CCD4' },
+  data: { plate: '#ADBBDA', ink: '#26346B', signal: '#7091E6', line: '#3D52A0' },
+  design: { plate: '#273DB4', ink: '#1E1E1E', signal: '#ED7845', line: '#C9C4C0' },
+};
+const ROLES = ['cuerpo', 'secundario', 'metal', 'acento', 'vidrio'];
+
+const PROJECTS = {
+  trainlog: {
+    area: 'fullstack', sheet: '01 Full-stack', title: 'TrainLog', yaw: 0.62, pitch: 0.2,
+    label: 'Exploded view of an arcade cabinet that stands for TrainLog',
+    calls: [
+      { parts: ['pantalla_panel'], side: 'R', k: 'Built for', t: 'Offline-first PWA', s: 'A phone, in a gym, with unreliable signal.' },
+      { parts: ['boton_1', 'boton_2', 'boton_3', 'boton_4', 'boton_5', 'boton_6'], side: 'R', k: 'Output', t: 'Your next load', s: 'Worked out from a record of what you actually did.' },
+      { parts: ['panel_moneda'], side: 'R', k: 'Rigor', t: 'Mutation testing' },
+      { parts: ['marquesina'], side: 'L', k: 'Stack', t: 'React, TypeScript, PWA' },
+      { parts: ['panel_control', 'joystick_1', 'joystick_2'], side: 'L', k: 'Input', t: 'Your programme, as YAML', s: 'You write it as a YAML file; the app runs it in the gym.' },
+      { parts: ['trasera'], side: 'L', k: 'No back end', t: 'No account, no server' },
+      { parts: ['tapa_superior'], side: 'L', k: 'Rigor', t: 'Architecture decision records' },
+    ],
+  },
+  changesmith: {
+    area: 'ai', sheet: '02 AI', title: 'ChangeSmith', yaw: 0.3, pitch: 0.16, fill: true, zoom: 0.74,
+    label: 'Exploded view of a neural network, with a packet carrying the workflow stages from layer to layer',
+    calls: [
+      { parts: ['marco_1', 'marco_2'], side: 'L', v: 'top', plugin: 0, k: 'Plugin 1.2.0', t: 'software-design-skills', s: 'Brief to build plan.' },
+      { parts: ['nodo_01', 'nodo_02', 'nodo_03'], side: 'L', v: 'bottom', k: 'Rigor', t: 'CI on Node 24', s: 'Plus plugin validation.' },
+      { parts: ['marco_3', 'marco_4'], side: 'R', v: 'top', plugin: 1, k: 'Plugin 3.0.0', t: 'compact-change-skills', s: 'Shape to verify, one change at a time.' },
+      { parts: ['nodo_11', 'nodo_12'], side: 'R', v: 'bottom', k: 'Runs in', t: 'Claude Code and Codex' },
+    ],
+  },
+  data: {
+    area: 'data', sheet: '03 Data', title: 'Data & Analytics', tb: 'Data', yaw: 0.5, pitch: 0.22, zoom: 0.84, ghost: true,
+    label: 'Ghosted outline of the data piece, a project that is in the works',
+    calls: [{ parts: ['disco_1', 'aro_1'], side: 'R', dash: true, k: 'In the works', t: 'A data project lands here', s: 'Preview this style to see the area.' }],
+  },
+  design: {
+    area: 'design', sheet: '04 3D', title: '3D & Engineering design', tb: 'Engineering', yaw: 0.5, pitch: 0.22, zoom: 0.9, ghost: true,
+    label: 'Ghosted outline of the engine piece, a project that is in the works',
+    calls: [{ parts: ['bloque'], side: 'R', dash: true, k: 'In the works', t: 'A 3D or CAD piece lands here', s: 'Preview this style to see the area.' }],
+  },
+};
+
+const PLUGINS = [
+  { name: 'software-design-skills', version: '1.2.0', stages: ['brief', 'PRD', 'system design', 'design review', 'build plan'], note: {} },
+  { name: 'compact-change-skills', version: '3.0.0', stages: ['shape', 'audit', 'spec', 'plan', 'implement', 'verify'], note: { verify: 'independently' } },
+];
+
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const easeInOut = (x) => (x < 0.5 ? 4 * x * x * x : 1 - (-2 * x + 2) ** 3 / 2);
+const pick = (xs) => xs[Math.floor(Math.random() * xs.length)];
+const roleOf = (name) => ROLES.find((r) => name.startsWith(r)) ?? 'cuerpo';
+const blender = (v) => (Array.isArray(v) ? new THREE.Vector3(v[0], v[2], -v[1]) : undefined);
+const num = (name) => Number(name.match(/_(\d+)$/)?.[1] ?? 0);
+const desk = matchMedia('(min-width:760px)');
+const Yax = new THREE.Vector3(0, 1, 0);
+
+/* ---------- motion of the parts, ported from the site engine ---------- */
+function arcadeMotion(d) {
+  const ph = Number(d.fase ?? 0);
+  const tilt = blender(d.inclina), tiltB = blender(d.inclina_b);
+  if (tilt && tiltB) return { play: { kind: 'tilt', a: tilt.normalize(), b: tiltB.normalize(), amp: Number(d.amplitud ?? 0.3), ph } };
+  const press = blender(d.presiona);
+  if (press) return { play: { kind: 'press', move: press, ph } };
+  const side = blender(d.desliza), drop = blender(d.baja), up = blender(d.dispara);
+  if (side && up) return { play: { kind: 'shot', up, side, ph } };
+  if (side && drop) return { play: { kind: 'invaders', side, drop } };
+  if (side) return { play: { kind: 'ship', side, ph } };
+  return {};
+}
+function motionFor(area, part, extras) {
+  const n = num(part);
+  if (area === 'fullstack') {
+    const m = arcadeMotion(extras);
+    return part === 'pantalla_hud' || part === 'rotulo' ? { ...m, pulse: [0.012, 2.4, 0] } : m;
+  }
+  if (area === 'ai') {
+    if (part.startsWith('nodo')) return { pulse: [0.12, 2.6, n * 0.8] };
+    if (part.startsWith('marco')) return { bob: [0.005, 0.9, n * 1.3] };
+  }
+  if (area === 'data') {
+    if (part.startsWith('aro')) return { spin: 0.45 * (n % 2 ? 1 : -1) };
+    if (part.startsWith('disco')) return { spin: -0.25 * (n % 2 ? 1 : -1) };
+  }
+  return {};
+}
+function playMove(g, t, life, n) {
+  switch (g.kind) {
+    case 'press': n.position.addScaledVector(g.move, Math.max(0, Math.sin(5 * t + g.ph)) ** 4 * life); break;
+    case 'invaders': {
+      const c = Math.floor(t * 2.2) % 12, u = c < 6 ? c : 12 - c;
+      n.position.addScaledVector(g.side, (2 * u / 6 - 1) * life).addScaledVector(g.drop, (c >= 6 ? 1 : 0) * life);
+      break;
+    }
+    case 'ship': n.position.addScaledVector(g.side, Math.sin(0.9 * t + g.ph) * life); break;
+    case 'shot': {
+      const f = (t / 1.1 + g.ph / (2 * Math.PI)) % 1, fired = t - f * 1.1;
+      n.position.addScaledVector(g.side, Math.sin(0.9 * fired + g.ph) * life).addScaledVector(g.up, f * life);
+      n.visible = life < 0.02 || f < 0.9;
+      break;
+    }
+  }
+}
+
+/* ---------- renderer ---------- */
+const stage = document.getElementById('stage'), cosEl = document.getElementById('cos'), leads = document.getElementById('leads');
+const pkEl = document.getElementById('pk'), statusEl = document.getElementById('status'), capEl = document.getElementById('cap');
+const stagesEl = document.getElementById('stages'), explodeBtn = document.getElementById('explode'), motionBtn = document.getElementById('motion');
+const reelbar = document.getElementById('reelbar'), dotsEl = document.getElementById('dots'), countEl = document.getElementById('count');
+const SVGNS = 'http://www.w3.org/2000/svg';
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' });
+} catch (err) {
+  document.documentElement.classList.add('no3d');
+  statusEl.textContent = '3D view unavailable. The annotations are listed instead.';
+  console.warn('WebGL unavailable', err);
+}
+
+const S = {
+  face: document.documentElement.dataset.face, t: 0, e: 0, eT: 0, playing: !reduce.matches, vis: false, id: null, piece: null,
+  snap: true, drag: 0, nx: 0, ny: 0, hover: null, plugin: 1, exploded: true, view: '', seq: 0,
+};
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 60);
+camera.position.set(0, 0, 10);
+const rig = new THREE.Group();
+scene.add(rig);
+const mats = {};
+const lineMat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.55 });
+const holeMat = new THREE.MeshBasicMaterial({ colorWrite: false });
+const packetCore = new THREE.MeshBasicMaterial({ toneMapped: false });
+const packetHalo = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.4, depthWrite: false, depthTest: false, toneMapped: false });
+const packetGeo = new THREE.SphereGeometry(1, 14, 10);
+const draco = new DRACOLoader().setDecoderPath('assets/work3d/draco/').setDecoderConfig({ type: 'wasm' }).setWorkerLimit(2);
+const loader = new GLTFLoader().setDRACOLoader(draco);
+const raycaster = new THREE.Raycaster();
+
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  stage.prepend(renderer.domElement);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8890a0, 1.5));
+  const key = new THREE.DirectionalLight(0xffffff, 1.8);
+  key.position.set(3, 5, 6);
+  scene.add(key);
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environmentIntensity = 0.45;
+  const mk = (p) => new THREE.MeshStandardMaterial({ vertexColors: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, ...p });
+  Object.assign(mats, {
+    cuerpo: mk({ roughness: 0.4, metalness: 0 }),
+    secundario: mk({ roughness: 0.55, metalness: 0.15 }),
+    metal: mk({ roughness: 0.35, metalness: 0.8 }),
+    acento: mk({ roughness: 0.4, metalness: 0, emissiveIntensity: 0.6 }),
+    vidrio: new THREE.MeshPhysicalMaterial({ roughness: 0.05, metalness: 0, transparent: true, opacity: 0.22, depthWrite: false }),
+  });
+  holeMat.polygonOffset = true; holeMat.polygonOffsetFactor = 1; holeMat.polygonOffsetUnits = 1;
+}
+
+const targets = Object.fromEntries(ROLES.map((r) => [r, new THREE.Color()]));
+function paint(k) {
+  if (!renderer) return;
+  const p = PAL[S.face];
+  targets.cuerpo.set(p.plate); targets.secundario.set(p.ink); targets.acento.set(p.signal);
+  targets.metal.set('#C9CDD3').lerp(targets.cuerpo, 0.15);
+  targets.vidrio.set('#DCEBF5');
+  for (const r of ROLES) mats[r].color.lerp(targets[r], k);
+  mats.acento.emissive.copy(mats.acento.color);
+  lineMat.color.lerp(new THREE.Color(p.line), k);
+  packetCore.color.set(p.signal);
+  packetHalo.color.set(p.signal);
+}
+
+/* ---------- pieces ---------- */
+const pieces = new Map();
+async function loadPiece(area) {
+  if (pieces.has(area)) return pieces.get(area);
+  const job = (async () => {
+    const gltf = await loader.loadAsync(`assets/work3d/models/${area}.glb`);
+    const g = gltf.scene;
+    const nodes = [...g.children];
+    g.traverse((o) => {
+      if (!o.isMesh) return;
+      o.userData.role = roleOf(o.material.name);
+      o.material.dispose();
+      o.material = mats[o.userData.role];
+      o.frustumCulled = false;
+      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry, 28), lineMat);
+      edges.frustumCulled = false; edges.raycast = () => {};
+      o.add(edges);
+    });
+    const offsets = nodes.map((n) => blender(n.userData.explota) ?? new THREE.Vector3());
+    const heights = nodes.map((n, i) => n.position.y + offsets[i].y);
+    const rank = new Map([...heights.keys()].sort((a, b) => heights[a] - heights[b]).map((idx, r) => [idx, r]));
+    const parts = nodes.map((node, i) => ({
+      node, name: node.name.slice(area.length + 2), base: node.position.clone(), q0: node.quaternion.clone(), offset: offsets[i],
+      delay: 1 - (rank.get(i) ?? 0) / Math.max(1, nodes.length - 1),
+      motion: motionFor(area, node.name.slice(area.length + 2), node.userData),
+    }));
+    const spinner = new THREE.Group();
+    spinner.add(g);
+    const wrap = new THREE.Group();
+    wrap.add(spinner);
+    wrap.visible = false;
+    rig.add(wrap);
+    const piece = { area, g, spinner, wrap, parts, byName: new Map(parts.map((p) => [p.name, p])), c0: new THREE.Vector3(), c1: new THREE.Vector3(), r0: 1, r1: 1, flow: null, screen: null };
+    pose(piece, 0, 0);
+    wrap.updateMatrixWorld(true);
+    let b = new THREE.Box3().setFromObject(g);
+    b.getCenter(piece.c0); piece.ext0 = extent(b, piece.c0);
+    pose(piece, 1, 0);
+    wrap.updateMatrixWorld(true);
+    b = new THREE.Box3().setFromObject(g);
+    b.getCenter(piece.c1); piece.ext1 = extent(b, piece.c1);
+    piece.r0 = piece.ext0.h;
+    if (area === 'fullstack') piece.screen = makeScreen(piece);
+    if (area === 'ai') piece.flow = makeFlow(piece);
+    return piece;
+  })();
+  pieces.set(area, job);
+  job.catch(() => pieces.delete(area));
+  return job;
+}
+
+function extent(b, c) {
+  const dx = Math.max(b.max.x - c.x, c.x - b.min.x), dz = Math.max(b.max.z - c.z, c.z - b.min.z);
+  return { h: Math.hypot(dx, dz), y: Math.max(b.max.y - c.y, c.y - b.min.y) };
+}
+const qa = new THREE.Quaternion(), qc = new THREE.Quaternion();
+function pose(piece, e, t) {
+  for (const part of piece.parts) {
+    const l = easeInOut(clamp((e - part.delay * 0.45) / 0.55, 0, 1));
+    const n = part.node, m = part.motion, life = 1 - 0.7 * l;
+    n.position.copy(part.base).addScaledVector(part.offset, l * EXPLODE[piece.area]);
+    if (m.bob) n.position.y += m.bob[0] * piece.r0 * Math.sin(m.bob[1] * t + m.bob[2]) * life;
+    if (m.play) playMove(m.play, t, life, n);
+    n.quaternion.copy(part.q0);
+    if (m.play?.kind === 'tilt') {
+      const { a, b, amp, ph } = m.play;
+      n.quaternion.copy(qa.identity().multiply(qc.setFromAxisAngle(a, amp * Math.sin(2.1 * t + ph) * life)).multiply(qc.setFromAxisAngle(b, amp * Math.sin(2.9 * t + ph + 1) * life))).multiply(part.q0);
+    }
+    if (m.spin) n.quaternion.multiply(qa.setFromAxisAngle(Yax, m.spin * t));
+    n.scale.setScalar(m.pulse ? 1 + m.pulse[0] * Math.sin(m.pulse[1] * t + m.pulse[2]) * life : 1);
+  }
+}
+const EXPLODE = { fullstack: 1.05, ai: 0.8, data: 0.9, design: 0.9 };
+
+/* TrainLog screens play on the cabinet's screen panel */
+function makeScreen(piece) {
+  const node = piece.byName.get('pantalla_panel').node;
+  const msh = node.isMesh ? node : node.children.find((c) => c.isMesh);
+  console.info('screen mesh', msh.name, msh.position.toArray(), msh.quaternion.toArray(), msh.scale.toArray());
+  msh.geometry.computeBoundingBox();
+  const bb = msh.geometry.boundingBox, size = bb.getSize(new THREE.Vector3()), ctr = bb.getCenter(new THREE.Vector3());
+  const axes = [new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 1)];
+  const sz = [size.x, size.y, size.z];
+  const world = axes.map((a) => a.clone().applyQuaternion(piece.parts.find((p) => p.node === node).q0));
+  const ni = sz.indexOf(Math.min(...sz));
+  const rest = [0, 1, 2].filter((i) => i !== ni);
+  const ui = Math.abs(world[rest[0]].y) > Math.abs(world[rest[1]].y) ? rest[0] : rest[1];
+  const wi = rest.find((i) => i !== ui);
+  const zAx = axes[ni].clone().multiplyScalar(world[ni].z >= 0 ? 1 : -1);
+  const yAx = axes[ui].clone().multiplyScalar(world[ui].y >= 0 ? 1 : -1);
+  const xAx = new THREE.Vector3().crossVectors(yAx, zAx);
+  const cw = 640, ch = Math.round(cw * sz[ui] / sz[wi]);
+  const canvas = document.createElement('canvas');
+  canvas.width = cw; canvas.height = ch;
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(sz[wi] * 0.96, sz[ui] * 0.96), new THREE.MeshBasicMaterial({ map: tex, color: new THREE.Color(1.5, 1.5, 1.5), toneMapped: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 }));
+  mesh.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xAx, yAx, zAx));
+  mesh.position.copy(ctr).addScaledVector(zAx, sz[ni] / 2 + 0.004);
+  mesh.frustumCulled = false; mesh.raycast = () => {};
+  node.add(mesh);
+  return { canvas, ctx: canvas.getContext('2d'), tex };
+}
+
+const imgs = SHOTS.map((s) => { const i = new Image(); i.src = s.src; return i; });
+let shot = 0, prevShot = -1, shotT0 = 0;
+function drawScreen(piece) {
+  const sc = piece.screen; if (!sc) return;
+  const { ctx, canvas, tex } = sc, w = canvas.width, h = canvas.height;
+  ctx.fillStyle = '#080c18'; ctx.fillRect(0, 0, w, h);
+  const age = S.t - shotT0, fade = reduce.matches ? 1 : clamp(age / 0.45, 0, 1);
+  const draw = (i, a, f) => {
+    const im = imgs[i]; if (!im.complete || !im.naturalWidth) return;
+    const dh = im.naturalHeight * (w / im.naturalWidth);
+    ctx.globalAlpha = a; ctx.drawImage(im, 0, -(dh - h) * f, w, dh);
+  };
+  if (prevShot >= 0 && fade < 1) draw(prevShot, 1 - fade, 1);
+  draw(shot, fade, reduce.matches ? 0 : easeInOut(clamp((age - 0.5) / 2.6, 0, 1)));
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = 'rgba(0,0,0,.12)';
+  for (let y = 0; y < h; y += 3) ctx.fillRect(0, y, w, 1);
+  const vg = ctx.createRadialGradient(w / 2, h / 2, h * 0.3, w / 2, h / 2, h * 0.9);
+  vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.28)');
+  ctx.fillStyle = vg; ctx.fillRect(0, 0, w, h);
+  tex.needsUpdate = true;
+}
+
+/* A labelled packet walks the network layer by layer; ambient packets just walk. */
+function makeFlow(piece) {
+  const outgoing = new Map(), entries = [];
+  for (const p of piece.parts) {
+    const spec = p.node.userData.arista; if (!spec) continue;
+    const [a, b] = spec.split('>').map((n) => piece.byName.get(n));
+    if (!a || !b) continue;
+    outgoing.set(a, [...(outgoing.get(a) ?? []), { a, b }]);
+    if (a.node.userData.capa === 1) entries.push({ a, b });
+  }
+  const mkDot = () => {
+    const core = new THREE.Mesh(packetGeo, packetCore), halo = new THREE.Mesh(packetGeo, packetHalo);
+    core.frustumCulled = halo.frustumCulled = false; core.raycast = halo.raycast = () => {};
+    piece.g.add(core, halo);
+    return { core, halo };
+  };
+  const ambient = Array.from({ length: 6 }, (_, i) => ({ ...mkDot(), edge: null, f: 0, wait: i * 0.4, speed: 0.9 }));
+  const lead = { ...mkDot(), path: [], hop: 0, f: 0, hold: 0, stage: -1, pos: new THREE.Vector3(), on: false };
+  const newPath = () => {
+    let e = pick(entries); const path = [e];
+    while (outgoing.get(e.b)) { e = pick(outgoing.get(e.b)); path.push(e); }
+    return path;
+  };
+  lead.path = newPath();
+  return {
+    ambient, lead, newPath,
+    update(dt) {
+      const stages = PLUGINS[S.plugin].stages, n = stages.length;
+      const place = (d, pos, s) => { d.core.position.copy(pos); d.halo.position.copy(pos); d.core.scale.setScalar(s); d.halo.scale.setScalar(s * 2.2); };
+      const pos = new THREE.Vector3();
+      for (const w of ambient) {
+        let s = 0;
+        if (w.edge) {
+          w.f += dt * w.speed;
+          if (w.f >= 1) { const next = outgoing.get(w.edge.b); w.edge = next ? pick(next) : null; w.f = 0; if (!w.edge) w.wait = 0.4 + Math.random() * 0.8; }
+        } else if ((w.wait -= dt) <= 0) { w.edge = pick(entries); w.f = 0; w.speed = 0.75 + Math.random() * 0.35; }
+        if (w.edge) { pos.lerpVectors(w.edge.a.node.position, w.edge.b.node.position, w.f); s = Math.min(1, w.f * 5, (1 - w.f) * 5) * 0.06; }
+        place(w, pos, reduce.matches ? 0 : s);
+      }
+      const hops = lead.path.length, total = n * 1.05;
+      if (reduce.matches) { lead.hop = hops - 1; lead.f = 1; } else if (lead.hold > 0) { lead.hold -= dt; if (lead.hold <= 0) { lead.path = newPath(); lead.hop = 0; lead.f = 0; } } else {
+        lead.f += dt * hops / total;
+        if (lead.f >= 1) { lead.f = 0; lead.hop++; }
+        if (lead.hop >= hops) { lead.hop = hops - 1; lead.f = 1; lead.hold = 1.6; }
+      }
+      const edge = lead.path[lead.hop];
+      lead.pos.lerpVectors(edge.a.node.position, edge.b.node.position, lead.f);
+      const idx = Math.min(n - 1, Math.floor(((lead.hop + lead.f) / hops) * n));
+      place(lead, lead.pos, 0.17 * (1 + 0.18 * Math.sin(S.t * 8)));
+      lead.stage = idx;
+      const key = reduce.matches || lead.hold > 0 ? 'done' : idx;
+      if (key !== lead.key) { lead.key = key; markStages(idx, key === 'done'); }
+    },
+  };
+}
+
+/* ---------- callouts ---------- */
+let calls = [], activeCfg = null;
+function buildCalls(id) {
+  const cfg = PROJECTS[id];
+  cosEl.classList.remove('on'); leads.classList.remove('on');
+  cosEl.innerHTML = ''; leads.innerHTML = '';
+  calls = cfg.calls.map((c, i) => {
+    const d = `${i * 120}ms`;
+    const li = document.createElement('li');
+    li.className = 'co' + (c.dash ? ' co--dash' : ''); li.dataset.side = c.side; li.style.setProperty('--d', d);
+    const inner = `<span class="co__k"><span class="co__n" aria-hidden="true">${i + 1}</span>${c.k}</span><span class="co__t">${c.t}</span>${c.s ? `<span class="co__s">${c.s}</span>` : ''}`;
+    li.innerHTML = `<div class="co__in">${c.plugin !== undefined ? `<button type="button" class="co__box" data-plugin="${c.plugin}" aria-pressed="${c.plugin === S.plugin}">${inner}</button>` : `<div class="co__box">${inner}</div>`}</div>`;
+    cosEl.append(li);
+    const g = document.createElementNS(SVGNS, 'g');
+    g.setAttribute('class', 'lead' + (c.dash ? ' lead--dash' : '')); g.style.setProperty('--d', d);
+    g.innerHTML = `<path pathLength="1" d="M0 0"/><circle class="ring" r="11"/><circle class="pin" r="11"/><text class="pn">${i + 1}</text>`;
+    leads.append(g);
+    return { cfg: c, el: li, g, path: g.children[0], ring: g.children[1], pin: g.children[2], pn: g.children[3], ax: 0, ay: 0, y: null, h: 0 };
+  });
+  leads.append(inspRect, inspText);
+  activeCfg = cfg;
+  measure();
+}
+function measure() { for (const c of calls) c.h = c.el.offsetHeight; }
+
+const box = new THREE.Box3(), tb = new THREE.Box3(), v3 = new THREE.Vector3();
+function project(x, y, z, W, H) { v3.set(x, y, z).project(camera); return [(v3.x + 1) / 2 * W, (1 - v3.y) / 2 * H]; }
+function anchorOf(piece, c) {
+  box.makeEmpty();
+  for (const n of c.cfg.parts) { const p = piece.byName.get(n); if (p) box.union(tb.setFromObject(p.node)); }
+  if (box.isEmpty()) { const b = tb.setFromObject(piece.g); box.copy(b); box.min.x = box.max.x = (b.min.x + b.max.x) / 2; box.min.z = box.max.z = b.max.z; box.min.y = box.max.y = b.min.y + (b.max.y - b.min.y) * 0.25; }
+  return box.getCenter(v3.set(0, 0, 0));
+}
+function layout(piece, snap) {
+  const W = stage.clientWidth, H = stage.clientHeight;
+  const labW = calls[0]?.el.offsetWidth ?? 0;
+  const pts = calls.map((c) => { const p = anchorOf(piece, c).clone(); const [x, y] = project(p.x, p.y, p.z, W, H); c.ax = x; c.ay = y; return c; });
+  const dsk = desk.matches;
+  for (const side of ['L', 'R']) {
+    const at = (c) => (c.cfg.v === 'top' ? -1e4 : c.cfg.v === 'bottom' ? 1e4 : c.ay);
+    const col = pts.filter((c) => c.cfg.side === side).sort((a, b) => at(a) - at(b));
+    let cur = 16;
+    for (const c of col) { c.ty = Math.max(c.cfg.v === 'bottom' ? H : c.cfg.v === 'top' ? 0 : c.ay - 18, cur); cur = c.ty + c.h + 14; }
+    const maxEnd = H - 62;
+    let over = cur - 14 - maxEnd;
+    for (let i = col.length - 1; i >= 0 && over > 0; i--) { const shift = Math.min(over, col[i].ty - (i ? col[i - 1].ty + col[i - 1].h + 14 : 16)); col[i].ty -= shift; over -= shift; }
+    for (const c of col) c.ty = Math.max(16, c.ty);
+    col.forEach((c) => { c.y = c.y === null || snap ? c.ty : c.y + (c.ty - c.y) * 0.18; });
+  }
+  for (const c of pts) {
+    c.pin.setAttribute('cx', c.ax); c.pin.setAttribute('cy', c.ay); c.ring.setAttribute('cx', c.ax); c.ring.setAttribute('cy', c.ay);
+    c.pn.setAttribute('x', c.ax); c.pn.setAttribute('y', c.ay);
+    if (!dsk) continue;
+    c.el.style.transform = `translateY(${c.y.toFixed(1)}px)`;
+    const left = c.cfg.side === 'L', ex = left ? 20 + labW : W - 20 - labW, dir = left ? 1 : -1;
+    c.path.setAttribute('d', `M${c.ax.toFixed(1)} ${c.ay.toFixed(1)}L${(ex + dir * 34).toFixed(1)} ${c.y.toFixed(1)}L${ex} ${c.y.toFixed(1)}`);
+  }
+}
+
+/* ---------- stage rail (AI) ---------- */
+function buildStages() {
+  const pl = PLUGINS[S.plugin];
+  stagesEl.innerHTML = `<li class="stages__lab" style="box-shadow:none;min-height:0;padding:0;list-style:none">${pl.name}</li>` + pl.stages.map((s, k) => `<li data-k="${k}">${String(k + 1).padStart(2, '0')} ${s}${pl.note[s] ? ` <small>${pl.note[s]}</small>` : ''}</li>`).join('');
+  stagesEl.setAttribute('aria-label', `${pl.name} workflow stages`);
+}
+function markStages(idx, done) {
+  [...stagesEl.querySelectorAll('li[data-k]')].forEach((li, k) => {
+    li.classList.toggle('on', !done && k === idx);
+    li.classList.toggle('done', done || k < idx);
+  });
+}
+
+/* ---------- state machine ---------- */
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+function setTB(piece) {
+  const cfg = activeCfg;
+  document.getElementById('tb-p').textContent = cfg.tb ?? cfg.title;
+  document.getElementById('tb-a').textContent = cfg.sheet;
+  document.getElementById('tb-n').textContent = `${piece.parts.length} parts`;
+  stage.setAttribute('aria-label', cfg.label);
+}
+function setView() {
+  const v = S.piece?.ghost ? 'Draft' : S.e > 0.5 ? 'Exploded' : 'Assembled';
+  if (v !== S.view) { S.view = v; document.getElementById('tb-v').textContent = v; }
+}
+function setExploded(on) {
+  S.exploded = on; S.eT = on ? 1 : 0;
+  if (reduce.matches) { S.e = S.eT; requestRender(); }
+  explodeBtn.setAttribute('aria-pressed', String(!on));
+  const txt = on ? 'Reassemble' : 'Explode again';
+  const sp = explodeBtn.querySelector('.roll>span'); sp.textContent = txt; sp.dataset.t = txt;
+  if (!on) { cosEl.classList.remove('on'); leads.classList.remove('on'); }
+}
+
+async function openProject(id) {
+  const seq = ++S.seq, cfg = PROJECTS[id];
+  cosEl.classList.remove('on'); leads.classList.remove('on');
+  if (S.piece && !reduce.matches && S.e > 0.02 && !S.piece.ghost) {
+    S.eT = 0;
+    for (let i = 0; i < 30 && S.e > 0.02; i++) await wait(50);
+    if (seq !== S.seq) return;
+  }
+  if (S.piece) S.piece.wrap.visible = false;
+  S.id = id; S.piece = null;
+  statusEl.hidden = false; statusEl.textContent = renderer ? 'Loading parts…' : statusEl.textContent;
+  reelbar.hidden = id !== 'trainlog'; capEl.hidden = id !== 'trainlog';
+  stagesEl.hidden = id !== 'changesmith';
+  explodeBtn.hidden = !!cfg.ghost;
+  buildCalls(id);
+  if (!renderer) { cosEl.classList.add('on'); return; }
+  let piece;
+  try { piece = await loadPiece(cfg.area); } catch (err) { console.warn('piece failed', err); statusEl.textContent = '3D view unavailable. The annotations are listed instead.'; document.documentElement.classList.add('no3d'); cosEl.classList.add('on'); return; }
+  if (seq !== S.seq) return;
+  for (const p of piece.parts) p.node.traverse((o) => { if (o.isMesh && o.userData.role) o.material = cfg.ghost ? holeMat : mats[o.userData.role]; });
+  piece.ghost = !!cfg.ghost;
+  lineMat.opacity = cfg.ghost ? 1 : 0.55;
+  piece.wrap.visible = true; piece.cfg = cfg;
+  S.piece = piece; S.e = 0; S.eT = 0; S.view = '';
+  statusEl.hidden = true;
+  setTB(piece); measure();
+  if (cfg.ghost) wait(400).then(() => { if (seq === S.seq) showCalls(); });
+  if (cfg.area === 'ai') { buildStages(); }
+  if (cfg.area === 'fullstack') { shotT0 = S.t; }
+  S.exploded = true; setExploded(true); S.eT = 0;
+  if (reduce.matches) { S.e = 1; S.eT = 1; requestRender(); showCalls(); return; }
+  S.openedAt = performance.now(); S.armed = true;
+  armExplode();
+}
+function armExplode() {
+  if (!S.armed || !S.piece) return;
+  if (!S.vis) return;
+  S.armed = false;
+  const seq = S.seq;
+  wait(S.piece.ghost ? 0 : 650).then(() => { if (seq !== S.seq) return; if (S.exploded) S.eT = 1; });
+}
+function showCalls() {
+  cosEl.classList.add('on'); leads.classList.add('on');
+}
+
+/* ---------- carousel ---------- */
+let hold = 0;
+dotsEl.innerHTML = SHOTS.map((s, i) => `<button type="button" data-i="${i}" aria-label="Show screen ${i + 1} of ${SHOTS.length}"></button>`).join('');
+reelbar.querySelectorAll('.reel__arrow').forEach((b) => { b.innerHTML = b.dataset.dir === '1' ? ICON.next : ICON.prev; });
+function setShot(i, user) {
+  i = (i + SHOTS.length) % SHOTS.length;
+  if (i !== shot) { prevShot = shot; shot = i; shotT0 = S.t; }
+  [...dotsEl.children].forEach((d, k) => d.setAttribute('aria-current', String(k === i)));
+  countEl.textContent = `${String(i + 1).padStart(2, '0')} / ${String(SHOTS.length).padStart(2, '0')}`;
+  capEl.textContent = SHOTS[i].alt;
+  if (user) hold = performance.now() + 9000;
+  if (reduce.matches && S.piece) requestRender();
+}
+reelbar.addEventListener('click', (e) => {
+  const d = e.target.closest('[data-dir]'), dot = e.target.closest('.dots button');
+  if (d) setShot(shot + Number(d.dataset.dir), true); else if (dot) setShot(Number(dot.dataset.i), true);
+});
+setInterval(() => { if (S.id === 'trainlog' && S.vis && S.playing && !document.hidden && performance.now() > hold) setShot(shot + 1); }, 3800);
+setShot(0);
+
+/* ---------- controls ---------- */
+explodeBtn.addEventListener('click', () => setExploded(!S.exploded));
+motionBtn.addEventListener('click', () => {
+  S.playing = !S.playing;
+  motionBtn.setAttribute('aria-pressed', String(!S.playing));
+  const txt = S.playing ? 'Pause' : 'Play';
+  motionBtn.setAttribute('aria-label', S.playing ? 'Pause motion' : 'Resume motion');
+  const sp = motionBtn.querySelector('.roll>span'); sp.textContent = txt; sp.dataset.t = txt;
+});
+if (reduce.matches) motionBtn.hidden = true;
+cosEl.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-plugin]'); if (!b) return;
+  S.plugin = Number(b.dataset.plugin);
+  cosEl.querySelectorAll('[data-plugin]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  buildStages();
+  const f = S.piece?.flow; if (f) { f.lead.path = f.newPath(); f.lead.hop = 0; f.lead.f = 0; f.lead.hold = 0; f.lead.stage = -1; f.lead.key = null; }
+  if (reduce.matches) { requestRender(); }
+});
+
+/* ---------- frame ---------- */
+const inspRect = document.createElementNS(SVGNS, 'rect'), inspText = document.createElementNS(SVGNS, 'text');
+inspRect.setAttribute('class', 'insp'); inspText.setAttribute('class', 'inspt');
+leads.append(inspRect, inspText);
+let yaw = 0, pitch = 0, dragging = false, dragX = 0, last = performance.now(), raf = 0, needs = false;
+
+function resize() {
+  if (!renderer) return;
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (!w || !h) return;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+  leads.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  measure(); requestRender();
+}
+
+function render(dt, snap) {
+  const piece = S.piece; if (!piece || !renderer) return;
+  const W = stage.clientWidth, H = stage.clientHeight;
+  if (piece.ghost) S.e = reduce.matches ? 0.28 : 0.2 + 0.16 * Math.sin(S.t * 0.5);
+  else if (reduce.matches) S.e = S.eT;
+  else S.e = clamp(S.e + Math.sign(S.eT - S.e) * Math.min(Math.abs(S.eT - S.e), dt / (S.eT > S.e ? 1.7 : 0.85)), 0, 1);
+  const t = S.playing ? S.t : S.t;
+  pose(piece, S.e, t);
+  const ee = easeInOut(S.e);
+  piece.g.position.copy(piece.c0).lerp(piece.c1, ee).negate();
+  const cfg = piece.cfg;
+  const lerp = (a, b) => a + (b - a) * ee;
+  const eh = lerp(piece.ext0.h, piece.ext1.h), ey = lerp(piece.ext0.y, piece.ext1.y);
+  const halfH = Math.tan(THREE.MathUtils.degToRad(15)) * 10, aspect = W / H;
+  const frac = cfg.fill ? 0.96 : desk.matches ? clamp((W - 2 * ((calls[0]?.el.offsetWidth ?? 0) + 36)) / W, 0.3, 1) : 0.92;
+  const sinP = Math.sin(piece.cfg.pitch);
+  const fit = (cfg.zoom ?? (desk.matches ? 1 : 0.88)) * (1 + 0.42 * ee) * Math.min((halfH * 0.9) / (ey + eh * sinP), (halfH * aspect * frac * 0.92) / eh);
+  piece.spinner.scale.setScalar(fit);
+  const px = reduce.matches ? 0 : S.nx, py = reduce.matches ? 0 : S.ny;
+  const k = snap ? 1 : 1 - Math.exp(-3.2 * dt);
+  yaw += (px * 0.3 + S.drag - yaw) * k; pitch += (py * 0.12 - pitch) * k;
+  if (!dragging) S.drag *= Math.exp(-0.5 * dt);
+  rig.rotation.y = cfg.yaw + yaw + (reduce.matches ? 0 : Math.sin(S.t * 0.3) * 0.08);
+  rig.rotation.x = cfg.pitch + pitch;
+  mats.acento.emissiveIntensity = 0.55 + 0.25 * Math.sin(S.t * 2.2);
+  if (piece.screen) drawScreen(piece);
+  piece.flow?.update(dt, S.e);
+  renderer.render(scene, camera);
+
+  if (!piece.ghost && S.e > 0.35 && S.exploded) { if (!cosEl.classList.contains('on')) showCalls(); }
+  setView();
+  layout(piece, snap || !S.playing);
+  const lead = piece.flow?.lead;
+  if (lead) {
+    const wp = piece.g.localToWorld(lead.pos.clone());
+    const [x, y] = project(wp.x, wp.y, wp.z, W, H);
+    const pl = PLUGINS[S.plugin], i = Math.max(0, lead.stage), s = pl.stages[i];
+    pkEl.textContent = `${String(i + 1).padStart(2, '0')} ${s}${pl.note[s] ? ` (${pl.note[s]})` : ''}`;
+    const pw = pkEl.offsetWidth;
+    pkEl.style.transform = `translate(${clamp(x + 14, 10, W - pw - 10).toFixed(0)}px, ${clamp(y - 36, 10, H - 80).toFixed(0)}px)`;
+    pkEl.classList.add('on');
+  } else pkEl.classList.remove('on');
+  if (!reduce.matches) drawInspector(piece, W, H);
+}
+
+function drawInspector(piece, W, H) {
+  const part = S.hover && piece.parts.find((p) => p.node === S.hover);
+  if (!part || piece.ghost || S.e < 0.5) { inspRect.classList.remove('on'); inspText.classList.remove('on'); setInspect('Inspect —'); return; }
+  const b = tb.setFromObject(part.node);
+  let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const x of [b.min.x, b.max.x]) for (const y of [b.min.y, b.max.y]) for (const z of [b.min.z, b.max.z]) { const [sx, sy] = project(x, y, z, W, H); x0 = Math.min(x0, sx); y0 = Math.min(y0, sy); x1 = Math.max(x1, sx); y1 = Math.max(y1, sy); }
+  inspRect.setAttribute('x', x0 - 4); inspRect.setAttribute('y', y0 - 4); inspRect.setAttribute('width', x1 - x0 + 8); inspRect.setAttribute('height', y1 - y0 + 8);
+  inspText.setAttribute('x', x0 - 4); inspText.setAttribute('y', y0 - 10); inspText.textContent = part.node.name;
+  inspRect.classList.add('on'); inspText.classList.add('on');
+  setInspect(part.name);
+}
+const tbI = document.getElementById('tb-i');
+function setInspect(txt) { if (tbI.textContent !== txt) tbI.textContent = txt; }
+
+function frame(now) {
+  raf = requestAnimationFrame(frame);
+  const dt = Math.min(0.05, (now - last) / 1000); last = now;
+  if (S.playing) S.t += dt;
+  paint(S.snap ? 1 : 1 - Math.exp(-4 * dt));
+  const snap = S.snap; S.snap = false;
+  render(dt, snap);
+}
+function requestRender() {
+  if (!reduce.matches || needs) return;
+  needs = true;
+  requestAnimationFrame((now) => { needs = false; last = now; paint(1); render(0.016, true); });
+}
+function run() {
+  const on = S.vis && !document.hidden && !reduce.matches && renderer;
+  if (on && !raf) { last = performance.now(); raf = requestAnimationFrame(frame); }
+  else if (!on && raf) { cancelAnimationFrame(raf); raf = 0; }
+}
+new IntersectionObserver((es) => { S.vis = es[0].isIntersecting; run(); armExplode(); if (S.vis) requestRender(); }, { threshold: 0.35 }).observe(stage);
+document.addEventListener('visibilitychange', run);
+new ResizeObserver(resize).observe(stage);
+desk.addEventListener('change', () => { measure(); requestRender(); });
+document.fonts?.ready.then(() => { measure(); requestRender(); });
+
+new MutationObserver(() => { S.face = document.documentElement.dataset.face; if (reduce.matches) { requestRender(); } }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-face'] });
+
+/* pointer: parallax, drag, inspector */
+if (renderer) {
+  const cv = renderer.domElement;
+  cv.setAttribute('aria-hidden', 'true');
+  addEventListener('pointermove', (e) => { S.nx = (e.clientX / innerWidth) * 2 - 1; S.ny = (e.clientY / innerHeight) * 2 - 1; }, { passive: true });
+  cv.addEventListener('pointerdown', (e) => { if (reduce.matches) return; dragging = true; dragX = e.clientX; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointerup', () => { dragging = false; });
+  cv.addEventListener('pointercancel', () => { dragging = false; });
+  cv.addEventListener('pointermove', (e) => {
+    if (dragging) { S.drag = clamp(S.drag + (e.clientX - dragX) * 0.01, -1.5, 1.5); dragX = e.clientX; }
+    if (e.pointerType !== 'mouse' || !S.piece || reduce.matches) return;
+    const r = cv.getBoundingClientRect();
+    raycaster.setFromCamera(new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1), camera);
+    let o = raycaster.intersectObjects(S.piece.parts.map((p) => p.node), true)[0]?.object ?? null;
+    while (o && o.parent !== S.piece.g) o = o.parent;
+    S.hover = o;
+  });
+  cv.addEventListener('pointerleave', () => { S.hover = null; });
+  cv.addEventListener('webglcontextlost', (e) => { e.preventDefault(); statusEl.hidden = false; statusEl.textContent = '3D view paused. Reload to restore it.'; });
+}
+
+/* ---------- tabs (from mock B) ---------- */
+const tabs = $$('.tab'), thumb = $('.sel__thumb'), list = $('#tabs');
+let sel = -1;
+function placeThumb() {
+  const t = tabs[sel]; if (!t) return;
+  thumb.style.width = t.offsetWidth + 'px'; thumb.style.height = t.offsetHeight + 'px';
+  thumb.style.transform = `translate(${t.offsetLeft}px, ${t.offsetTop}px)`;
+}
+function select(i, focus) {
+  i = (i + tabs.length) % tabs.length;
+  const first = sel < 0; sel = i;
+  tabs.forEach((t, k) => {
+    const on = k === i;
+    t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+    const pane = document.getElementById(t.getAttribute('aria-controls'));
+    pane.classList.toggle('on', on); pane.inert = !on;
+  });
+  if (first) { thumb.style.transition = 'none'; placeThumb(); void thumb.offsetWidth; thumb.style.transition = ''; } else placeThumb();
+  if (focus) tabs[i].focus();
+  if (!first) history.replaceState(null, '', '#' + tabs[i].dataset.id);
+  openProject(tabs[i].dataset.id);
+}
+list.addEventListener('click', (e) => { const t = e.target.closest('.tab'); if (t && tabs.indexOf(t) !== sel) select(tabs.indexOf(t)); });
+list.addEventListener('keydown', (e) => {
+  const k = e.key, d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[k];
+  if (d) { e.preventDefault(); select(sel + d, true); } else if (k === 'Home') { e.preventDefault(); select(0, true); } else if (k === 'End') { e.preventDefault(); select(tabs.length - 1, true); }
+});
+addEventListener('resize', placeThumb);
+document.fonts?.ready.then(placeThumb);
+select(Math.max(0, tabs.findIndex((t) => '#' + t.dataset.id === location.hash)));
+['changesmith', 'data', 'design'].forEach((id, i) => wait(2500 + i * 1200).then(() => renderer && loadPiece(PROJECTS[id].area).catch(() => {})));
+window.__mock = { S, PROJECTS, loadPiece };
+
+</script>
+</body>
+</html>

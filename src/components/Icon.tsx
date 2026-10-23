@@ -1,6 +1,5 @@
 const ICONS = {
   mail: { box: '0 0 24 24', d: 'M3 6h18v12H3zM3 6l9 7 9-7', width: 1.8 },
-  cv: { box: '0 0 24 24', d: 'M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6', width: 1.8 },
   linkedin: { box: '0 0 24 24', d: 'M4 4h16v16H4zM8 10v6M8 7.5v.01M12 16v-6m0 3c0-2 1.2-3 2.6-3S17 11 17 13v3', width: 1.8 },
   github: {
     box: '0 0 18 18',

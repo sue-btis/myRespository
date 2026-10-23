@@ -33,8 +33,6 @@
   transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease-out);
 }
 a.nl:hover .t::after { transform: scaleX(1); transform-origin: left; }
-.nl.pend { border: 1.5px dashed var(--rule); color: var(--ink-2); cursor: not-allowed; }
-.nl.pend .t::after { display: none; }
 @media (max-width: 640px) {
   .nl .t { display: none; }
   .nl { padding: 0 8px; min-width: 44px; justify-content: center; }

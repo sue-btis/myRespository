@@ -345,7 +345,7 @@ One family, `.btn`, in the hero, top bar and close: every instance shares size, 
 - **Primary:** `cta` fill, `on-cta` text, 700 weight at 1rem, 48px tall (`.btn--sm`, 44px, in the top bar), icon left.
 - **Hover / Focus:** icon lifts up-right on a spring, label letters hop, a soft cursor-tracked spotlight, a magnetic lean on fine pointers; focus is a 3px ink outline at 3px offset. Pressed scales to .95.
 - **Ghost:** transparent with a 1.5px outline of ink at 45% and ink text, so it always reads below the primary; hover tints 8% ink and solidifies the outline.
-- **Write to me** is a mailto link that also copies the address; a "Email copied" status (live region, visible chip) confirms it. Pending items (CV) are dashed and inert, sized like the buttons in the close row; inside the screen a pending item is plain muted text.
+- **Write to me** is a mailto link that also copies the address; a "Email copied" status (live region, visible chip) confirms it. Inside the screen a pending item (the TrainLog demo) is plain muted text.
 
 ### Chips
 - **Style:** inside the screen only: 32px, 4px radius, 2px inset `scr-line` outline, `scr-fg` text 700.
@@ -359,7 +359,7 @@ One family, `.btn`, in the hero, top bar and close: every instance shares size, 
 - **Internal Padding:** `clamp(12px, 1.4vw, 18px)`. Each area card carries its icon, number, name, project count, and a five-swatch strip of its palette that extends on hover or selection. Cards tilt in 3D toward the pointer with a soft-light glare.
 
 ### Navigation
-- **Style:** transparent fixed bar over the field; after scrolling, ground at 82% with a 10px blur and a rule hairline. Wordmark in the display face (scaled by `--k`) with a signal dot that pulses three times on load; links at .9rem with an icon and a 2px underline that wipes in from the left; pending links (CV) render dashed and inert. Below 640px links show icons only at 44px.
+- **Style:** transparent fixed bar over the field; after scrolling, ground at 82% with a 10px blur and a rule hairline. Wordmark in the display face (scaled by `--k`) with a signal dot that pulses three times on load; links at .9rem with an icon and a 2px underline that wipes in from the left. Below 640px links show icons only at 44px.
 
 ### Work Console (signature)
 A handheld console: shell in site tokens, LED and "Projects" silkscreen on top, speaker grille, a status line with key caps at the bottom that follows the screen ("Choose a project to load" or "<Project> loaded" with Esc back). The first time it scrolls into view it loads the active area's project (else the first) with no animation; cartridges switch projects and Back returns to the slots. Only areas with a project get a cartridge. The screen switches views (select, loading bar of ten cells, project) without moving the console. Project views hold a framed viewport (corner brackets in `scr-acc`, a tag notched into the frame) with a phone-screenshot reel, a landscape render reel (the 3D showcase: stills exported from the Blender pipeline's renders) or a typed terminal, plus title, pitch, labelled steps, stack chips, proof badges and keys. Motion inside is stepped (`steps(2–8)`); a rejected action shakes the cartridge.

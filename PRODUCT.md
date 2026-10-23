@@ -16,7 +16,7 @@ Secondary: hiring managers and engineers who open the projects and code to judge
 
 Josue Escobar's personal portfolio. It replaces a generic "developer" site that no longer represents him. Success: a visitor understands who he is in 10 seconds, sees verifiable evidence for each project, and writes to him.
 
-Primary action: contact Josue. CV, LinkedIn and GitHub are secondary and always visible.
+Primary action: contact Josue. LinkedIn and GitHub are secondary and always visible.
 
 ## Positioning
 
@@ -53,7 +53,7 @@ The site itself has to demonstrate craft; a template look defeats the purpose.
 - TrainLog (Full-stack & Product): offline-first training PWA, React/TS, mutation testing, ADRs. Source in the sibling repo `../TrainLog`, screenshots in `../TrainLog/docs/screenshots/`. Public demo URL: not provided yet; do not invent one.
 - ChangeSmith (AI & Agents): public repo `github.com/sue-btis/ChangeSmith`, Claude Code plugins for spec-driven changes.
 - Career: mechatronics technician (CBTis 122, 2018) → biomedical engineer (UACH, 2024) → QA data analysis intern at Teleflex (2024–2025) → data scientist at Waldo's (2025) → Ecosat (current).
-- CV: maintained by Josue outside the site; the site only links it. The current CV predates Ecosat.
+- CV: not on the site for now. A public version (no phone number) may be linked later; the old PDF with the phone number was removed from `public/`.
 - Data & Analytics and 3D & Engineering design have no publishable project yet. Never fabricate projects, metrics or testimonials to fill them.
 
 ## Product Principles

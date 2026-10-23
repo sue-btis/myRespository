@@ -92,9 +92,6 @@ test('?face= is applied before the app starts', async ({ page }) => {
 test('links without a target never render as live anchors', async ({ page }) => {
   await page.goto('/')
   await expect(page.locator('a[href="#"]')).toHaveCount(0)
-  await expect(page.getByRole('link', { name: /CV/ })).toHaveCount(0)
-  // CV in the bar and in the close section.
-  await expect(page.locator('.pend')).toHaveCount(2)
 })
 
 test('tabbing into the Work console keeps focus on the cartridge', async ({ page }) => {

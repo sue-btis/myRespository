@@ -1,6 +1,5 @@
 import { CLOSE_LINE, EMAIL, GITHUB, LINKEDIN } from '../content'
 import { Icon } from './Icon'
-import { PendingLink } from './PendingLink'
 import { MailLink } from './MailLink'
 import { Chars, Words } from './text'
 
@@ -12,7 +11,6 @@ export function Close() {
       <div className="cta-row" data-reveal>
         <MailLink className="btn spot" data-mag="0.3"><Icon name="mail" /><span className="lbl"><Chars text="Write to me" /></span></MailLink>
         <a className="btn btn--ghost spot" href={GITHUB} data-mag="0.3"><Icon name="github" /><span className="lbl"><Chars text="GitHub" /></span></a>
-        <PendingLink label="CV"><span aria-hidden="true">CV</span></PendingLink>
         <a className="btn btn--ghost spot" href={LINKEDIN} data-mag="0.3"><Icon name="linkedin" /><span className="lbl"><Chars text="LinkedIn" /></span></a>
       </div>
     </section>

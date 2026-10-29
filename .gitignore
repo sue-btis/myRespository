@@ -31,9 +31,8 @@ dist-ssr
 test-results
 playwright-report
 
-# Impeccable transient artifacts
-.impeccable/review
-.impeccable/questions
+# Impeccable design artifacts
+.impeccable/
 
 # Blender
 *.blend1
@@ -45,6 +44,3 @@ modelos/render/
 
 # Local tooling
 .claude/
-
-# Copies of public/ assets used only by the work-explotado mock
-.impeccable/mocks/assets/work3d/
